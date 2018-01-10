@@ -1,40 +1,98 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const NODE_ENV = process.env.NODE_ENV || "development";
+const webpack = require('webpack');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    entry: ['./src/js/main.es6', './sass/style.scss'],
+
+    watch: NODE_ENV == 'development',
+
+    entry: './src/entry.js',
+
     output: {
-        filename: 'dist/bundle.js'
+        path: __dirname,
+        filename: 'build/bundle.js'
     },
+
+
+    plugins: [
+        new webpack.DefinePlugin({
+            NODE_ENV: JSON.stringify(NODE_ENV)
+        }),
+        new ExtractTextPlugin("build/styles.css"),
+
+        new HtmlWebpackPlugin({
+            template: 'src/html/pages/index.pug',
+            filename: 'index.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/html/pages/about.pug',
+            filename: 'about.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/html/pages/contact.pug',
+            filename: 'contact.html'
+        })
+    ],
+
     module: {
 
         rules: [
             {
-                test: /\.js$/,
-                use: [
-                    {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: ['es2015']
-                        }
+                test: /\.es6$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env']
                     }
-                ]
+                }
             },
-            { // regular css files
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract({
-                    loader: 'css-loader?importLoaders=1'
+
+            {
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        },
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                plugins: [
+                                    autoprefixer({
+                                        browsers: ['last 4 version']
+                                    })
+                                ]
+                            }
+                        },
+                        {
+                            loader: 'sass-loader',
+                        }
+                    ]
                 })
             },
-            { // sass / scss loader for webpack
-                test: /\.(sass|scss)$/,
-                loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+            {
+                test: /\.pug$/,
+                loader: 'pug-loader',
+                options: {
+                    pretty: true
+                }
             }
         ]
     },
-    plugins: [
-        new ExtractTextPlugin({ // define where to save the file
-            filename: 'dist/[name].bundle.css',
-            allChunks: true
-        })
-    ]
+
+    devtool: NODE_ENV == 'development' ? "source-map" : false,
+
+    resolve: {
+        alias: {
+            jquery: "jquery/src/jquery"
+        }
+    },
+
 };

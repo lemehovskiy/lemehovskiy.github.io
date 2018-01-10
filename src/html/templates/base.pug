@@ -1,0 +1,33 @@
+- var pages = [{name: 'Home', url: 'index.html'}, {name: 'About', url: 'about.html'}, {name: 'Contact', url: 'contact.html'}];
+
+
+block sharedVars
+
+doctype html
+html
+  head
+    meta(charset = 'utf-8')
+    meta(name='viewport', content="initial-scale=1.0, width=device-width")
+    title
+      block title
+
+  body
+
+    header
+      .container
+        .wp-navbar-head
+          a.logo(href='/')
+            | Lemehovskiy
+          button.wp-navbar-toggle(type='button')
+            | sdfsdf
+            .animate-burger
+              span.top
+              span.middle
+              span.bottom
+        .wp-navbar-collapse
+          ul.nav
+            each i in pages
+              li.menu-item(class={active: pageUrl})
+                a(href=i.url)= i.name
+
+    block main

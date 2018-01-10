@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,600');
 
-@import "reset";
-@import "mixins";
+@import "_reset.scss";
+@import "mixins.scss";
 
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
+
 }
+
 
 .back-img {
   background-size: cover;
@@ -37,3 +39,4 @@ section {
 
 
 @import "partials/section-intro";
+@import "partials/section-features-list";
