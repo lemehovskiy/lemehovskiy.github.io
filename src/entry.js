@@ -1,10 +1,18 @@
 require("./sass/style.scss");
 
-require ("jquery");
+require("jquery");
 
-require ("gsap");
+require("gsap");
 
 require("../../wp_nav/build/wp_nav.js");
+
+require("../../lem_gmaps/build/lem_gmaps.js");
+
+require("../../lem_youtube/build/lem_youtube.js");
+
+require("../../videoBackground/build/videoBackground.js");
+
+var Prism = require('prismjs');
 
 
 (function ($) {
@@ -20,5 +28,50 @@ require("../../wp_nav/build/wp_nav.js");
             TweenLite.to('.dropdown-caption', 0.2, {autoAlpha: 0})
         }
     });
+
+
+    //INTRO BACKGROUND VIDEO
+    $(window).on('ly.apiReady', function () {
+        $('.section-intro .youtube-video').lemYoutube();
+        $('.background-video').videoBackground();
+    });
+
+    $('.section-intro .youtube-video').on('ly.playerReady', function () {
+        $(this).lemYoutube('ytPlayer', 'playVideo');
+        $(this).lemYoutube('ytPlayer', 'mute');
+    });
+
+
+    //DEMO 1
+    $(window).on('ly.apiReady', function () {
+        $('.demo-item-1 .youtube-video').lemYoutube();
+    });
+
+
+    //DEMO 2
+    $(window).on('ly.apiReady', function () {
+        $('.demo-item-2 .youtube-video').lemYoutube();
+    });
+
+    $('.demo-item-2 .youtube-video').on('ly.playerReady', function () {
+        $(this).lemYoutube('ytPlayer', 'playVideo');
+        $(this).lemYoutube('ytPlayer', 'mute');
+    });
+
+
+    //DEMO 3
+    $(window).on('ly.apiReady', function () {
+        $('.demo-item-3 .youtube-video').lemYoutube();
+    });
+
+    $('.play-btn').on('click', function(){
+        $('.demo-item-3 .youtube-video').lemYoutube('ytPlayer', 'playVideo');
+    })
+
+    $('.pause-btn').on('click', function(){
+        $('.demo-item-3 .youtube-video').lemYoutube('ytPlayer', 'pauseVideo');
+    })
+
+
 
 })(jQuery);

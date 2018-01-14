@@ -1,0 +1,88 @@
+extends ../templates/base
+
+append sharedVars
+  - var page_url = 'lem-youtube.html';
+  - var page_name_slug = 'lem-youtube';
+
+block title
+  | Lem youtube
+
+block main
+  section.section-intro
+    .youtube-video.background-video(data-lem-youtube='{"videoId": "yu_bA7jzX5Y"}')
+    .container
+      .content-wrap
+        h3.main-ttl-1
+          | Lem youtube
+  section.section-features
+    .container
+
+      .main-ttl-2
+        | Demos
+
+      ul.demos-list
+        li.demo-item.demo-item-1
+          .content-col
+            .main-ttl-3
+              | Default settings
+            .desc
+              pre
+                code.language-javascript
+                  |  $(window).on('ly.apiReady', function () {
+                  |      $('.youtube-video').lemYoutube();
+                  |  });
+          .media-col
+            .media-col-inner
+              .rect-outer
+                .rect-inner
+                  .youtube-video(data-lem-youtube='{"videoId": "yu_bA7jzX5Y"}')
+        li.demo-item.demo-item-2
+          .content-col
+            .main-ttl-3
+              | Call methods when player ready
+            .desc
+              pre
+                code.language-javascript
+                  | $(window).on('ly.apiReady', function () {
+                  |     $('.demo-item-2 .youtube-video').lemYoutube();
+                  | });
+                  | $('.demo-item-2 .youtube-video').on('ly.playerReady', function () {
+                  |     $(this).lemYoutube('ytPlayer', 'playVideo');
+                  |     $(this).lemYoutube('ytPlayer', 'mute');
+                  | });
+
+
+          .media-col
+            .media-col-inner
+              .rect-outer
+                .rect-inner
+                  .youtube-video(data-lem-youtube='{"videoId": "yu_bA7jzX5Y"}')
+        li.demo-item.demo-item-3
+          .content-col
+            .main-ttl-3
+              | Simple external controls
+            .desc
+              pre
+                code.language-javascript
+                  | $(window).on('ly.apiReady', function () {
+                  |     $('.demo-item-3 .youtube-video').lemYoutube();
+                  | });
+                  |
+                  | $('.play-btn').on('click', function(){
+                  |     $('.demo-item-3 .youtube-video').lemYoutube('ytPlayer', 'playVideo');
+                  | })
+                  |
+                  | $('.pause-btn').on('click', function(){
+                  |     $('.demo-item-3 .youtube-video').lemYoutube('ytPlayer', 'pauseVideo');
+                  | })
+            .btn-group
+              button.play-btn.btn
+                | Play
+              button.pause-btn.btn
+                | Pause
+
+          .media-col
+            .media-col-inner
+              .rect-outer
+                .rect-inner
+                  .youtube-video(data-lem-youtube='{"videoId": "yu_bA7jzX5Y"}')

@@ -1,0 +1,62 @@
+//.background-video {
+//  width: 100%;
+//  height: 100%;
+//  position: absolute;
+//  left: 0;
+//  top: 0;
+//  //filter: blur(10px);
+//
+//  &:before {
+//    content: '';
+//    display: block;
+//    left: 0;
+//    top: 0;
+//    bottom: 0;
+//    right: 0;
+//    position: absolute;
+//    z-index: 10;
+//  }
+//}
+
+.page.lem-youtube {
+  .section-intro {
+    .container {
+      position: relative;
+      z-index: 10;
+    }
+
+    .background-video {
+      width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+  }
+
+  .demos-list {
+
+    .demo-item {
+      padding: 40px 0 0;
+    }
+
+    .btn-group {
+      text-align: center;
+      margin: 20px 0 0;
+    }
+
+    .media-col-inner {
+      max-width: 500px;
+      margin: 30px auto 0;
+      >.rect-outer {
+        padding: 56% 0 0;
+      }
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}

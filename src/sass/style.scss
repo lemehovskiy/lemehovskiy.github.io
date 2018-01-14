@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,600');
-
 @import "_reset.scss";
 @import "mixins.scss";
+@import "partials/_variables";
+@import "partials/_typography";
+@import "partials/_fonts";
+@import "partials/_buttons";
 
-body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
 
-}
+@import "../../node_modules/prismjs/themes/prism.css";
 
 
 .back-img {
@@ -37,6 +36,8 @@ section {
   }
 }
 
+@import "partials/wp_nav";
 
-@import "partials/section-intro";
 @import "partials/section-features-list";
+@import "partials/_section-intro";
+@import "partials/lem_youtube";

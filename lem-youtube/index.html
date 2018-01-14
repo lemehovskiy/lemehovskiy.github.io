@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <title>Index page
+    <title>Lem youtube
     </title>
-  <link href="build/styles.css" rel="stylesheet"></head>
-  <body>
+  <link href="../build/styles.css" rel="stylesheet"></head>
+  <body class="lem-youtube">
     <header>
       <div class="container">
         <div class="wp-navbar-head"><a class="logo" href="/">lem</a>
@@ -18,23 +18,25 @@
         <div class="wp-navbar-collapse">
           <ul class="nav">
             <li class="menu-item"><a href="index.html">Home</a></li>
-            <li class="menu-item"><a href="lem-youtube.html">lem-youtube</a></li>
+            <li class="menu-item active"><a href="lem-youtube.html">lem-youtube</a></li>
             <li class="menu-item"><a href="contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
     </header>
-    <div class="page" id="page">
-      <section class="section-intro back-img" style="background-image: url('src/imgs/sample-img-1.jpg');">
+    <div class="page lem-youtube" id="page">
+      <section class="section-intro">
+        <div class="youtube-video background-video" data-lem-youtube="{&quot;videoId&quot;: &quot;yu_bA7jzX5Y&quot;}"></div>
         <div class="container">
           <div class="content-wrap">
-            <h3 class="title">Home</h3>
+            <h3 class="main-ttl-1">Lem youtube</h3>
           </div>
         </div>
       </section>
       <section class="section-features">
         <div class="container">
-          <ul class="features-list">
+          <div class="main-ttl-2">Demos</div>
+          <ul class="features-list demos-list">
             <li class="feature-item">
               <div class="content-col">
                 <div class="title">Lorem ipsum</div>
@@ -50,8 +52,10 @@
                   </p>
                 </div>
               </div>
-              <div class="img-col">
-                <div class="img-wrap back-img" style="background-image: url('src/imgs/sample-img-2.jpg');"></div>
+              <div class="media-col">
+                <div class="media-col-inner">
+                  <div class="youtube-video" data-lem-youtube="{&quot;videoId&quot;: &quot;yu_bA7jzX5Y&quot;}"></div>
+                </div>
               </div>
             </li>
             <li class="feature-item">
@@ -69,8 +73,10 @@
                   </p>
                 </div>
               </div>
-              <div class="img-col">
-                <div class="img-wrap back-img" style="background-image: url('src/imgs/sample-img-3.jpg');"></div>
+              <div class="media-col">
+                <div class="media-col-inner">
+                  <div class="youtube-video background-video" data-lem-youtube="{&quot;videoId&quot;: &quot;yu_bA7jzX5Y&quot;}"></div>
+                </div>
               </div>
             </li>
             <li class="feature-item">
@@ -88,13 +94,15 @@
                   </p>
                 </div>
               </div>
-              <div class="img-col">
-                <div class="img-wrap back-img" style="background-image: url('src/imgs/sample-img-4.jpg');"></div>
+              <div class="media-col">
+                <div class="media-col-inner">
+                  <div class="youtube-video background-video" data-lem-youtube="{&quot;videoId&quot;: &quot;yu_bA7jzX5Y&quot;}"></div>
+                </div>
               </div>
             </li>
           </ul>
         </div>
       </section>
     </div>
-  <script type="text/javascript" src="build/bundle.js"></script></body>
+  <script type="text/javascript" src="../build/bundle.js"></script></body>
 </html>

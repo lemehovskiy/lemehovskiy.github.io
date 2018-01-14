@@ -16,14 +16,17 @@
     "lodash": "^4.17.4",
     "node-sass": "^4.7.2",
     "postcss-loader": "^2.0.9",
+    "prismjs": "^1.9.0",
     "pug": "^2.0.0-rc.4",
     "pug-loader": "^2.3.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
-    "webpack": "^3.6.0"
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.10.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "webpack-dev-server"
   },
   "keywords": [
     "starter project webpack pug"

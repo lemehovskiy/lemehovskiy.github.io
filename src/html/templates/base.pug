@@ -1,6 +1,6 @@
-- var pages = [{name: 'Home', url: 'index.html'}, {name: 'About', url: 'about.html'}, {name: 'Contact', url: 'contact.html'}];
+- var pages = [{name: 'Home', url: 'index.html'}, {name: 'lem-youtube', url: 'lem-youtube.html'}, {name: 'Contact', url: 'contact.html'}];
 
-
+lem
 block sharedVars
 
 doctype html
@@ -11,15 +11,16 @@ html
     title
       block title
 
-  body
+  body(class=page_name_slug)
+
+
 
     header
       .container
         .wp-navbar-head
           a.logo(href='/')
-            | Lemehovskiy
+            | lem
           button.wp-navbar-toggle(type='button')
-            | sdfsdf
             .animate-burger
               span.top
               span.middle
@@ -27,7 +28,8 @@ html
         .wp-navbar-collapse
           ul.nav
             each i in pages
-              li.menu-item(class={active: pageUrl})
+              li.menu-item(class={active: page_url == i.url})
                 a(href=i.url)= i.name
 
-    block main
+    #page.page(class=page_name_slug)
+      block main

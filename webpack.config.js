@@ -27,8 +27,8 @@ module.exports = {
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
-            template: 'src/html/pages/about.pug',
-            filename: 'about.html'
+            template: 'src/html/pages/lem-youtube.pug',
+            filename: 'lem-youtube/index.html'
         }),
         new HtmlWebpackPlugin({
             template: 'src/html/pages/contact.pug',
@@ -87,12 +87,18 @@ module.exports = {
         ]
     },
 
+    devServer: {
+        stats: 'errors-only'
+    },
+
     devtool: NODE_ENV == 'development' ? "source-map" : false,
 
     resolve: {
         alias: {
             jquery: "jquery/src/jquery"
         }
-    },
+    }
+
+
 
 };
