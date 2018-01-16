@@ -32,7 +32,6 @@ var Prism = require('prismjs');
 
     //INTRO BACKGROUND VIDEO
     $(window).on('ytApiReady.ly', function () {
-
         $('.section-intro .youtube-video').lemYoutube();
         $('.background-video').videoBackground();
     });
@@ -40,6 +39,13 @@ var Prism = require('prismjs');
     $('.section-intro .youtube-video').on('onReady.ly', function () {
         $(this).lemYoutube('ytPlayer', 'playVideo');
         $(this).lemYoutube('ytPlayer', 'mute');
+    });
+
+
+    $('.section-intro .youtube-video').on('onStateChange.ly', function (event, data) {
+        if (data == 0) {
+            $(this).lemYoutube('ytPlayer', 'playVideo');
+        }
     });
 
 

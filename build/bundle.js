@@ -13882,7 +13882,6 @@ var Prism = __webpack_require__(210);
 
     //INTRO BACKGROUND VIDEO
     $(window).on('ytApiReady.ly', function () {
-
         $('.section-intro .youtube-video').lemYoutube();
         $('.background-video').videoBackground();
     });
@@ -13890,6 +13889,13 @@ var Prism = __webpack_require__(210);
     $('.section-intro .youtube-video').on('onReady.ly', function () {
         $(this).lemYoutube('ytPlayer', 'playVideo');
         $(this).lemYoutube('ytPlayer', 'mute');
+    });
+
+
+    $('.section-intro .youtube-video').on('onStateChange.ly', function (event, data) {
+        if (data == 0) {
+            $(this).lemYoutube('ytPlayer', 'playVideo');
+        }
     });
 
 

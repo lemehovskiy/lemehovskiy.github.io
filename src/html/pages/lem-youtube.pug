@@ -1,7 +1,7 @@
 extends ../templates/base
 
 append sharedVars
-  - var page_url = 'lem-youtube.html';
+  - var page_url = '/lem-youtube';
   - var page_name_slug = 'lem-youtube';
 
 block title
@@ -9,12 +9,12 @@ block title
 
 block main
   section.section-intro
-    .youtube-video.background-video(data-lem-youtube='{"videoId": "yu_bA7jzX5Y"}')
+    .youtube-video.background-video(data-lem-youtube='{"videoId": "_L2sI5GFf1g"}')
     .container
       .content-wrap
         h3.main-ttl-1
           | Lem youtube
-  section.section-features
+  section.section-demos
     .container
 
       .main-ttl-2
@@ -28,7 +28,7 @@ block main
             .desc
               pre
                 code.language-javascript
-                  |  $(window).on('ly.apiReady', function () {
+                  |  $(window).on('apiReady.ly', function () {
                   |      $('.youtube-video').lemYoutube();
                   |  });
           .media-col
@@ -42,10 +42,10 @@ block main
             .desc
               pre
                 code.language-javascript
-                  | $(window).on('ly.apiReady', function () {
+                  | $(window).on('apiReady.ly', function () {
                   |     $('.demo-item-2 .youtube-video').lemYoutube();
                   | });
-                  | $('.demo-item-2 .youtube-video').on('ly.playerReady', function () {
+                  | $('.demo-item-2 .youtube-video').on('onReady.ly', function () {
                   |     $(this).lemYoutube('ytPlayer', 'playVideo');
                   |     $(this).lemYoutube('ytPlayer', 'mute');
                   | });
@@ -62,7 +62,7 @@ block main
             .desc
               pre
                 code.language-javascript
-                  | $(window).on('ly.apiReady', function () {
+                  | $(window).on('apiReady.ly', function () {
                   |     $('.demo-item-3 .youtube-video').lemYoutube();
                   | });
                   |
@@ -83,3 +83,38 @@ block main
             .media-col-inner
               .rect-outer
                 .rect-inner.youtube-video(data-lem-youtube='{"videoId": "yu_bA7jzX5Y"}')
+
+  section.section-installation
+    .container
+
+      .main-ttl-2
+        | Installation
+
+      ul.installation-list
+        li.installation-item
+          .content-col
+            .main-ttl-3
+              | Include JS
+            .desc
+              pre.language-markup
+                code
+                  | &lt;script src="jquery.min.js">&lt;/script>
+                  | &lt;script src="lem_youtube.js">&lt;/script>
+        li.installation-item
+          .content-col
+            .main-ttl-3
+              | Set HTML
+            .desc
+              pre.language-markup
+                code
+                  | &lt;div class="youtube-video">&lt;/div>
+        li.installation-item
+          .content-col
+            .main-ttl-3
+              | Call the plugin
+            .desc
+              pre.language-javascript
+                code
+                  | $(window).on('apiReady.ly', function () {
+                  |     $('.youtube-video').lemYoutube();
+                  | });

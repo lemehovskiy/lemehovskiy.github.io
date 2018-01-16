@@ -469,6 +469,14 @@ header {
     bottom: 0;
     background: rgba(0, 0, 0, 0.15); }
 
+.section-installation .container {
+  margin: 100px auto;
+  max-width: 1000px; }
+
+.section-demos .container {
+  margin: 100px auto;
+  max-width: 1000px; }
+
 .page.lem-youtube .section-intro .container {
   position: relative;
   z-index: 10; }

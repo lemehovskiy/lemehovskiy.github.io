@@ -28,7 +28,7 @@
         <div class="wp-navbar-collapse">
           <ul class="nav">
             <li class="menu-item"><a href="index.html">Home</a></li>
-            <li class="menu-item active"><a href="lem-youtube.html">lem-youtube</a></li>
+            <li class="menu-item"><a href="lem-youtube.html">lem-youtube</a></li>
             <li class="menu-item"><a href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -36,14 +36,14 @@
     </header>
     <div class="page lem-youtube" id="page">
       <section class="section-intro">
-        <div class="youtube-video background-video" data-lem-youtube="{&quot;videoId&quot;: &quot;yu_bA7jzX5Y&quot;}"></div>
+        <div class="youtube-video background-video" data-lem-youtube="{&quot;videoId&quot;: &quot;_L2sI5GFf1g&quot;}"></div>
         <div class="container">
           <div class="content-wrap">
             <h3 class="main-ttl-1">Lem youtube</h3>
           </div>
         </div>
       </section>
-      <section class="section-features">
+      <section class="section-demos">
         <div class="container">
           <div class="main-ttl-2">Demos</div>
           <ul class="demos-list">
@@ -51,7 +51,7 @@
               <div class="content-col">
                 <div class="main-ttl-3">Default settings</div>
                 <div class="desc">
-                  <pre><code class="language-javascript"> $(window).on('ly.apiReady', function () {
+                  <pre><code class="language-javascript"> $(window).on('apiReady.ly', function () {
      $('.youtube-video').lemYoutube();
  });</code></pre>
                 </div>
@@ -68,10 +68,10 @@
               <div class="content-col">
                 <div class="main-ttl-3">Call methods when player ready</div>
                 <div class="desc">
-                  <pre><code class="language-javascript">$(window).on('ly.apiReady', function () {
+                  <pre><code class="language-javascript">$(window).on('apiReady.ly', function () {
     $('.demo-item-2 .youtube-video').lemYoutube();
 });
-$('.demo-item-2 .youtube-video').on('ly.playerReady', function () {
+$('.demo-item-2 .youtube-video').on('onReady.ly', function () {
     $(this).lemYoutube('ytPlayer', 'playVideo');
     $(this).lemYoutube('ytPlayer', 'mute');
 });</code></pre>
@@ -89,7 +89,7 @@ $('.demo-item-2 .youtube-video').on('ly.playerReady', function () {
               <div class="content-col">
                 <div class="main-ttl-3">Simple external controls</div>
                 <div class="desc">
-                  <pre><code class="language-javascript">$(window).on('ly.apiReady', function () {
+                  <pre><code class="language-javascript">$(window).on('apiReady.ly', function () {
     $('.demo-item-3 .youtube-video').lemYoutube();
 });
 
@@ -111,6 +111,40 @@ $('.pause-btn').on('click', function(){
                   <div class="rect-outer">
                     <div class="rect-inner youtube-video" data-lem-youtube="{&quot;videoId&quot;: &quot;yu_bA7jzX5Y&quot;}"></div>
                   </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section-installation">
+        <div class="container">
+          <div class="main-ttl-2">Installation</div>
+          <ul class="installation-list">
+            <li class="installation-item">
+              <div class="content-col">
+                <div class="main-ttl-3">Include JS</div>
+                <div class="desc">
+                  <pre class="language-markup"><code>&lt;script src="jquery.min.js">&lt;/script>
+&lt;script src="lem_youtube.js">&lt;/script></code></pre>
+                </div>
+              </div>
+            </li>
+            <li class="installation-item">
+              <div class="content-col">
+                <div class="main-ttl-3">Set HTML</div>
+                <div class="desc">
+                  <pre class="language-markup"><code>&lt;div class="youtube-video">&lt;/div></code></pre>
+                </div>
+              </div>
+            </li>
+            <li class="installation-item">
+              <div class="content-col">
+                <div class="main-ttl-3">Call the plugin</div>
+                <div class="desc">
+                  <pre class="language-javascript"><code>$(window).on('apiReady.ly', function () {
+    $('.youtube-video').lemYoutube();
+});</code></pre>
                 </div>
               </div>
             </li>
