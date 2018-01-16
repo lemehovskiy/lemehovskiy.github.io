@@ -31,36 +31,37 @@ var Prism = require('prismjs');
 
 
     //INTRO BACKGROUND VIDEO
-    $(window).on('ly.apiReady', function () {
+    $(window).on('ytApiReady.ly', function () {
+
         $('.section-intro .youtube-video').lemYoutube();
         $('.background-video').videoBackground();
     });
 
-    $('.section-intro .youtube-video').on('ly.playerReady', function () {
+    $('.section-intro .youtube-video').on('onReady.ly', function () {
         $(this).lemYoutube('ytPlayer', 'playVideo');
         $(this).lemYoutube('ytPlayer', 'mute');
     });
 
 
     //DEMO 1
-    $(window).on('ly.apiReady', function () {
+    $(window).on('ytApiReady.ly', function () {
         $('.demo-item-1 .youtube-video').lemYoutube();
     });
 
 
     //DEMO 2
-    $(window).on('ly.apiReady', function () {
+    $(window).on('ytApiReady.ly', function () {
         $('.demo-item-2 .youtube-video').lemYoutube();
     });
 
-    $('.demo-item-2 .youtube-video').on('ly.playerReady', function () {
+    $('.demo-item-2 .youtube-video').on('onReady.ly', function () {
         $(this).lemYoutube('ytPlayer', 'playVideo');
         $(this).lemYoutube('ytPlayer', 'mute');
     });
 
 
     //DEMO 3
-    $(window).on('ly.apiReady', function () {
+    $(window).on('ytApiReady.ly', function () {
         $('.demo-item-3 .youtube-video').lemYoutube();
     });
 
