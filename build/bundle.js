@@ -13921,14 +13921,25 @@ var Prism = __webpack_require__(210);
         $('.demo-item-3 .youtube-video').lemYoutube();
     });
 
-    $('.play-btn').on('click', function(){
+    $('.play-btn').on('click', function () {
         $('.demo-item-3 .youtube-video').lemYoutube('ytPlayer', 'playVideo');
     })
 
-    $('.pause-btn').on('click', function(){
+    $('.pause-btn').on('click', function () {
         $('.demo-item-3 .youtube-video').lemYoutube('ytPlayer', 'pauseVideo');
     })
 
+
+    $(window).on('apiReady.ly', function () {
+        $('.youtube-video').lemYoutube({
+            videoId: "yu_bA7jzX5Y",
+            playerVars: {
+                'rel': 1,
+                'showinfo': 1,
+                'autoplay': 1
+            }
+        });
+    });
 
 
 })(jQuery);

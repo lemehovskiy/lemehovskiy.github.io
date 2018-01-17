@@ -34,7 +34,7 @@ block main
           .media-col
             .media-col-inner
               .rect-outer
-                .rect-inner.youtube-video(data-lem-youtube='{"videoId": "yu_bA7jzX5Y"}')
+                .rect-inner.youtube-video(data-lem-youtube='{"videoId": "yu_bA7jzX5Y"')
         li.demo-item.demo-item-2
           .content-col
             .main-ttl-3
@@ -118,3 +118,128 @@ block main
                   | $(window).on('apiReady.ly', function () {
                   |     $('.youtube-video').lemYoutube();
                   | });
+
+    section.section-settings
+      .container
+
+        .main-ttl-2
+          | Settings
+
+        ul.settings-list
+          li.setting-item
+            .content-col
+              .main-ttl-3
+                | All Youtube Player parameters support
+              .desc
+                a(href='https://developers.google.com/youtube/player_parameters') https://developers.google.com/youtube/player_parameters
+
+
+          li.setting-item
+            .content-col
+              .main-ttl-3
+                | Default PlayerVars
+              .desc
+
+                pre.language-javascript
+                  code
+                    | playerVars: {
+                    |     'rel': 0,
+                    |     'showinfo': 0
+                    |    }
+          li.setting-item
+            .content-col
+              .main-ttl-3
+                | Set options in function args
+              .desc
+                pre.language-javascript
+                  code
+                    | $(window).on('apiReady.ly', function () {
+                    |     $('.youtube-video').lemYoutube({
+                    |         videoId: "yu_bA7jzX5Y",
+                    |         playerVars: {
+                    |             'rel': 1,
+                    |             'showinfo': 1,
+                    |             'autoplay': 1
+                    |         }
+                    |     });
+                    | });
+
+          li.setting-item
+            .content-col
+              .main-ttl-3
+                | Set options in data attribute
+              .desc
+                pre.language-javascript
+                  code
+                    | $(window).on('apiReady.ly', function () {
+                    |     $('.youtube-video').lemYoutube();
+                    | });
+
+                pre.language-markup
+                  code
+                    | &lt;div
+                    | class="youtube-video"
+                    | data-lem-youtube='{"videoId": "yu_bA7jzX5Y", "playerVars": {"rel": 1, "showinfo": 1, "autoplay": 1}}'>
+                    | &lt;/div>
+
+    section.section-methods
+      .container
+
+        .main-ttl-2
+          | Methods
+
+        ul.methods-list
+          li.method-item
+            .content-col
+              .main-ttl-3
+                | All IFrame API methods support
+              .desc
+                a(href='https://developers.google.com/youtube/iframe_api_reference') https://developers.google.com/youtube/iframe_api_reference
+
+
+          li.method-item
+            .content-col
+              .main-ttl-3
+                | Example
+              .desc
+                pre
+                  code.language-javascript
+                    | $(window).on('apiReady.ly', function () {
+                    |     $('.youtube-video').lemYoutube();
+                    | });
+                    | $('.youtube-video').on('onReady.ly', function () {
+                    |     $(this).lemYoutube('ytPlayer', 'playVideo');
+                    |     $(this).lemYoutube('ytPlayer', 'loadVideoById', ["bHQqvYy5KYo", 50, "large"]);
+                    | });
+
+    section.section-events
+      .container
+
+        .main-ttl-2
+          | Events
+
+        ul.events-list
+
+          li.method-item
+            .content-col
+              .main-ttl-3
+                | onReady
+              .desc
+                pre
+                  code.language-javascript
+                    | $('.youtube-video').on('onReady.ly', function () {
+                    |     $(this).lemYoutube('ytPlayer', 'playVideo');
+                    | });
+          li.method-item
+            .content-col
+              .main-ttl-3
+                | onStateChange
+              .desc
+                pre
+                  code.language-javascript
+                    | $('.youtube-video').on('onStateChange.ly', function (event, data) {
+                    |    if (data == 0) {
+                    |        $(this).lemYoutube('ytPlayer', 'playVideo');
+                    |    }
+                    | });
+

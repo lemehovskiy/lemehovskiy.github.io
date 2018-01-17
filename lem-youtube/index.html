@@ -59,7 +59,7 @@
               <div class="media-col">
                 <div class="media-col-inner">
                   <div class="rect-outer">
-                    <div class="rect-inner youtube-video" data-lem-youtube="{&quot;videoId&quot;: &quot;yu_bA7jzX5Y&quot;}"></div>
+                    <div class="rect-inner youtube-video" data-lem-youtube="{&quot;videoId&quot;: &quot;yu_bA7jzX5Y&quot;"></div>
                   </div>
                 </div>
               </div>
@@ -150,6 +150,117 @@ $('.pause-btn').on('click', function(){
             </li>
           </ul>
         </div>
+        <section class="section-settings">
+          <div class="container">
+            <div class="main-ttl-2">Settings</div>
+            <ul class="settings-list">
+              <li class="setting-item">
+                <div class="content-col">
+                  <div class="main-ttl-3">All Youtube Player parameters support</div>
+                  <div class="desc"><a href="https://developers.google.com/youtube/player_parameters">https://developers.google.com/youtube/player_parameters</a></div>
+                </div>
+              </li>
+              <li class="setting-item">
+                <div class="content-col">
+                  <div class="main-ttl-3">Default PlayerVars</div>
+                  <div class="desc">
+                    <pre class="language-javascript"><code>playerVars: {
+    'rel': 0,
+    'showinfo': 0
+   }</code></pre>
+                  </div>
+                </div>
+              </li>
+              <li class="setting-item">
+                <div class="content-col">
+                  <div class="main-ttl-3">Set options in function args</div>
+                  <div class="desc">
+                    <pre class="language-javascript"><code>$(window).on('apiReady.ly', function () {
+    $('.youtube-video').lemYoutube({
+        videoId: "yu_bA7jzX5Y",
+        playerVars: {
+            'rel': 1,
+            'showinfo': 1,
+            'autoplay': 1
+        }
+    });
+});</code></pre>
+                  </div>
+                </div>
+              </li>
+              <li class="setting-item">
+                <div class="content-col">
+                  <div class="main-ttl-3">Set options in data attribute</div>
+                  <div class="desc">
+                    <pre class="language-javascript"><code>$(window).on('apiReady.ly', function () {
+    $('.youtube-video').lemYoutube();
+});</code></pre>
+                    <pre class="language-markup"><code>&lt;div
+class="youtube-video"
+data-lem-youtube='{"videoId": "yu_bA7jzX5Y", "playerVars": {"rel": 1, "showinfo": 1, "autoplay": 1}}'>
+&lt;/div></code></pre>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="section-methods">
+          <div class="container">
+            <div class="main-ttl-2">Methods</div>
+            <ul class="methods-list">
+              <li class="method-item">
+                <div class="content-col">
+                  <div class="main-ttl-3">All IFrame API methods support</div>
+                  <div class="desc"><a href="https://developers.google.com/youtube/iframe_api_reference">https://developers.google.com/youtube/iframe_api_reference</a></div>
+                </div>
+              </li>
+              <li class="method-item">
+                <div class="content-col">
+                  <div class="main-ttl-3">Example</div>
+                  <div class="desc">
+                    <pre><code class="language-javascript">$(window).on('apiReady.ly', function () {
+    $('.youtube-video').lemYoutube();
+});
+$('.youtube-video').on('onReady.ly', function () {
+    $(this).lemYoutube('ytPlayer', 'playVideo');
+    $(this).lemYoutube('ytPlayer', 'loadVideoById', ["bHQqvYy5KYo", 50, "large"]);
+});</code></pre>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="section-events">
+          <div class="container">
+            <div class="main-ttl-2">Events</div>
+            <ul class="events-list">
+              <li class="method-item">
+                <div class="content-col">
+                  <div class="main-ttl-3">onReady</div>
+                  <div class="desc">
+                    <pre><code class="language-javascript">$('.youtube-video').on('onReady.ly', function () {
+    $(this).lemYoutube('ytPlayer', 'playVideo');
+});</code></pre>
+                  </div>
+                </div>
+              </li>
+              <li class="method-item">
+                <div class="content-col">
+                  <div class="main-ttl-3">onStateChange</div>
+                  <div class="desc">
+                    <pre><code class="language-javascript">$('.youtube-video').on('onStateChange.ly', function (event, data) {
+   if (data == 0) {
+       $(this).lemYoutube('ytPlayer', 'playVideo');
+   }
+});</code></pre>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
       </section>
     </div>
   <script type="text/javascript" src="../build/bundle.js"></script></body>
