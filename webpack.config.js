@@ -31,8 +31,8 @@ module.exports = {
             filename: 'lem-youtube/index.html'
         }),
         new HtmlWebpackPlugin({
-            template: 'src/html/pages/contact.pug',
-            filename: 'contact.html'
+            template: 'src/html/pages/lem-counter.pug',
+            filename: 'lem-counter/index.html'
         })
     ],
 

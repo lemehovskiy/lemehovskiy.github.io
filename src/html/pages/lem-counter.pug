@@ -1,0 +1,156 @@
+extends ../templates/base
+
+append sharedVars
+  - var page_url = '/lem-youtube';
+  - var page_name_slug = 'lem-youtube';
+
+block title
+  | Lem counter
+
+block main
+  section.section-intro.back-img(style="background-image: url('src/imgs/sample-img-1.jpg')")
+    .container
+      .content-wrap
+        h3.main-ttl-1
+          | Lem counter
+  section.section-demos
+    .container
+
+      .main-ttl-2
+        | Demos
+
+      ul.demos-list
+        li.demo-item
+          .content-col
+            .main-ttl-3
+              | Animate to
+            .desc
+              pre
+                code.language-javascript
+                  |$('.counter-demo-1').lemCounter({
+                  |   value_to: 100
+                  |});
+          .media-col
+            .counter-demo-1.main-ttl-3
+              | 0
+
+        li.demo-item
+          .content-col
+            .main-ttl-3
+              | Animate from to
+            .desc
+              pre
+                code.language-javascript
+                  |$('.counter-demo-2').lemCounter({
+                  |   value_to: 100,
+                  |   value_from: 200
+                  |});
+          .media-col
+            .counter-demo-2.main-ttl-3
+              | 200
+
+        li.demo-item
+          .content-col
+            .main-ttl-3
+              | Value to from content
+            .desc
+              pre
+                code.language-javascript
+                  | $('.counter-demo-3').lemCounter({
+                  |   value_to_from_content: true
+                  | });
+
+              pre.language-markup
+                code
+                  | &lt;div class="counter-demo-3">
+                  |   100
+                  | &lt;/div>
+
+          .media-col
+            .counter-demo-3.main-ttl-3
+              | 100
+
+        li.demo-item
+          .content-col
+            .main-ttl-3
+              | Settings from data attribute
+            .desc
+              pre
+                code.language-javascript
+                  | $('.counter-demo-4').lemCounter();
+
+              pre.language-markup
+                code
+                  | &lt;div
+                  | class="counter-demo-4"
+                  | data-lem-counter='{"value_from": 100000, "value_to": 1000, "animate_duration": 3, "locale": "en-US"}'>
+                  | &lt;/div>
+          .media-col
+            .counter-demo-4.main-ttl-3(data-lem-counter='{"value_from": 100000, "value_to": 1000, "animate_duration": 3, "locale": "en-US"}')
+
+
+
+
+  section.section-installation
+    .container
+
+      .main-ttl-2
+        | Installation
+
+      ul.installation-list
+        li.installation-item
+          .content-col
+            .main-ttl-3
+              | Include JS
+            .desc
+              pre.language-markup
+                code
+                  | &lt;script src="jquery.min.js">&lt;/script>
+                  | &lt;script src="TweenLite.js">&lt;/script>
+                  | &lt;script src="lem_counter.js">&lt;/script>
+        li.installation-item
+          .content-col
+            .main-ttl-3
+              | Set HTML
+            .desc
+              pre.language-markup
+                code
+                  | &lt;div class="counter">&lt;/div>
+        li.installation-item
+          .content-col
+            .main-ttl-3
+              | Call the plugin
+            .desc
+              pre.language-javascript
+                code
+                  | $('.counter').lemCounter({
+                  |   value_to: 100
+                  | });
+
+
+    section.section-events
+      .container
+
+        .main-ttl-2
+          | Events
+
+        ul.events-list
+
+          li.method-item
+            .content-col
+              .main-ttl-3
+                | onComplete
+              .desc
+                pre
+                  code.language-javascript
+
+                    | $('.counter-event-demo-1').lemCounter({
+                    |   value_to: 100
+                    | });
+                    |
+                    | $('.counter-event-demo-1').on('onComplete.lc', function () {
+                    |   $(this).css('color', 'red');
+                    | });
+
+            .media-col
+              .counter-event-demo-1.main-ttl-3

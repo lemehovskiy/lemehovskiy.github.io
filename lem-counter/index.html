@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Lem counter
+    </title>
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-112465244-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+          dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-112465244-1');
+      
+    </script>
+  <link href="../build/styles.css" rel="stylesheet"></head>
+  <body class="lem-youtube">
+    <header>
+      <div class="container">
+        <div class="wp-navbar-head"><a class="logo" href="/">lem</a>
+          <button class="wp-navbar-toggle" type="button">
+            <div class="animate-burger"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
+          </button>
+        </div>
+        <div class="wp-navbar-collapse">
+          <ul class="nav">
+            <li class="menu-item"><a href="index.html">Home</a></li>
+            <li class="menu-item active"><a href="/lem-youtube">lem-youtube</a></li>
+            <li class="menu-item"><a href="/lem-counter">lem-counter</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="page lem-youtube" id="page">
+      <section class="section-intro back-img" style="background-image: url('src/imgs/sample-img-1.jpg');">
+        <div class="container">
+          <div class="content-wrap">
+            <h3 class="main-ttl-1">Lem counter</h3>
+          </div>
+        </div>
+      </section>
+      <section class="section-demos">
+        <div class="container">
+          <div class="main-ttl-2">Demos</div>
+          <ul class="demos-list">
+            <li class="demo-item">
+              <div class="content-col">
+                <div class="main-ttl-3">Animate to</div>
+                <div class="desc">
+                  <pre><code class="language-javascript">$('.counter-demo-1').lemCounter({
+  value_to: 100
+});</code></pre>
+                </div>
+              </div>
+              <div class="media-col">
+                <div class="counter-demo-1 main-ttl-3">0</div>
+              </div>
+            </li>
+            <li class="demo-item">
+              <div class="content-col">
+                <div class="main-ttl-3">Animate from to</div>
+                <div class="desc">
+                  <pre><code class="language-javascript">$('.counter-demo-2').lemCounter({
+  value_to: 100,
+  value_from: 200
+});</code></pre>
+                </div>
+              </div>
+              <div class="media-col">
+                <div class="counter-demo-2 main-ttl-3">200</div>
+              </div>
+            </li>
+            <li class="demo-item">
+              <div class="content-col">
+                <div class="main-ttl-3">Value to from content</div>
+                <div class="desc">
+                  <pre><code class="language-javascript">$('.counter-demo-3').lemCounter({
+  value_to_from_content: true
+});</code></pre>
+                  <pre class="language-markup"><code>&lt;div class="counter-demo-3">
+  100
+&lt;/div></code></pre>
+                </div>
+              </div>
+              <div class="media-col">
+                <div class="counter-demo-3 main-ttl-3">100</div>
+              </div>
+            </li>
+            <li class="demo-item">
+              <div class="content-col">
+                <div class="main-ttl-3">Settings from data attribute</div>
+                <div class="desc">
+                  <pre><code class="language-javascript">$('.counter-demo-4').lemCounter();</code></pre>
+                  <pre class="language-markup"><code>&lt;div
+class="counter-demo-4"
+data-lem-counter='{"value_from": 100000, "value_to": 1000, "animate_duration": 3, "locale": "en-US"}'>
+&lt;/div></code></pre>
+                </div>
+              </div>
+              <div class="media-col">
+                <div class="counter-demo-4 main-ttl-3" data-lem-counter="{&quot;value_from&quot;: 100000, &quot;value_to&quot;: 1000, &quot;animate_duration&quot;: 3, &quot;locale&quot;: &quot;en-US&quot;}"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section-installation">
+        <div class="container">
+          <div class="main-ttl-2">Installation</div>
+          <ul class="installation-list">
+            <li class="installation-item">
+              <div class="content-col">
+                <div class="main-ttl-3">Include JS</div>
+                <div class="desc">
+                  <pre class="language-markup"><code>&lt;script src="jquery.min.js">&lt;/script>
+&lt;script src="TweenLite.js">&lt;/script>
+&lt;script src="lem_counter.js">&lt;/script></code></pre>
+                </div>
+              </div>
+            </li>
+            <li class="installation-item">
+              <div class="content-col">
+                <div class="main-ttl-3">Set HTML</div>
+                <div class="desc">
+                  <pre class="language-markup"><code>&lt;div class="counter">&lt;/div></code></pre>
+                </div>
+              </div>
+            </li>
+            <li class="installation-item">
+              <div class="content-col">
+                <div class="main-ttl-3">Call the plugin</div>
+                <div class="desc">
+                  <pre class="language-javascript"><code>$('.counter').lemCounter({
+  value_to: 100
+});</code></pre>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <section class="section-events">
+          <div class="container">
+            <div class="main-ttl-2">Events</div>
+            <ul class="events-list">
+              <li class="method-item">
+                <div class="content-col">
+                  <div class="main-ttl-3">onComplete</div>
+                  <div class="desc">
+                    <pre><code class="language-javascript">$('.counter-event-demo-1').lemCounter({
+  value_to: 100
+});
+
+$('.counter-event-demo-1').on('onComplete.lc', function () {
+  $(this).css('color', 'red');
+});</code></pre>
+                  </div>
+                </div>
+                <div class="media-col">
+                  <div class="counter-event-demo-1 main-ttl-3"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+    </div>
+  <script type="text/javascript" src="../build/bundle.js"></script></body>
+</html>
