@@ -8,11 +8,14 @@ module.exports = {
 
     watch: NODE_ENV == 'development',
 
-    entry: './src/entry.js',
+    entry: {
+        index: './src/entry.js',
+        another: './src/another-module.es6'
+    },
 
     output: {
         path: __dirname,
-        filename: 'build/bundle.js'
+        filename: 'build/' + '[name].bundle.js'
     },
 
 
@@ -21,6 +24,10 @@ module.exports = {
             NODE_ENV: JSON.stringify(NODE_ENV)
         }),
         new ExtractTextPlugin("build/styles.css"),
+
+        new webpack.ProvidePlugin({
+            THREE: "three"
+        }),
 
         new HtmlWebpackPlugin({
             template: 'src/html/pages/index.pug',
@@ -33,7 +40,17 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/html/pages/lem-counter.pug',
             filename: 'lem-counter/index.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/html/pages/three-js-experiments.pug',
+            filename: 'three-js-experiments/index.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/html/pages/three-js-experiments-2.pug',
+            filename: 'three-js-experiments/experiment-2.html',
+            chunks: ['another']
         })
+
     ],
 
     module: {
@@ -91,7 +108,7 @@ module.exports = {
         stats: 'errors-only'
     },
 
-    devtool: NODE_ENV == 'development' ? "source-map" : false,
+    devtool: NODE_ENV == 'development' ? "eval" : false,
 
     resolve: {
         alias: {

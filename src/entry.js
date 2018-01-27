@@ -14,6 +14,10 @@ require("../../videoBackground/build/videoBackground.js");
 
 require("../../lem_counter/build/lem_counter.js");
 
+
+require("./js/three-js-experiments.es6");
+
+
 var Prism = require('prismjs');
 
 
@@ -122,6 +126,8 @@ var Prism = require('prismjs');
     $('.counter-event-demo-1').on('onComplete.lc', function () {
         $(this).css('color', 'red');
     });
+
+
 
 
 })(jQuery);
