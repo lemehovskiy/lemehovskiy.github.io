@@ -10,7 +10,8 @@ module.exports = {
 
     entry: {
         index: './src/entry.js',
-        another: './src/another-module.es6'
+        another: './src/another-module.es6',
+        canvas_confetti: './src/canvas-confetti.es6'
     },
 
     output: {
@@ -20,13 +21,14 @@ module.exports = {
 
 
     plugins: [
+
         new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify(NODE_ENV)
         }),
         new ExtractTextPlugin("build/styles.css"),
 
         new webpack.ProvidePlugin({
-            THREE: "three"
+            THREE: "three",
         }),
 
         new HtmlWebpackPlugin({
@@ -49,6 +51,11 @@ module.exports = {
             template: 'src/html/pages/three-js-experiments-2.pug',
             filename: 'three-js-experiments/experiment-2.html',
             chunks: ['another']
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/html/pages/canvas-confetti.pug',
+            filename: 'canvas/confetti-1.html',
+            chunks: ['canvas_confetti']
         })
 
     ],
@@ -108,7 +115,8 @@ module.exports = {
         stats: 'errors-only'
     },
 
-    devtool: NODE_ENV == 'development' ? "eval" : false,
+    // devtool: NODE_ENV == 'development' ? "eval" : false,
+    devtool: false,
 
     resolve: {
         alias: {
