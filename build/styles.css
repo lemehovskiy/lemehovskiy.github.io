@@ -505,34 +505,94 @@ header {
   width: 100%;
   height: 100%; }
 .canvas-confetti #demo-popup {
-  max-width: 400px;
-  height: 600px;
+  max-width: 500px;
+  height: 627px;
   margin: 100px auto 0;
-  background: #b5aeb2;
   position: relative; }
   .canvas-confetti #demo-popup:before {
     content: '';
-    background: rgba(0, 0, 0, 0.5);
     position: absolute;
     left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    bottom: 0;
+    right: 0;
+    height: 45%;
+    background: -webkit-gradient(linear, left bottom, left top, from(black), to(transparent));
+    background: -webkit-linear-gradient(bottom, black, transparent);
+    background: -o-linear-gradient(bottom, black, transparent);
+    background: linear-gradient(to top, black, transparent);
     z-index: 2; }
+  .canvas-confetti #demo-popup .background-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    right: 15px;
+    bottom: 15px;
+    z-index: 2; }
+    .canvas-confetti #demo-popup .background-overlay:before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      right: 15px;
+      bottom: 15px;
+      border: 1px solid #4C4027; }
   .canvas-confetti #demo-popup canvas {
     position: absolute;
     left: 0;
     top: 0; }
-  .canvas-confetti #demo-popup .test-text {
-    padding: 200px 0 0;
-    display: block;
+  .canvas-confetti #demo-popup .logo-wrap {
     text-align: center;
+    padding: 41px 0 0;
+    position: relative;
+    z-index: 2; }
+    .canvas-confetti #demo-popup .logo-wrap img {
+      max-width: 190px;
+      margin: auto;
+      display: block; }
+  .canvas-confetti #demo-popup .interactive-text {
+    display: block;
     position: relative;
     z-index: 20;
     line-height: 0.8;
     font-size: 40px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: white; }
-    .canvas-confetti #demo-popup .test-text span {
+    color: white;
+    text-align: center; }
+    .canvas-confetti #demo-popup .interactive-text .inner-wrap {
+      max-width: 290px;
+      position: relative;
+      display: inline-block; }
+      .canvas-confetti #demo-popup .interactive-text .inner-wrap img {
+        width: 100%; }
+      .canvas-confetti #demo-popup .interactive-text .inner-wrap .area-1 {
+        background: red;
+        left: 0;
+        top: 40%;
+        width: 56%;
+        height: 55%;
+        position: absolute;
+        -webkit-transform: rotate(-7deg);
+            -ms-transform: rotate(-7deg);
+                transform: rotate(-7deg);
+        -webkit-transform-origin: center;
+            -ms-transform-origin: center;
+                transform-origin: center;
+        visibility: hidden; }
+      .canvas-confetti #demo-popup .interactive-text .inner-wrap .area-2 {
+        background: blue;
+        left: 58%;
+        top: 7%;
+        width: 43%;
+        height: 82%;
+        position: absolute;
+        -webkit-transform: rotate(-7deg);
+            -ms-transform: rotate(-7deg);
+                transform: rotate(-7deg);
+        -webkit-transform-origin: center;
+            -ms-transform-origin: center;
+                transform-origin: center;
+        visibility: hidden; }
+    .canvas-confetti #demo-popup .interactive-text span {
       display: inline-block; }

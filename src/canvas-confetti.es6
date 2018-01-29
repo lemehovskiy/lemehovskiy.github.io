@@ -6,6 +6,10 @@ require("jquery");
 
 import Matter from 'matter-js';
 
+// Converts from degrees to radians.
+Math.radians = function (degrees) {
+    return degrees * Math.PI / 180;
+};
 
 
 // module aliases
@@ -21,7 +25,6 @@ var Engine = Matter.Engine,
     Mouse = Matter.Mouse,
     MouseConstraint = Matter.MouseConstraint,
     SVG = Matter.Svg;
-
 
 
 // create an engine
@@ -45,27 +48,32 @@ var render = Render.create({
 
 // engine.world.gravity.x = -.2;
 
-
+var colors = [
+    'B99E62', 'ECECDB', 'E3A43B'
+]
 
 var particles = [];
 var updateParticles = function () {
     var particleOptions = {
         // count: render.canvas.width*0.05,
         count: 150,
-        size: {min: render.canvas.width * 0.003, max: render.canvas.width * 0.012},
-        restitution: 2,
-        // frictionAir: ,
+        size_width: {min: 3, max: 10},
+        size_height: {min: 10, max: 20},
+        restitution: 0.3,
         color: '#ff357a'
     };
 
     for (var i = 0; i < particleOptions.count; i++) {
         var x = Matter.Common.random(15, render.canvas.width);
         var y = Matter.Common.random(-render.canvas.height, render.canvas.height / 3);
-        var size = Matter.Common.random(particleOptions.size.min, particleOptions.size.max);
-        var p = Bodies.circle(x, y, size, {
+        var size_width = Matter.Common.random(particleOptions.size_width.min, particleOptions.size_width.max);
+        var size_height = Matter.Common.random(particleOptions.size_height.min, particleOptions.size_height.max);
+        var p = Bodies.rectangle(x, y, size_width, size_height, {
             restitution: particleOptions.restitution,
+            inertia: 0,
+            friction: 0,
             render: {
-                fillStyle: '#' + Math.floor(Common.random(0, 16777215)).toString(16)
+                fillStyle: '#' + colors[Math.floor(Math.random() * colors.length)]
             },
             frictionAir: Common.random(0.1, 0.1)
         });
@@ -79,28 +87,37 @@ var letters = [];
 var updateLetters = function () {
 
 
-    $('.test-text .word').each(function(){
+    $('.area-1, .area-2').each(function () {
         let $this = $(this);
+
+        let wrap_left = $('.interactive-text .inner-wrap').position().left;
+        let wrap_top = $('.interactive-text').position().top;
+
+        console.log(wrap_top);
 
         let width = $this.outerWidth();
         let height = $this.outerHeight();
 
 
-        let left = $this.position().left;
-        let top = $this.position().top;
+        let left = $this.position().left + wrap_left;
+        let top = $this.position().top + wrap_top;
 
 
-        console.log(top);
+        // console.log(top);
+        // console.log($this.position().left);
 
 
         var letter = Bodies.rectangle(left + width / 2, top + height / 2, width, height, {
             friction: 0,
             isStatic: true,
+            label: "Area",
             render: {
                 fillStyle: "#FFFF00",
                 visible: false
             }
         });
+
+        Body.rotate(letter, Math.radians(-7));
 
         letters.push(letter);
 
@@ -148,8 +165,23 @@ Engine.run(engine);
 // run the renderer
 Render.run(render);
 
+
+var rotate_clockwise = true;
+
 Matter.Events.on(render, "afterRender", function (e) {
     particles.forEach(function (p) {
+
+        if (rotate_clockwise) {
+            Matter.Body.rotate(p, Math.radians(Matter.Common.random(1, 4)));
+
+            rotate_clockwise = false;
+        }
+        else {
+            Matter.Body.rotate(p, Math.radians(Matter.Common.random(-1, -4)));
+
+            rotate_clockwise = true;
+        }
+
         if (p.position.y > render.canvas.height || p.position.x < 0 || p.position.x > render.canvas.width) {
             // Matter.Body.setVelocity(p, { x: 0, y: Matter.Common.random(1, 30) });
             var x = Matter.Common.random(15, render.canvas.width);
@@ -157,4 +189,39 @@ Matter.Events.on(render, "afterRender", function (e) {
             Matter.Body.setPosition(p, {x: x, y: y});
         }
     });
+});
+
+Matter.Events.on(engine, 'collisionStart', function (event) {
+    var pairs = event.pairs;
+
+
+    // console.log(pairs);
+
+    for (var i = 0, j = pairs.length; i != j; ++i) {
+        var pair = pairs[i];
+
+        // console.log(pair);
+
+
+        if (pair.bodyA.label == 'Area') {
+
+            var x = Matter.Common.random(15, render.canvas.width);
+            var y = Matter.Common.random(-render.canvas.height, 0);
+            Matter.Body.setPosition(p, {x: x, y: y});
+
+            pair.bodyB.render.strokeStyle = '#C44D58';
+        }
+        else if (pair.bodyB.label == 'Area') {
+
+
+            setTimeout(function () {
+                var x = Matter.Common.random(15, render.canvas.width);
+                var y = Matter.Common.random(-render.canvas.height, 0);
+
+                Matter.Body.setPosition(pair.bodyA, {x: x, y: y});
+            }, 100);
+
+        }
+
+    }
 });
