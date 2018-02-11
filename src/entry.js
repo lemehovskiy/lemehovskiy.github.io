@@ -4,7 +4,7 @@ require("jquery");
 
 require("gsap");
 
-require("../../wp_nav/build/wp_nav.js");
+require("../../lem_nav/build/lem_nav.js");
 
 require("../../lem_gmaps/build/lem_gmaps.js");
 
@@ -15,15 +15,9 @@ require("../../videoBackground/build/videoBackground.js");
 require("../../lem_counter/build/lem_counter.js");
 
 
-require("./js/three-js-experiments.es6");
-
-
-var Prism = require('prismjs');
-
-
 (function ($) {
 
-    $('.wp-navbar-collapse').wpNav({
+    $('.wp-navbar-collapse').lemNav({
         collapse_duration: 0.6,
         trigger: 'hover',
         navbar_toggle: '.wp-navbar-toggle',

@@ -10,13 +10,13 @@ module.exports = {
 
     entry: {
         index: './src/entry.js',
-        another: './src/another-module.es6',
+        three_js_experiments: './src/three_js_experiments.es6',
         canvas_confetti: './src/canvas-confetti.es6'
     },
 
     output: {
-        path: __dirname,
-        filename: 'build/' + '[name].bundle.js'
+        filename: 'build/' + '[name].bundle.js',
+        path: __dirname
     },
 
 
@@ -41,16 +41,18 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: 'src/html/pages/lem-counter.pug',
-            filename: 'lem-counter/index.html'
-        }),
-        new HtmlWebpackPlugin({
-            template: 'src/html/pages/three-js-experiments.pug',
-            filename: 'three-js-experiments/index.html'
-        }),
-        new HtmlWebpackPlugin({
-            template: 'src/html/pages/three-js-experiments-2.pug',
-            filename: 'three-js-experiments/experiment-2.html',
+            filename: 'lem-counter/index.html',
             chunks: ['another']
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/html/pages/three-js-experiments-confetti-1.pug',
+            filename: 'three-js-experiments/confetti-1.html',
+            chunks: ['index', 'three_js_experiments']
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/html/pages/three-js-experiments-physics-1.pug',
+            filename: 'three-js-experiments/physics-1.html',
+            chunks: ['index', 'three_js_experiments']
         }),
         new HtmlWebpackPlugin({
             template: 'src/html/pages/canvas-confetti.pug',

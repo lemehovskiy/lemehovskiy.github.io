@@ -1,7 +1,4 @@
-require("./sass/style.scss");
-
-
-const THREE = require('./js/vendor/three');
+const THREE = require('../vendor/three.js');
 
 const OrbitControls = require('three-orbit-controls')(THREE);
 

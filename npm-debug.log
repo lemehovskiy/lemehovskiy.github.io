@@ -1,35 +1,36 @@
+0 info it worked if it ends with ok
 1 verbose cli [ '/usr/local/bin/node',
 1 verbose cli   '/usr/local/bin/npm',
 1 verbose cli   'run',
 1 verbose cli   'start:dev' ]
-2 info using npm@3.10.10
-3 info using node@v6.11.2
+2 info using npm@4.0.5
+3 info using node@v7.4.0
 4 verbose run-script [ 'prestart:dev', 'start:dev', 'poststart:dev' ]
 5 info lifecycle html_starter_webpack_pug@1.0.0~prestart:dev: html_starter_webpack_pug@1.0.0
 6 silly lifecycle html_starter_webpack_pug@1.0.0~prestart:dev: no script for prestart:dev, continuing
 7 info lifecycle html_starter_webpack_pug@1.0.0~start:dev: html_starter_webpack_pug@1.0.0
 8 verbose lifecycle html_starter_webpack_pug@1.0.0~start:dev: unsafe-perm in lifecycle true
-9 verbose lifecycle html_starter_webpack_pug@1.0.0~start:dev: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/lemehovskiy1/PhpstormProjects/lemehovskiy.github.io/node_modules/.bin:/Users/lemehovskiy1/.rvm/gems/ruby-2.4.0/bin:/Users/lemehovskiy1/.rvm/gems/ruby-2.4.0@global/bin:/Users/lemehovskiy1/.rvm/rubies/ruby-2.4.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/lemehovskiy1/.rvm/bin:/Users/lemehovskiy1/.rvm/bin
-10 verbose lifecycle html_starter_webpack_pug@1.0.0~start:dev: CWD: /Users/lemehovskiy1/PhpstormProjects/lemehovskiy.github.io
+9 verbose lifecycle html_starter_webpack_pug@1.0.0~start:dev: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/lemehovskiy/PhpstormProjects/lemehovskiy.github.io/node_modules/.bin:/Users/lemehovskiy/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/Users/lemehovskiy/.rvm/bin
+10 verbose lifecycle html_starter_webpack_pug@1.0.0~start:dev: CWD: /Users/lemehovskiy/PhpstormProjects/lemehovskiy.github.io
 11 silly lifecycle html_starter_webpack_pug@1.0.0~start:dev: Args: [ '-c', 'webpack-dev-server' ]
 12 silly lifecycle html_starter_webpack_pug@1.0.0~start:dev: Returned: code: 1  signal: null
 13 info lifecycle html_starter_webpack_pug@1.0.0~start:dev: Failed to exec start:dev script
 14 verbose stack Error: html_starter_webpack_pug@1.0.0 start:dev: `webpack-dev-server`
 14 verbose stack Exit status 1
-14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:279:16)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at EventEmitter.emit (events.js:191:7)
 14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:40:14)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at ChildProcess.emit (events.js:191:7)
-14 verbose stack     at maybeClose (internal/child_process.js:891:16)
+14 verbose stack     at maybeClose (internal/child_process.js:885:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 15 verbose pkgid html_starter_webpack_pug@1.0.0
-16 verbose cwd /Users/lemehovskiy1/PhpstormProjects/lemehovskiy.github.io
-17 error Darwin 16.7.0
+16 verbose cwd /Users/lemehovskiy/PhpstormProjects/lemehovskiy.github.io
+17 error Darwin 16.0.0
 18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "start:dev"
-19 error node v6.11.2
-20 error npm  v3.10.10
+19 error node v7.4.0
+20 error npm  v4.0.5
 21 error code ELIFECYCLE
 22 error html_starter_webpack_pug@1.0.0 start:dev: `webpack-dev-server`
 22 error Exit status 1
