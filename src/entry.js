@@ -6,8 +6,6 @@ require("gsap");
 
 require("../../lem_nav/build/lem_nav.js");
 
-require("../../lem_gmaps/build/lem_gmaps.js");
-
 require("../../lem_youtube/build/lem_youtube.js");
 
 require("../../videoBackground/build/videoBackground.js");

@@ -11,7 +11,8 @@ module.exports = {
     entry: {
         index: './src/entry.js',
         three_js_experiments: './src/three_js_experiments.es6',
-        canvas_confetti: './src/canvas-confetti.es6'
+        canvas_confetti: './src/canvas-confetti.es6',
+        lem_gmaps_page: './src/lem_gmaps_page.es6'
     },
 
     output: {
@@ -38,6 +39,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/html/pages/lem-youtube.pug',
             filename: 'lem-youtube/index.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/html/pages/lem-gmaps/index.pug',
+            filename: 'lem-gmaps/index.html',
+            chunks: ['index', 'lem_gmaps_page']
+
         }),
         new HtmlWebpackPlugin({
             template: 'src/html/pages/lem-counter.pug',
