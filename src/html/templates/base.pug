@@ -1,4 +1,4 @@
-- var pages = [{name: 'Home', url: 'index.html'}, {name: 'lem-youtube', url: '/lem-youtube'}, {name: 'lem-counter', url: '/lem-counter'}, {name: 'three-js-experiments', url: '/three-js-experiments'}];
+- var pages = [{name: 'Home', url: 'index.html'}, {name: 'lem-youtube', url: '/lem-youtube'}, {name: 'lem-counter', url: '/lem-counter'}, {name: 'lem-gmaps', url: '/lem-gmaps'}, {name: 'three-js-experiments', url: '/three-js-experiments'}];
 
 
 block sharedVars
@@ -14,12 +14,12 @@ html
     // Global site tag (gtag.js) - Google Analytics
     script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-112465244-1')
     script.
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-112465244-1');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-112465244-1');
 
   body(class=page_name_slug)
     header

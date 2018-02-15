@@ -22,6 +22,7 @@ block main
               pre.language-markup
                 code
                   | &lt;script src="jquery.min.js">&lt;/script>
+                  | &lt;script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=googleMapsOnLoad" async defer>&lt;/script>
                   | &lt;script src="lem_gmaps.js">&lt;/script>
         li
           .content-col
@@ -37,14 +38,16 @@ block main
             .desc
               pre.language-javascript
                 code
-                  | $('.google-map').lemGmaps({
-                  |   markers: [
-                  |     {
-                  |       "lat": 44.530436,
-                  |       "lng": -103.887630
-                  |     }
-                  |   ],
-                  | });
+                  | window.googleMapsOnLoad = () => {
+                  |   $('.google-map').lemGmaps({
+                  |     markers: [
+                  |       {
+                  |         "lat": 44.530436,
+                  |         "lng": -103.887630
+                  |       }
+                  |     ],
+                  |   });
+                  | };
   section.section-features-blocks
     .container
       h2.section-title.main-ttl-2
@@ -71,39 +74,85 @@ block main
         li.feature-item
           .content-col
             .title.main-ttl-3
-              | Animation type - rotate
+              | Default marker
             .desc.main-p-1
-              pre.
-                \n
+              pre.language-javascript
+                code
+                  | $('.google-map-demo-2').lemGmaps({
+                  |   markers: [
+                  |     {
+                  |       "lat": 44.530436,
+                  |       "lng": -103.887630
+                  |     }
+                  |  ],
+                  |   marker_icon: null
+                  | });
           .img-col
             .img-wrap.google-map-demo-2
         li.feature-item
           .content-col
             .title.main-ttl-3
-              | Event - mouse move
+              | Multiply markers
             .desc.main-p-1
-              pre.
-                \n
-          .img-col.hover-me
-            .img-wrap.parallax-demo-3
-              .parallax-inner.back-img(style="background-image: url('/src/imgs/sample-img-3.jpg')")
+              pre.language-javascript
+                code
+                  | $('.google-map-demo-3').lemGmaps({
+                  |   markers: [
+                  |     {
+                  |       "lat": 44.530436,
+                  |       "lng": -103.887630
+                  |     },
+                  |     {
+                  |       "lat": 55.170730,
+                  |       "lng": -118.819305
+                  |     }
+                  |   ]
+                  | });
+          .img-col
+            .img-wrap.google-map-demo-3
         li.feature-item
           .content-col
             .title.main-ttl-3
-              | Event - mouse move with rotate animation
+              | Styles
             .desc.main-p-1
-              pre.
-                \n
-          .img-col.hover-me
-            .img-wrap.parallax-demo-4
-              .parallax-inner.back-img(style="background-image: url('/src/imgs/sample-img-4.jpg')")
+              pre.language-javascript
+                code
+                  | $('.google-map-demo-4').lemGmaps({
+                  |   markers: [
+                  |     {
+                  |       "lat": 44.530436,
+                  |       "lng": -103.887630
+                  |     }
+                  |   ],
+                  |   map_options: {
+                  |     styles: [
+                  |       {
+                  |         "featureType": "road",
+                  |         "elementType": "all",
+                  |         "stylers": [
+                  |           {
+                  |             "lightness": 90
+                  |           }
+                  |         ]
+                  |       }
+                  |     ]
+                  |   }
+                  | });
+          .img-col
+            .img-wrap.google-map-demo-4
         li.feature-item
           .content-col
             h3.main-ttl-3
-              | Alternative background type
+              | Settings from data attribute
             .desc
-              pre.
-                \n
-          .img-col.hover-me
-            .img-wrap.parallax-demo-5
-              .parallax-inner.youtube-video.youtube-video-background
+              pre.language-markup
+                code
+                  | &lt;div
+                  | class="google-map-demo-5"
+                  | data-lem-gmap='{"markers": [{"lat": 46.904767, "lng": -96.797955}, {"lat": 42.163677, "lng": -72.632944, "icon": {"fillColor": "#0000ff"}}]}'>
+                  | &lt;/div>
+              pre.language-javascript
+                code
+                  | $('.google-map-demo-5').lemGmaps();
+          .img-col
+            .img-wrap.google-map-demo-5(data-lem-gmap='{"markers": [{"lat": 46.904767, "lng": -96.797955}, {"lat": 42.163677, "lng": -72.632944, "icon": {"fillColor": "#0000ff"}}]}')

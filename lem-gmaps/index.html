@@ -10,7 +10,7 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
-          dataLayer.push(arguments);
+        dataLayer.push(arguments);
       }
       gtag('js', new Date());
       gtag('config', 'UA-112465244-1');
@@ -30,6 +30,7 @@
             <li class="menu-item"><a href="index.html">Home</a></li>
             <li class="menu-item"><a href="/lem-youtube">lem-youtube</a></li>
             <li class="menu-item"><a href="/lem-counter">lem-counter</a></li>
+            <li class="menu-item"><a href="/lem-gmaps">lem-gmaps</a></li>
             <li class="menu-item"><a href="/three-js-experiments">three-js-experiments</a></li>
           </ul>
         </div>
@@ -52,6 +53,7 @@
                 <div class="main-ttl-3">Include JS</div>
                 <div class="desc">
                   <pre class="language-markup"><code>&lt;script src="jquery.min.js">&lt;/script>
+&lt;script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=googleMapsOnLoad" async defer>&lt;/script>
 &lt;script src="lem_gmaps.js">&lt;/script></code></pre>
                 </div>
               </div>
@@ -68,14 +70,16 @@
               <div class="content-col">
                 <div class="main-ttl-3">Call the plugin</div>
                 <div class="desc">
-                  <pre class="language-javascript"><code>$('.google-map').lemGmaps({
-  markers: [
-    {
-      "lat": 44.530436,
-      "lng": -103.887630
-    }
-  ],
-});</code></pre>
+                  <pre class="language-javascript"><code>window.googleMapsOnLoad = () => {
+  $('.google-map').lemGmaps({
+    markers: [
+      {
+        "lat": 44.530436,
+        "lng": -103.887630
+      }
+    ],
+  });
+};</code></pre>
                 </div>
               </div>
             </li>
@@ -106,9 +110,17 @@
             </li>
             <li class="feature-item">
               <div class="content-col">
-                <div class="title main-ttl-3">Animation type - rotate</div>
+                <div class="title main-ttl-3">Default marker</div>
                 <div class="desc main-p-1">
-                  <pre>\n</pre>
+                  <pre class="language-javascript"><code>$('.google-map-demo-2').lemGmaps({
+  markers: [
+    {
+      "lat": 44.530436,
+      "lng": -103.887630
+    }
+ ],
+  marker_icon: null
+});</code></pre>
                 </div>
               </div>
               <div class="img-col">
@@ -117,41 +129,70 @@
             </li>
             <li class="feature-item">
               <div class="content-col">
-                <div class="title main-ttl-3">Event - mouse move</div>
+                <div class="title main-ttl-3">Multiply markers</div>
                 <div class="desc main-p-1">
-                  <pre>\n</pre>
+                  <pre class="language-javascript"><code>$('.google-map-demo-3').lemGmaps({
+  markers: [
+    {
+      "lat": 44.530436,
+      "lng": -103.887630
+    },
+    {
+      "lat": 55.170730,
+      "lng": -118.819305
+    }
+  ]
+});</code></pre>
                 </div>
               </div>
-              <div class="img-col hover-me">
-                <div class="img-wrap parallax-demo-3">
-                  <div class="parallax-inner back-img" style="background-image: url('/src/imgs/sample-img-3.jpg');"></div>
-                </div>
+              <div class="img-col">
+                <div class="img-wrap google-map-demo-3"></div>
               </div>
             </li>
             <li class="feature-item">
               <div class="content-col">
-                <div class="title main-ttl-3">Event - mouse move with rotate animation</div>
+                <div class="title main-ttl-3">Styles</div>
                 <div class="desc main-p-1">
-                  <pre>\n</pre>
+                  <pre class="language-javascript"><code>$('.google-map-demo-4').lemGmaps({
+  markers: [
+    {
+      "lat": 44.530436,
+      "lng": -103.887630
+    }
+  ],
+  map_options: {
+    styles: [
+      {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+          {
+            "lightness": 90
+          }
+        ]
+      }
+    ]
+  }
+});</code></pre>
                 </div>
               </div>
-              <div class="img-col hover-me">
-                <div class="img-wrap parallax-demo-4">
-                  <div class="parallax-inner back-img" style="background-image: url('/src/imgs/sample-img-4.jpg');"></div>
-                </div>
+              <div class="img-col">
+                <div class="img-wrap google-map-demo-4"></div>
               </div>
             </li>
             <li class="feature-item">
               <div class="content-col">
-                <h3 class="main-ttl-3">Alternative background type</h3>
+                <h3 class="main-ttl-3">Settings from data attribute</h3>
                 <div class="desc">
-                  <pre>\n</pre>
+                  <pre class="language-markup"><code>&lt;div
+class="google-map-demo-5"
+data-lem-gmap='{"markers": [{"lat": 46.904767, "lng": -96.797955}, {"lat": 42.163677, "lng": -72.632944, "icon": {"fillColor": "#0000ff"}}]}'>
+&lt;/div></code></pre>
+                  <pre class="language-javascript"><code>$('.google-map-demo-5').lemGmaps();</code></pre>
                 </div>
               </div>
-              <div class="img-col hover-me">
-                <div class="img-wrap parallax-demo-5">
-                  <div class="parallax-inner youtube-video youtube-video-background"></div>
-                </div>
+              <div class="img-col">
+                <div class="img-wrap google-map-demo-5" data-lem-gmap="{&quot;markers&quot;: [{&quot;lat&quot;: 46.904767, &quot;lng&quot;: -96.797955}, {&quot;lat&quot;: 42.163677, &quot;lng&quot;: -72.632944, &quot;icon&quot;: {&quot;fillColor&quot;: &quot;#0000ff&quot;}}]}"></div>
               </div>
             </li>
           </ul>

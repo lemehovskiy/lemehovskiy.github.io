@@ -76,14 +76,50 @@ __webpack_require__(225);
 var loadGoogleMapsAPI = __webpack_require__(226);
 
 loadGoogleMapsAPI({ key: "AIzaSyAkbu04rf_WBmWQhuo9c5K8DV1jrsK3Hlw" }).then(function (googleMaps) {
-    $('.google-map-demo-1').lemGmaps({
-        markers: [{
-            "lat": 44.530436,
-            "lng": -103.887630
+  $('.google-map-demo-1').lemGmaps({
+    markers: [{
+      "lat": 44.530436,
+      "lng": -103.887630
+    }]
+  });
+
+  $('.google-map-demo-2').lemGmaps({
+    markers: [{
+      "lat": 44.530436,
+      "lng": -103.887630
+    }],
+    marker_icon: null
+  });
+
+  $('.google-map-demo-3').lemGmaps({
+    markers: [{
+      "lat": 44.530436,
+      "lng": -103.887630
+    }, {
+      "lat": 55.170730,
+      "lng": -118.819305
+    }]
+  });
+
+  $('.google-map-demo-4').lemGmaps({
+    markers: [{
+      "lat": 44.530436,
+      "lng": -103.887630
+    }],
+    map_options: {
+      styles: [{
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [{
+          "lightness": 90
         }]
-    });
+      }]
+    }
+  });
+
+  $('.google-map-demo-5').lemGmaps();
 }).catch(function (err) {
-    console.error(err);
+  console.error(err);
 });
 
 /***/ }),
@@ -191,6 +227,7 @@ var LemGmaps = function () {
                 path: 'M10.9,0C4.9,0,0,4.9,0,10.9c0,7,9.8,24.7,10.9,24.7c1.2,0,10.9-17.5,10.9-24.7C21.8,4.9,16.9,0,10.9,0z M10.9,15.5c-2.5,0-4.6-2-4.6-4.6s2-4.6,4.6-4.6c2.5,0,4.6,2,4.6,4.6S13.4,15.5,10.9,15.5z',
                 fillColor: '#882929',
                 fillOpacity: 1,
+                scale: 1.1,
                 strokeWeight: 0,
                 anchor: new google.maps.Point(20, 20)
             },
@@ -230,6 +267,13 @@ var LemGmaps = function () {
             markers.forEach(function (markerObj) {
                 bounds.extend(markerObj.marker.position);
             });
+
+            // if (self.settings.lat_shift) {
+            //     if (bounds.getNorthEast().equals(bounds.getSouthWest())) {
+            //         var extendPoint = new google.maps.LatLng(bounds.getNorthEast().lat() + self.settings.lat_shift, bounds.getNorthEast().lng());
+            //         bounds.extend(extendPoint);
+            //     }
+            // }
 
             self.map.fitBounds(bounds);
         }
