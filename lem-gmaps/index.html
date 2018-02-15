@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <title>Lem youtube
+    <title>Lem gmaps
     </title>
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-112465244-1"></script>
@@ -36,12 +36,13 @@
       </div>
     </header>
     <div class="page" id="page">
-      <section class="section-intro full-width back-img"></section>
-      <div class="container">
-        <div class="content-wrap">
-          <h1 class="main-ttl-1">Parallax background</h1>
+      <section class="section-intro full-width back-img">
+        <div class="container">
+          <div class="content-wrap">
+            <h1 class="main-ttl-1">Lem gmaps</h1>
+          </div>
         </div>
-      </div>
+      </section>
       <section class="section-features-list">
         <div class="container">
           <h2 class="section-title main-ttl-2">Installation</h2>
@@ -50,7 +51,8 @@
               <div class="content-col">
                 <div class="main-ttl-3">Include JS</div>
                 <div class="desc">
-                  <pre class="language-markup">\n</pre>
+                  <pre class="language-markup"><code>&lt;script src="jquery.min.js">&lt;/script>
+&lt;script src="lem_gmaps.js">&lt;/script></code></pre>
                 </div>
               </div>
             </li>
@@ -58,7 +60,7 @@
               <div class="content-col">
                 <div class="main-ttl-3">Set HTML</div>
                 <div class="desc">
-                  <pre class="language-markup">\n</pre>
+                  <pre class="language-markup"><code>&lt;div class="google-map">&lt;/div></code></pre>
                 </div>
               </div>
             </li>
@@ -66,7 +68,14 @@
               <div class="content-col">
                 <div class="main-ttl-3">Call the plugin</div>
                 <div class="desc">
-                  <pre class="language-javascript">\n</pre>
+                  <pre class="language-javascript"><code>$('.google-map').lemGmaps({
+  markers: [
+    {
+      "lat": 44.530436,
+      "lng": -103.887630
+    }
+  ],
+});</code></pre>
                 </div>
               </div>
             </li>
@@ -81,13 +90,18 @@
               <div class="content-col">
                 <div class="title main-ttl-3">Basic usage</div>
                 <div class="desc main-p-1">
-                  <pre>\n</pre>
+                  <pre class="language-javascript"><code>$('.google-map-demo-1').lemGmaps({
+  markers: [
+    {
+      "lat": 44.530436,
+      "lng": -103.887630
+    }
+  ],
+});</code></pre>
                 </div>
               </div>
               <div class="img-col">
-                <div class="img-wrap parallax-demo-1">
-                  <div class="parallax-inner back-img" style="background-image: url('/src/imgs/sample-img-1.jpg');"></div>
-                </div>
+                <div class="img-wrap google-map-demo-1"></div>
               </div>
             </li>
             <li class="feature-item">
@@ -98,9 +112,7 @@
                 </div>
               </div>
               <div class="img-col">
-                <div class="img-wrap parallax-demo-2">
-                  <div class="parallax-inner back-img" style="background-image: url('/src/imgs/sample-img-2.jpg');"></div>
-                </div>
+                <div class="img-wrap google-map-demo-2"></div>
               </div>
             </li>
             <li class="feature-item">

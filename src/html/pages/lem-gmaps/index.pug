@@ -2,14 +2,14 @@ extends ../../templates/base
 
 
 block title
-  | Lem youtube
+  | Lem gmaps
 
 block main
   section.section-intro.full-width.back-img
-  .container
-    .content-wrap
-      h1.main-ttl-1
-        | Parallax background
+      .container
+        .content-wrap
+          h1.main-ttl-1
+            | Lem gmaps
   section.section-features-list
     .container
       h2.section-title.main-ttl-2
@@ -19,20 +19,32 @@ block main
           .content-col
             .main-ttl-3 Include JS
             .desc
-              pre.language-markup.
-                \n
+              pre.language-markup
+                code
+                  | &lt;script src="jquery.min.js">&lt;/script>
+                  | &lt;script src="lem_gmaps.js">&lt;/script>
         li
           .content-col
             .main-ttl-3 Set HTML
             .desc
-              pre.language-markup.
-                \n
+              pre.language-markup
+                code
+                  | &lt;div class="google-map">&lt;/div>
+
         li
           .content-col
             .main-ttl-3 Call the plugin
             .desc
-              pre.language-javascript.
-                \n
+              pre.language-javascript
+                code
+                  | $('.google-map').lemGmaps({
+                  |   markers: [
+                  |     {
+                  |       "lat": 44.530436,
+                  |       "lng": -103.887630
+                  |     }
+                  |   ],
+                  | });
   section.section-features-blocks
     .container
       h2.section-title.main-ttl-2
@@ -43,11 +55,19 @@ block main
             .title.main-ttl-3
               | Basic usage
             .desc.main-p-1
-              pre.
-                \n
+              pre.language-javascript
+                code
+                  | $('.google-map-demo-1').lemGmaps({
+                  |   markers: [
+                  |     {
+                  |       "lat": 44.530436,
+                  |       "lng": -103.887630
+                  |     }
+                  |   ],
+                  | });
           .img-col
-            .img-wrap.parallax-demo-1
-              .parallax-inner.back-img(style="background-image: url('/src/imgs/sample-img-1.jpg')")
+            .img-wrap.google-map-demo-1
+
         li.feature-item
           .content-col
             .title.main-ttl-3
@@ -56,8 +76,7 @@ block main
               pre.
                 \n
           .img-col
-            .img-wrap.parallax-demo-2
-              .parallax-inner.back-img(style="background-image: url('/src/imgs/sample-img-2.jpg')")
+            .img-wrap.google-map-demo-2
         li.feature-item
           .content-col
             .title.main-ttl-3

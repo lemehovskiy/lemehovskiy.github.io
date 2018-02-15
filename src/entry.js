@@ -12,6 +12,10 @@ require("../../videoBackground/build/videoBackground.js");
 
 require("../../lem_counter/build/lem_counter.js");
 
+var Prism = require('prismjs');
+var Normalizer = require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');
+require('prismjs/themes/prism.css');
+
 
 (function ($) {
 

@@ -60,22 +60,35 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 217);
+/******/ 	return __webpack_require__(__webpack_require__.s = 224);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 217:
+/***/ 224:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(218);
+__webpack_require__(225);
+
+var loadGoogleMapsAPI = __webpack_require__(226);
+
+loadGoogleMapsAPI({ key: "AIzaSyAkbu04rf_WBmWQhuo9c5K8DV1jrsK3Hlw" }).then(function (googleMaps) {
+    $('.google-map-demo-1').lemGmaps({
+        markers: [{
+            "lat": 44.530436,
+            "lng": -103.887630
+        }]
+    });
+}).catch(function (err) {
+    console.error(err);
+});
 
 /***/ }),
 
-/***/ 218:
+/***/ 225:
 /***/ (function(module, exports) {
 
 /******/ (function(modules) { // webpackBootstrap
@@ -178,7 +191,6 @@ var LemGmaps = function () {
                 path: 'M10.9,0C4.9,0,0,4.9,0,10.9c0,7,9.8,24.7,10.9,24.7c1.2,0,10.9-17.5,10.9-24.7C21.8,4.9,16.9,0,10.9,0z M10.9,15.5c-2.5,0-4.6-2-4.6-4.6s2-4.6,4.6-4.6c2.5,0,4.6,2,4.6,4.6S13.4,15.5,10.9,15.5z',
                 fillColor: '#882929',
                 fillOpacity: 1,
-                scale: 1.1,
                 strokeWeight: 0,
                 anchor: new google.maps.Point(20, 20)
             },
@@ -218,13 +230,6 @@ var LemGmaps = function () {
             markers.forEach(function (markerObj) {
                 bounds.extend(markerObj.marker.position);
             });
-
-            // if (self.settings.lat_shift) {
-            //     if (bounds.getNorthEast().equals(bounds.getSouthWest())) {
-            //         var extendPoint = new google.maps.LatLng(bounds.getNorthEast().lat() + self.settings.lat_shift, bounds.getNorthEast().lng());
-            //         bounds.extend(extendPoint);
-            //     }
-            // }
 
             self.map.fitBounds(bounds);
         }
@@ -276,6 +281,61 @@ $.fn.lemGmaps = function () {
 
 /***/ })
 /******/ ]);
+
+/***/ }),
+
+/***/ 226:
+/***/ (function(module, exports) {
+
+var CALLBACK_NAME = '__googleMapsApiOnLoadCallback'
+
+var OPTIONS_KEYS = ['channel', 'client', 'key', 'language', 'region', 'v']
+
+module.exports = function(options) {
+  options = options || {}
+
+  return new Promise(function(resolve, reject) {
+    // Exit if not running inside a browser.
+    if (typeof window === 'undefined') {
+      return reject(
+        new Error('Can only load the Google Maps API in the browser')
+      )
+    }
+
+    // Reject the promise after a timeout.
+    var timeoutId = setTimeout(function() {
+      window[CALLBACK_NAME] = function() {} // Set the on load callback to a no-op.
+      reject(new Error('Could not load the Google Maps API'))
+    }, options.timeout || 10000)
+
+    // Hook up the on load callback.
+    window[CALLBACK_NAME] = function() {
+      if (timeoutId !== null) {
+        clearTimeout(timeoutId)
+      }
+      resolve(window.google.maps)
+      delete window[CALLBACK_NAME]
+    }
+
+    // Prepare the `script` tag to be inserted into the page.
+    var scriptElement = document.createElement('script')
+    var params = ['callback=' + CALLBACK_NAME]
+    OPTIONS_KEYS.forEach(function(key) {
+      if (options[key]) {
+        params.push(key + '=' + options[key])
+      }
+    })
+    if (options.libraries && options.libraries.length) {
+      params.push('libraries=' + options.libraries.join(','))
+    }
+    scriptElement.src =
+      'https://maps.googleapis.com/maps/api/js?' + params.join('&')
+
+    // Insert the `script` tag.
+    document.body.appendChild(scriptElement)
+  })
+}
+
 
 /***/ })
 

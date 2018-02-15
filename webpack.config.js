@@ -29,7 +29,7 @@ module.exports = {
         new ExtractTextPlugin("build/styles.css"),
 
         new webpack.ProvidePlugin({
-            THREE: "three",
+            THREE: "three"
         }),
 
         new HtmlWebpackPlugin({
@@ -84,14 +84,21 @@ module.exports = {
             },
 
             {
-                test: /\.scss$/,
+                test: /\.s?css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
                         {
                             loader: 'css-loader',
                             options: {
-                                sourceMap: true
+                                sourceMap: NODE_ENV == 'development',
+                                minimize: NODE_ENV == 'production'
+                            }
+                        },
+                        {
+                            loader: 'resolve-url-loader',
+                            options: {
+                                sourceMap: NODE_ENV == 'development'
                             }
                         },
                         {
@@ -101,14 +108,24 @@ module.exports = {
                                     autoprefixer({
                                         browsers: ['last 4 version']
                                     })
-                                ]
+                                ],
+                                sourceMap: 'inline'
                             }
                         },
                         {
                             loader: 'sass-loader',
+                            options: {
+                                sourceMap: NODE_ENV == 'development'
+                            }
                         }
                     ]
                 })
+
+            },
+
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg|gif)$/,
+                loader: 'url-loader?limit=100000'
             },
             {
                 test: /\.pug$/,
