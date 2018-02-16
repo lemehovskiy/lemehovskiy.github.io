@@ -60,20 +60,20 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 224);
+/******/ 	return __webpack_require__(__webpack_require__.s = 223);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 224:
+/***/ 223:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(225);
+__webpack_require__(224);
 
-var loadGoogleMapsAPI = __webpack_require__(226);
+var loadGoogleMapsAPI = __webpack_require__(225);
 
 loadGoogleMapsAPI({ key: "AIzaSyAkbu04rf_WBmWQhuo9c5K8DV1jrsK3Hlw" }).then(function (googleMaps) {
   $('.google-map-demo-1').lemGmaps({
@@ -124,7 +124,7 @@ loadGoogleMapsAPI({ key: "AIzaSyAkbu04rf_WBmWQhuo9c5K8DV1jrsK3Hlw" }).then(funct
 
 /***/ }),
 
-/***/ 225:
+/***/ 224:
 /***/ (function(module, exports) {
 
 /******/ (function(modules) { // webpackBootstrap
@@ -328,7 +328,7 @@ $.fn.lemGmaps = function () {
 
 /***/ }),
 
-/***/ 226:
+/***/ 225:
 /***/ (function(module, exports) {
 
 var CALLBACK_NAME = '__googleMapsApiOnLoadCallback'

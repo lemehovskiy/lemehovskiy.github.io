@@ -122,8 +122,9 @@ header {
 
       >a {
         color: $menu-font-color;
-        padding: 20px 30px;
+        padding: 20px 20px;
         display: block;
+        white-space: nowrap;
 
         @media (max-width: $mobile-menu-breakpoint) {
           padding: 20px 0;

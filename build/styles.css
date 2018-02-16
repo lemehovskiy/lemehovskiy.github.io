@@ -301,7 +301,7 @@ code {
   font-size: 50px;
   text-transform: uppercase;
   font-weight: 600;
-  margin: 30px 0;
+  margin: 20px 0;
 }
 
 .main-ttl-2 {
@@ -309,12 +309,12 @@ code {
   text-transform: uppercase;
   font-weight: 600;
   text-align: center;
-  margin: 30px 0;
+  margin: 10px 0;
 }
 
 .main-ttl-3 {
   font-size: 35px;
-  margin: 30px 0;
+  margin: 10px 0;
 }
 
 .main-p {
@@ -364,6 +364,7 @@ code {
 
 .container {
   margin: auto;
+  max-width: 1100px;
 }
 
 section {
@@ -574,10 +575,6 @@ header .sub-menu > li > a {
   text-align: center;
 }
 
-.section-features-blocks .container {
-  max-width: 1000px;
-}
-
 .section-features-blocks .features-list {
   padding: 20px 0 0;
 }
@@ -719,11 +716,7 @@ header .sub-menu > li > a {
 }
 
 .section-features-list {
-  padding: 80px 0;
-}
-
-.section-features-list .container {
-  max-width: 1000px;
+  padding: 60px 0;
 }
 
 .section-features-list .section-title {
@@ -762,16 +755,6 @@ header .sub-menu > li > a {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.15);
-}
-
-.section-installation .container {
-  margin: 100px auto;
-  max-width: 1000px;
-}
-
-.section-demos .container {
-  margin: 100px auto;
-  max-width: 1000px;
 }
 
 .page.lem-youtube .section-intro .container {

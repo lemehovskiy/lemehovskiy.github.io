@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <title>Lem counter
-    </title>
+    <title></title>
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-112465244-1"></script>
     <script>
@@ -16,10 +15,11 @@
       gtag('config', 'UA-112465244-1');
       
     </script>
-  </head>
-  <body class="lem-youtube">
+  <link href="../build/styles.css" rel="stylesheet"></head>
+  <body>
     <header>
       <div class="container">
+        <div></div>
         <div class="wp-navbar-head"><a class="logo" href="/">lem</a>
           <button class="wp-navbar-toggle" type="button">
             <div class="animate-burger"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
@@ -27,16 +27,14 @@
         </div>
         <div class="wp-navbar-collapse">
           <ul class="nav">
-            <li class="menu-item"><a href="index.html">Home</a></li>
-            <li class="menu-item active"><a href="/lem-youtube">lem-youtube</a></li>
-            <li class="menu-item"><a href="/lem-counter">lem-counter</a></li>
-            <li class="menu-item"><a href="/lem-gmaps">lem-gmaps</a></li>
-            <li class="menu-item"><a href="/three-js-experiments">three-js-experiments</a></li>
+            <!--each i in pages-->
+            <!--  li.menu-item(class={active: page_url == i.url})-->
+            <!--    a(href=i.url)= i.name-->
           </ul>
         </div>
       </div>
     </header>
-    <div class="page lem-youtube" id="page">
+    <div class="page lem-counter" id="page">
       <section class="section-intro back-img" style="background-image: url('/src/imgs/sample-img-1.jpg');">
         <div class="container">
           <div class="content-wrap">
@@ -44,7 +42,42 @@
           </div>
         </div>
       </section>
-      <section class="section-demos">
+      <section class="section-features-list">
+        <div class="container">
+          <div class="main-ttl-2">Installation</div>
+          <ul class="installation-list">
+            <li class="installation-item">
+              <div class="content-col">
+                <div class="main-ttl-3">Include JS</div>
+                <div class="desc">
+                  <pre class="language-markup"><code>&lt;script src="jquery.min.js">&lt;/script>
+&lt;script src="TweenLite.js">&lt;/script>
+&lt;script src="lem_counter.js">&lt;/script></code></pre>
+                </div>
+              </div>
+            </li>
+            <li class="installation-item">
+              <div class="content-col">
+                <div class="main-ttl-3">Set HTML</div>
+                <div class="desc">
+                  <pre class="language-markup"><code>&lt;div class="counter">&lt;/div></code></pre>
+                </div>
+              </div>
+            </li>
+            <li class="installation-item">
+              <div class="content-col">
+                <div class="main-ttl-3">Call the plugin</div>
+                <div class="desc">
+                  <pre class="language-javascript"><code>$('.counter').lemCounter({
+  value_to: 100
+});</code></pre>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section-features-list">
         <div class="container">
           <div class="main-ttl-2">Demos</div>
           <ul class="demos-list">
@@ -109,65 +142,30 @@ data-lem-counter='{"value_from": 100000, "value_to": 1000, "animate_duration": 3
           </ul>
         </div>
       </section>
-      <section class="section-installation">
+      <section class="section-features-list">
         <div class="container">
-          <div class="main-ttl-2">Installation</div>
-          <ul class="installation-list">
-            <li class="installation-item">
+          <div class="main-ttl-2">Events</div>
+          <ul class="events-list">
+            <li class="method-item">
               <div class="content-col">
-                <div class="main-ttl-3">Include JS</div>
+                <div class="main-ttl-3">onComplete</div>
                 <div class="desc">
-                  <pre class="language-markup"><code>&lt;script src="jquery.min.js">&lt;/script>
-&lt;script src="TweenLite.js">&lt;/script>
-&lt;script src="lem_counter.js">&lt;/script></code></pre>
-                </div>
-              </div>
-            </li>
-            <li class="installation-item">
-              <div class="content-col">
-                <div class="main-ttl-3">Set HTML</div>
-                <div class="desc">
-                  <pre class="language-markup"><code>&lt;div class="counter">&lt;/div></code></pre>
-                </div>
-              </div>
-            </li>
-            <li class="installation-item">
-              <div class="content-col">
-                <div class="main-ttl-3">Call the plugin</div>
-                <div class="desc">
-                  <pre class="language-javascript"><code>$('.counter').lemCounter({
-  value_to: 100
-});</code></pre>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <section class="section-events">
-          <div class="container">
-            <div class="main-ttl-2">Events</div>
-            <ul class="events-list">
-              <li class="method-item">
-                <div class="content-col">
-                  <div class="main-ttl-3">onComplete</div>
-                  <div class="desc">
-                    <pre><code class="language-javascript">$('.counter-event-demo-1').lemCounter({
+                  <pre><code class="language-javascript">$('.counter-event-demo-1').lemCounter({
   value_to: 100
 });
 
 $('.counter-event-demo-1').on('onComplete.lc', function () {
   $(this).css('color', 'red');
 });</code></pre>
-                  </div>
                 </div>
-                <div class="media-col">
-                  <div class="counter-event-demo-1 main-ttl-3"></div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
+              </div>
+              <div class="media-col">
+                <div class="counter-event-demo-1 main-ttl-3"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </section>
     </div>
-  </body>
+  <script type="text/javascript" src="../build/index.bundle.js"></script><script type="text/javascript" src="../build/lem_counter_page.bundle.js"></script></body>
 </html>

@@ -1,11 +1,9 @@
 extends ../templates/base
 
 append sharedVars
-  - var page_url = '/lem-youtube';
-  - var page_name_slug = 'lem-youtube';
-
-block title
-  | Lem counter
+  - var page_slug = 'lem-counter';
+  - var page_title = 'Lem counter'
+  - var page_url = '/lem-counter';
 
 block main
   section.section-intro.back-img(style="background-image: url('/src/imgs/sample-img-1.jpg')")
@@ -13,14 +11,51 @@ block main
       .content-wrap
         h3.main-ttl-1
           | Lem counter
-  section.section-demos
+
+  section.section-features-list
+    .container
+
+      .main-ttl-2
+        | Installation
+
+      ul.features-list
+        li
+          .content-col
+            .main-ttl-3
+              | Include JS
+            .desc
+              pre.language-markup
+                code
+                  | &lt;script src="jquery.min.js">&lt;/script>
+                  | &lt;script src="TweenLite.js">&lt;/script>
+                  | &lt;script src="lem_counter.js">&lt;/script>
+        li
+          .content-col
+            .main-ttl-3
+              | Set HTML
+            .desc
+              pre.language-markup
+                code
+                  | &lt;div class="counter">&lt;/div>
+        li
+          .content-col
+            .main-ttl-3
+              | Call the plugin
+            .desc
+              pre.language-javascript
+                code
+                  | $('.counter').lemCounter({
+                  |   value_to: 100
+                  | });
+
+  section.section-features-list
     .container
 
       .main-ttl-2
         | Demos
 
-      ul.demos-list
-        li.demo-item
+      ul.features-list
+        li
           .content-col
             .main-ttl-3
               | Animate to
@@ -34,7 +69,7 @@ block main
             .counter-demo-1.main-ttl-3
               | 0
 
-        li.demo-item
+        li
           .content-col
             .main-ttl-3
               | Animate from to
@@ -49,7 +84,7 @@ block main
             .counter-demo-2.main-ttl-3
               | 200
 
-        li.demo-item
+        li
           .content-col
             .main-ttl-3
               | Value to from content
@@ -70,7 +105,7 @@ block main
             .counter-demo-3.main-ttl-3
               | 100
 
-        li.demo-item
+        li
           .content-col
             .main-ttl-3
               | Settings from data attribute
@@ -88,69 +123,29 @@ block main
           .media-col
             .counter-demo-4.main-ttl-3(data-lem-counter='{"value_from": 100000, "value_to": 1000, "animate_duration": 3, "locale": "en-US"}')
 
-
-
-
-  section.section-installation
+  section.section-features-list
     .container
 
       .main-ttl-2
-        | Installation
+        | Events
 
-      ul.installation-list
-        li.installation-item
+      ul.events-list
+
+        li.method-item
           .content-col
             .main-ttl-3
-              | Include JS
+              | onComplete
             .desc
-              pre.language-markup
-                code
-                  | &lt;script src="jquery.min.js">&lt;/script>
-                  | &lt;script src="TweenLite.js">&lt;/script>
-                  | &lt;script src="lem_counter.js">&lt;/script>
-        li.installation-item
-          .content-col
-            .main-ttl-3
-              | Set HTML
-            .desc
-              pre.language-markup
-                code
-                  | &lt;div class="counter">&lt;/div>
-        li.installation-item
-          .content-col
-            .main-ttl-3
-              | Call the plugin
-            .desc
-              pre.language-javascript
-                code
-                  | $('.counter').lemCounter({
+              pre
+                code.language-javascript
+
+                  | $('.counter-event-demo-1').lemCounter({
                   |   value_to: 100
                   | });
+                  |
+                  | $('.counter-event-demo-1').on('onComplete.lc', function () {
+                  |   $(this).css('color', 'red');
+                  | });
 
-
-    section.section-events
-      .container
-
-        .main-ttl-2
-          | Events
-
-        ul.events-list
-
-          li.method-item
-            .content-col
-              .main-ttl-3
-                | onComplete
-              .desc
-                pre
-                  code.language-javascript
-
-                    | $('.counter-event-demo-1').lemCounter({
-                    |   value_to: 100
-                    | });
-                    |
-                    | $('.counter-event-demo-1').on('onComplete.lc', function () {
-                    |   $(this).css('color', 'red');
-                    | });
-
-            .media-col
-              .counter-event-demo-1.main-ttl-3
+          .media-col
+            .counter-event-demo-1.main-ttl-3

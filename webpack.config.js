@@ -12,7 +12,8 @@ module.exports = {
         index: './src/entry.js',
         three_js_experiments: './src/three_js_experiments.es6',
         canvas_confetti: './src/canvas-confetti.es6',
-        lem_gmaps_page: './src/lem_gmaps_page.es6'
+        lem_gmaps_page: './src/lem_gmaps_page.es6',
+        lem_counter_page: './src/lem_counter_page.es6'
     },
 
     output: {
@@ -42,7 +43,7 @@ module.exports = {
             chunks: ['index']
         }),
         new HtmlWebpackPlugin({
-            template: 'src/html/pages/lem-gmaps/index.pug',
+            template: 'src/html/pages/lem-gmaps.pug',
             filename: 'lem-gmaps/index.html',
             chunks: ['index', 'lem_gmaps_page']
 
@@ -50,7 +51,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/html/pages/lem-counter.pug',
             filename: 'lem-counter/index.html',
-            chunks: ['another']
+            chunks: ['index', 'lem_counter_page']
         }),
         new HtmlWebpackPlugin({
             template: 'src/html/pages/three-js-experiments-confetti-1.pug',

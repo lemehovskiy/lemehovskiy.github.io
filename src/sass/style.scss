@@ -17,6 +17,7 @@
 
 .container {
   margin: auto;
+  max-width: 1100px;
 
 }
 
@@ -42,6 +43,4 @@ section {
 @import "partials/section-features-list";
 
 @import "partials/_section-intro";
-@import "partials/_section-installation";
-@import "partials/_section-demos";
 @import "partials/lem_youtube";

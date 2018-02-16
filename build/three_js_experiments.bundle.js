@@ -60,10 +60,20 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 217);
+/******/ 	return __webpack_require__(__webpack_require__.s = 216);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ 216:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(217);
+
+/***/ }),
 
 /***/ 217:
 /***/ (function(module, exports, __webpack_require__) {
@@ -71,19 +81,9 @@
 "use strict";
 
 
-__webpack_require__(218);
+var THREE = __webpack_require__(218);
 
-/***/ }),
-
-/***/ 218:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var THREE = __webpack_require__(219);
-
-var OrbitControls = __webpack_require__(220)(THREE);
+var OrbitControls = __webpack_require__(219)(THREE);
 
 var mContainer;
 var mCamera, mRenderer;
@@ -620,7 +620,7 @@ THREE.BAS.PhongAnimationMaterial.prototype._concatVertexShader = function () {
 
 /***/ }),
 
-/***/ 219:
+/***/ 218:
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (global, factory) {
@@ -46610,7 +46610,7 @@ THREE.BAS.PhongAnimationMaterial.prototype._concatVertexShader = function () {
 
 /***/ }),
 
-/***/ 220:
+/***/ 219:
 /***/ (function(module, exports) {
 
 module.exports = function( THREE ) {

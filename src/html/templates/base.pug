@@ -1,4 +1,8 @@
-- var pages = [{name: 'Home', url: 'index.html'}, {name: 'lem-youtube', url: '/lem-youtube'}, {name: 'lem-counter', url: '/lem-counter'}, {name: 'lem-gmaps', url: '/lem-gmaps'}, {name: 'three-js-experiments', url: '/three-js-experiments'}];
+-
+  var pages = [
+  {name: 'Lem counter', url: '/lem-counter'},
+  {name: 'Lem youtube', url: '/lem-youtube'}
+  ];
 
 
 block sharedVars
@@ -8,8 +12,7 @@ html
   head
     meta(charset = 'utf-8')
     meta(name='viewport', content="initial-scale=1.0, width=device-width")
-    title
-      block title
+    title= page_title
 
     // Global site tag (gtag.js) - Google Analytics
     script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-112465244-1')
@@ -21,9 +24,10 @@ html
       gtag('js', new Date());
       gtag('config', 'UA-112465244-1');
 
-  body(class=page_name_slug)
+  body(class='page-' + page_slug)
     header
       .container
+        //div= page_title
         .wp-navbar-head
           a.logo(href='/')
             | lem
@@ -38,5 +42,5 @@ html
               li.menu-item(class={active: page_url == i.url})
                 a(href=i.url)= i.name
 
-    #page.page(class=page_name_slug)
+    #page.page(class=page_slug)
       block main
