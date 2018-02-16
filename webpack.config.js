@@ -38,7 +38,8 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: 'src/html/pages/lem-youtube.pug',
-            filename: 'lem-youtube/index.html'
+            filename: 'lem-youtube/index.html',
+            chunks: ['index']
         }),
         new HtmlWebpackPlugin({
             template: 'src/html/pages/lem-gmaps/index.pug',
