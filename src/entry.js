@@ -6,9 +6,6 @@ require("gsap");
 
 require("../../lem_nav/build/lem_nav.js");
 
-require("../../videoBackground/build/videoBackground.js");
-
-
 var Prism = require('prismjs');
 var Normalizer = require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');
 require('prismjs/themes/prism.css');

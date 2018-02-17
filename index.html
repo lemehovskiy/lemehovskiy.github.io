@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <title></title>
+    <title>title</title>
+    <meta name="description" content="description">
+    <meta name="keywords" content="keywords">
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-112465244-1"></script>
     <script>
@@ -16,10 +18,10 @@
       
     </script>
   <link href="build/styles.css" rel="stylesheet"></head>
-  <body>
+  <body class="page-index">
     <header>
       <div class="container">
-        <div></div>
+        <!--div= page_title-->
         <div class="wp-navbar-head"><a class="logo" href="/">lem</a>
           <button class="wp-navbar-toggle" type="button">
             <div class="animate-burger"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
@@ -27,9 +29,10 @@
         </div>
         <div class="wp-navbar-collapse">
           <ul class="nav">
-            <!--each i in pages-->
-            <!--  li.menu-item(class={active: page_url == i.url})-->
-            <!--    a(href=i.url)= i.name-->
+            <li class="menu-item"><a href="/lem-counter">Lem counter</a></li>
+            <li class="menu-item"><a href="/lem-youtube">Lem youtube</a></li>
+            <li class="menu-item"><a href="/lem-gmaps">Lem gmaps</a></li>
+            <li class="menu-item"><a href="/parallax-background">Parallax background</a></li>
           </ul>
         </div>
       </div>
@@ -38,16 +41,16 @@
       <section class="section-intro back-img" style="background-image: url('src/imgs/sample-img-1.jpg');">
         <div class="container">
           <div class="content-wrap">
-            <h3 class="title">Home</h3>
+            <h3 class="title main-ttl-1">Home</h3>
           </div>
         </div>
       </section>
-      <section class="section-features">
+      <section class="section-features-list">
         <div class="container">
           <ul class="features-list">
             <li class="feature-item">
               <div class="content-col">
-                <div class="title">Lorem ipsum</div>
+                <div class="title main-ttl-3">Lorem ipsum</div>
                 <div class="desc">
                   <p>
                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
@@ -66,7 +69,7 @@
             </li>
             <li class="feature-item">
               <div class="content-col">
-                <div class="title">Lorem ipsum</div>
+                <div class="title main-ttl-3">Lorem ipsum</div>
                 <div class="desc">
                   <p>
                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
@@ -85,7 +88,7 @@
             </li>
             <li class="feature-item">
               <div class="content-col">
-                <div class="title">Lorem ipsum</div>
+                <div class="title main-ttl-3">Lorem ipsum</div>
                 <div class="desc">
                   <p>
                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
@@ -106,5 +109,5 @@
         </div>
       </section>
     </div>
-  <script type="text/javascript" src="build/index.bundle.js"></script><script type="text/javascript" src="build/canvas_confetti.bundle.js"></script><script type="text/javascript" src="build/three_js_experiments.bundle.js"></script><script type="text/javascript" src="build/lem_gmaps_page.bundle.js"></script><script type="text/javascript" src="build/lem_counter_page.bundle.js"></script></body>
+  <script type="text/javascript" src="build/index.bundle.js"></script></body>
 </html>

@@ -60,50 +60,61 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 217);
+/******/ 	return __webpack_require__(__webpack_require__.s = 219);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 217:
+/***/ 219:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(218);
+__webpack_require__(220);
 
-//COUNTER DEMO 1
-$('.counter-demo-1').lemCounter({
-  value_to: 100
+//DEMO 1
+$(window).on('ytApiReady.ly', function () {
+  $('.demo-item-1 .youtube-video').lemYoutube();
 });
 
-//COUNTER DEMO 2
-$('.counter-demo-2').lemCounter({
-  value_to: 100,
-  value_from: 200
+//DEMO 2
+$(window).on('ytApiReady.ly', function () {
+  $('.demo-item-2 .youtube-video').lemYoutube();
 });
 
-//COUNTER DEMO 3
-$('.counter-demo-3').lemCounter({
-  value_to_from_content: true
+$('.demo-item-2 .youtube-video').on('onReady.ly', function () {
+  $(this).lemYoutube('ytPlayer', 'playVideo');
+  $(this).lemYoutube('ytPlayer', 'mute');
 });
 
-//COUNTER DEMO 4
-$('.counter-demo-4').lemCounter();
-
-//COUNTER EVENT DEMO 1
-$('.counter-event-demo-1').lemCounter({
-  value_to: 100
+//DEMO 3
+$(window).on('ytApiReady.ly', function () {
+  $('.demo-item-3 .youtube-video').lemYoutube();
 });
 
-$('.counter-event-demo-1').on('onComplete.lc', function () {
-  $(this).css('color', 'red');
+$('.play-btn').on('click', function () {
+  $('.demo-item-3 .youtube-video').lemYoutube('ytPlayer', 'playVideo');
+});
+
+$('.pause-btn').on('click', function () {
+  $('.demo-item-3 .youtube-video').lemYoutube('ytPlayer', 'pauseVideo');
+});
+
+$(window).on('apiReady.ly', function () {
+  $('.youtube-video').lemYoutube({
+    videoId: "yu_bA7jzX5Y",
+    playerVars: {
+      'rel': 1,
+      'showinfo': 1,
+      'autoplay': 1
+    }
+  });
 });
 
 /***/ }),
 
-/***/ 218:
+/***/ 220:
 /***/ (function(module, exports) {
 
 /******/ (function(modules) { // webpackBootstrap
@@ -180,8 +191,8 @@ $('.counter-event-demo-1').on('onComplete.lc', function () {
  Version: 1.0.0
  Author: lemehovskiy
  Website: http://lemehovskiy.github.io
- Repo: https://github.com/lemehovskiy/lem_counter
- */
+ Repo: https://github.com/lemehovskiy/lem_youtube
+*/
 
 
 
@@ -192,107 +203,99 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 (function ($) {
-    var LemCounter = function () {
-        function LemCounter(element, options) {
-            _classCallCheck(this, LemCounter);
+    //init youtube
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    window.onYouTubePlayerAPIReady = function () {
+        $(document).ready(function () {
+            $(window).trigger('ytApiReady.ly');
+        });
+    };
+
+    var LemYoutube = function () {
+        function LemYoutube(element, options) {
+            _classCallCheck(this, LemYoutube);
 
             var self = this;
 
-            //extend by function call
             self.settings = $.extend(true, {
-                value_from: 0,
-                value_to: 0,
-                locale: false,
-                value_to_from_content: false,
-                animate_duration: 2
+                playerVars: {
+                    'rel': 0,
+                    'showinfo': 0
+                }
+
             }, options);
 
             self.$element = $(element);
 
-            self.to_fixed_digits = 0;
+            //create div for iframe init
+            $(self.$element).append('<div class="player"></div>');
+
+            self.$player_element = $(self.$element).find('.player');
 
             //extend by data options
-            self.data_options = self.$element.data('lem-counter');
+            self.data_options = self.$element.data('lem-youtube');
+
             self.settings = $.extend(true, self.settings, self.data_options);
 
-            //value to from content
-            if (self.settings.value_to_from_content) {
-                //check if number and remove commas
-                if (!isNaN(self.$element.text().replace(/,/g, ''))) {
-                    self.settings = $.extend(true, self.settings, {
-                        value_to: Number(self.$element.text().replace(/,/g, ''))
-                    });
+            self.settings.events = {
+                'onReady': function onReady() {
+                    self.$element.trigger('onReady.ly');
+                },
+                'onStateChange': function onStateChange(event) {
+                    self.$element.trigger('onStateChange.ly', event.data);
                 }
-            }
-
-            //set start value
-            self.counter_helper = { val: self.settings.value_from };
+            };
 
             self.init();
         }
 
-        _createClass(LemCounter, [{
+        _createClass(LemYoutube, [{
             key: 'init',
             value: function init() {
+                var self = this;
+                self.player = new YT.Player(self.$player_element[0], self.settings);
+            }
+        }, {
+            key: 'ytPlayer',
+            value: function ytPlayer(method, args) {
 
                 var self = this;
 
-                var counter_to = self.settings.value_to;
+                var params = [];
 
-                //check if number is float
-                if (isFloat(counter_to)) {
-                    var string_counter_val_to = counter_to.toString();
-
-                    self.to_fixed_digits = string_counter_val_to.substr(string_counter_val_to.indexOf('.') + 1).length;
+                if ((typeof args === 'undefined' ? 'undefined' : _typeof(args)) === 'object') {
+                    params = args;
+                } else {
+                    params.push(args);
                 }
 
-                TweenLite.to(self.counter_helper, self.settings.animate_duration, {
-                    val: counter_to,
-                    onUpdate: updateHandler,
-                    ease: Linear.easeNone,
-                    onComplete: function onComplete() {
-                        self.$element.trigger('onComplete.lc');
-                    }
-                });
-
-                function isFloat(n) {
-                    return Number(n) === n && n % 1 !== 0;
-                }
-
-                function updateHandler() {
-                    var value = self.counter_helper.val;
-
-                    var num = value.toFixed(self.to_fixed_digits);
-
-                    var num_locale = 0;
-
-                    if (self.to_fixed_digits == 0) {
-                        num_locale = parseInt(num);
-                    } else {
-                        num_locale = parseFloat(num);
-                    }
-
-                    if (self.settings.locale) {
-                        num_locale = num_locale.toLocaleString(self.settings.locale, { maximumFractionDigits: self.to_fixed_digits });
-                    }
-
-                    self.$element.text(num_locale);
-                }
+                self.player[method].apply(self.player, params);
             }
         }]);
 
-        return LemCounter;
+        return LemYoutube;
     }();
 
-    $.fn.lemCounter = function () {
+    $.fn.lemYoutube = function () {
         var $this = this,
-            opt = arguments[0],
+            options = arguments[0],
             args = Array.prototype.slice.call(arguments, 1),
             length = $this.length,
             i = void 0,
             ret = void 0;
+
         for (i = 0; i < length; i++) {
-            if ((typeof opt === 'undefined' ? 'undefined' : _typeof(opt)) == 'object' || typeof opt == 'undefined') $this[i].lem_counter = new LemCounter($this[i], opt);else ret = $this[i].lem_counter[opt].apply($this[i].lem_counter, args);
+            if ((typeof options === 'undefined' ? 'undefined' : _typeof(options)) == 'object' || typeof options == 'undefined') {
+                $this[i].lem_youtube = new LemYoutube($this[i], options);
+            } else {
+                ret = $this[i].lem_youtube[options].apply($this[i].lem_youtube, args);
+            }
+
             if (typeof ret != 'undefined') return ret;
         }
         return $this;

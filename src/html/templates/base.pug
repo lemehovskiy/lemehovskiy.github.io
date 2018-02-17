@@ -2,9 +2,13 @@
   var pages = [
   {name: 'Lem counter', url: '/lem-counter'},
   {name: 'Lem youtube', url: '/lem-youtube'},
-  {name: 'Lem gmaps', url: '/lem-gmaps'}
+  {name: 'Lem gmaps', url: '/lem-gmaps'},
+  {name: 'Parallax background', url: '/parallax-background'}
   ];
 
+  var page_title = "title";
+  var page_description = 'description';
+  var page_keywords = 'keywords';
 
 block sharedVars
 
@@ -14,6 +18,9 @@ html
     meta(charset = 'utf-8')
     meta(name='viewport', content="initial-scale=1.0, width=device-width")
     title= page_title
+
+    meta(name="description", content=page_description)
+    meta(name="keywords", content=page_keywords)
 
     // Global site tag (gtag.js) - Google Analytics
     script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-112465244-1')

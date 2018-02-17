@@ -12,11 +12,13 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^2.30.1",
     "jquery": "^3.2.1",
+    "lem_youtube": "^1.0.0",
     "load-google-maps-api": "^1.0.1",
     "lodash": "^4.17.4",
     "matter-js": "^0.14.1",
     "node-sass": "^4.7.2",
     "nodemon": "^1.15.0",
+    "parallax_background": "^1.0.7",
     "postcss-loader": "^2.0.9",
     "prismjs": "^1.9.0",
     "pug": "^2.0.0-rc.4",
@@ -25,6 +27,7 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
     "three-orbit-controls": "^82.1.0",
+    "video_background": "^1.0.2",
     "webpack": "^3.6.0",
     "webpack-concat-plugin": "^2.4.2",
     "webpack-dev-server": "^2.10.1"
@@ -33,6 +36,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "webpack-dev-server",
     "start": "nodemon --watch webpack.config.js ./node_modules/.bin/webpack-dev-server"
+  },
+  "nodemonConfig": {
+    "delay": "2500"
   },
   "keywords": [
     "starter project webpack pug"

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Parallax background</title>
+    <meta name="description" content="Parallax background">
+    <meta name="keywords" content="parallax background responsive jQuery plugin Greensock Gsap animation">
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-112465244-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-112465244-1');
+      
+    </script>
+  <link href="../build/styles.css" rel="stylesheet"></head>
+  <body class="page-parallax-background">
+    <header>
+      <div class="container">
+        <!--div= page_title-->
+        <div class="wp-navbar-head"><a class="logo" href="/">lem</a>
+          <button class="wp-navbar-toggle" type="button">
+            <div class="animate-burger"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
+          </button>
+        </div>
+        <div class="wp-navbar-collapse">
+          <ul class="nav">
+            <li class="menu-item"><a href="/lem-counter">Lem counter</a></li>
+            <li class="menu-item"><a href="/lem-youtube">Lem youtube</a></li>
+            <li class="menu-item"><a href="/lem-gmaps">Lem gmaps</a></li>
+            <li class="menu-item active"><a href="/parallax-background">Parallax background</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="page parallax-background" id="page">
+      <section class="section-intro full-width back-img" style="background-image: url('/src/imgs/sample-img-1.jpg');">
+        <div class="container">
+          <div class="content-wrap">
+            <h1 class="main-ttl-1">Parallax background</h1>
+          </div>
+        </div>
+      </section>
+      <section class="section-features-list">
+        <div class="container">
+          <h2 class="section-title main-ttl-2">Installation</h2>
+          <ul class="features-list">
+            <li>
+              <div class="content-col">
+                <div class="main-ttl-3">Include JS</div>
+                <div class="desc">
+                  <pre class="language-markup"><code>&lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;parallax_background.js&quot;&gt;&lt;/script&gt;</code></pre>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="content-col">
+                <div class="main-ttl-3">Set HTML</div>
+                <div class="desc">
+                  <pre class="language-markup"><code>&lt;div class=&quot;parallax-background&quot;&gt;
+  &lt;div class=&quot;parallax-inner&quot; style=&quot;background-image: url(&apos;background-image.jpg&apos;)&quot;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="content-col">
+                <div class="main-ttl-3">Call the plugin</div>
+                <div class="desc">
+                  <pre class="language-javascript"><code>$(&apos;.parallax-background&apos;).parallaxBackground();</code></pre>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section-features-blocks">
+        <div class="container">
+          <h2 class="section-title main-ttl-2">Demo</h2>
+          <ul class="features-list">
+            <li class="feature-item">
+              <div class="content-col">
+                <div class="title main-ttl-3">Basic usage</div>
+                <div class="desc main-p-1">
+                  <pre><code class="language-javascript">$(&apos;.parallax-demo-1&apos;).parallaxBackground();</code></pre>
+                </div>
+              </div>
+              <div class="img-col">
+                <div class="img-wrap parallax-demo-1">
+                  <div class="parallax-inner back-img" style="background-image: url('/src/imgs/sample-img-2.jpg');"></div>
+                </div>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="content-col">
+                <div class="title main-ttl-3">Animation type - rotate</div>
+                <div class="desc main-p-1">
+                  <pre><code class="language-javascript">$(&apos;.parallax-demo-2&apos;).parallaxBackground({
+  animation_type: &apos;rotate&apos;,
+  zoom: 50,
+  rotate_perspective: 500
+});</code></pre>
+                </div>
+              </div>
+              <div class="img-col">
+                <div class="img-wrap parallax-demo-2">
+                  <div class="parallax-inner back-img" style="background-image: url('/src/imgs/sample-img-3.jpg');"></div>
+                </div>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="content-col">
+                <div class="title main-ttl-3">Event - mouse move</div>
+                <div class="desc main-p-1">
+                  <pre><code class="language-javascript">$(&apos;.parallax-demo-3&apos;).parallaxBackground({
+  event: &apos;mouse_move&apos;,
+  animation_type: &apos;shift&apos;,
+  animate_duration: 2
+});</code></pre>
+                </div>
+              </div>
+              <div class="img-col hover-me">
+                <div class="img-wrap parallax-demo-3">
+                  <div class="parallax-inner back-img" style="background-image: url('/src/imgs/sample-img-4.jpg');"></div>
+                </div>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="content-col">
+                <div class="title main-ttl-3">Event - mouse move with rotate animation</div>
+                <div class="desc main-p-1">
+                  <pre><code class="language-javascript">$(&apos;.parallax-demo-4&apos;).parallaxBackground({
+  event: &apos;mouse_move&apos;,
+  animation_type: &apos;rotate&apos;,
+  animate_duration: 1,
+  zoom: 70,
+r otate_perspective: 1000
+});</code></pre>
+                </div>
+              </div>
+              <div class="img-col hover-me">
+                <div class="img-wrap parallax-demo-4">
+                  <div class="parallax-inner back-img" style="background-image: url('/src/imgs/sample-img-1.jpg');"></div>
+                </div>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="content-col">
+                <h3 class="main-ttl-3">Alternative background type</h3>
+                <div class="desc">
+                  <pre><code class="language-javascript">$(&apos;.parallax-demo-5&apos;).parallaxBackground({
+  event: &apos;mouse_move&apos;,
+  animation_type: &apos;rotate&apos;,
+  animate_duration: 1,
+  zoom: 70,
+  rotate_perspective: 1000
+});</code></pre>
+                </div>
+              </div>
+              <div class="img-col hover-me">
+                <div class="img-wrap parallax-demo-5">
+                  <div class="parallax-inner youtube-video youtube-video-background"></div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  <script type="text/javascript" src="../build/index.bundle.js"></script><script type="text/javascript" src="../build/parallax_background_page.bundle.js"></script></body>
+</html>

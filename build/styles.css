@@ -537,8 +537,12 @@ header .nav > li {
 
 header .nav > li > a {
   color: white;
-  padding: 20px 30px;
+  padding: 20px 20px;
   display: block;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 @media (max-width: 800px) {
@@ -724,7 +728,7 @@ header .sub-menu > li > a {
 }
 
 .section-features-list .features-list > li {
-  padding: 50px 0 0;
+  padding: 30px 0 0;
 }
 
 .section-features-list .features-list .desc {
@@ -770,144 +774,164 @@ header .sub-menu > li > a {
   top: 0;
 }
 
-.page.lem-youtube .demos-list .demo-item {
-  padding: 40px 0 0;
-}
-
-.page.lem-youtube .demos-list .btn-group {
+.page.lem-youtube .features-list .btn-group {
   text-align: center;
   margin: 20px 0 0;
 }
 
-.page.lem-youtube .demos-list .media-col-inner {
+.page.lem-youtube .features-list .media-col-inner {
   max-width: 500px;
   margin: 30px auto 0;
 }
 
-.page.lem-youtube .demos-list .media-col-inner > .rect-outer {
+.page.lem-youtube .features-list .media-col-inner > .rect-outer {
   padding: 56% 0 0;
 }
 
-.page.lem-youtube .demos-list iframe {
+.page.lem-youtube .features-list iframe {
   width: 100%;
   height: 100%;
 }
 
-.canvas-confetti #demo-popup {
-  max-width: 500px;
-  height: 627px;
-  margin: 100px auto 0;
-  position: relative;
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: black;
+  background: none;
+  text-shadow: 0 1px white;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
-.canvas-confetti #demo-popup:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 45%;
-  background: -webkit-gradient(linear, left bottom, left top, from(black), to(transparent));
-  background: -webkit-linear-gradient(bottom, black, transparent);
-  background: -o-linear-gradient(bottom, black, transparent);
-  background: linear-gradient(to top, black, transparent);
-  z-index: 2;
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: #b3d4fc;
 }
 
-.canvas-confetti #demo-popup .background-overlay {
-  background: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  left: 15px;
-  top: 15px;
-  right: 15px;
-  bottom: 15px;
-  z-index: 2;
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #b3d4fc;
 }
 
-.canvas-confetti #demo-popup .background-overlay:before {
-  content: '';
-  position: absolute;
-  left: 15px;
-  top: 15px;
-  right: 15px;
-  bottom: 15px;
-  border: 1px solid #4C4027;
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
 }
 
-.canvas-confetti #demo-popup canvas {
-  position: absolute;
-  left: 0;
-  top: 0;
+/* Code blocks */
+
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
 }
 
-.canvas-confetti #demo-popup .logo-wrap {
-  text-align: center;
-  padding: 41px 0 0;
-  position: relative;
-  z-index: 2;
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #f5f2f0;
 }
 
-.canvas-confetti #demo-popup .logo-wrap img {
-  max-width: 190px;
-  margin: auto;
-  display: block;
+/* Inline code */
+
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
 }
 
-.canvas-confetti #demo-popup .interactive-text {
-  display: block;
-  position: relative;
-  z-index: 20;
-  line-height: 0.8;
-  font-size: 40px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: white;
-  text-align: center;
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray;
 }
 
-.canvas-confetti #demo-popup .interactive-text .inner-wrap {
-  max-width: 290px;
-  position: relative;
-  display: inline-block;
+.token.punctuation {
+  color: #999;
 }
 
-.canvas-confetti #demo-popup .interactive-text .inner-wrap img {
-  width: 100%;
+.namespace {
+  opacity: .7;
 }
 
-.canvas-confetti #demo-popup .interactive-text .inner-wrap .area-1 {
-  background: red;
-  left: 0;
-  top: 40%;
-  width: 56%;
-  height: 55%;
-  position: absolute;
-  -webkit-transform: rotate(-7deg);
-  -ms-transform: rotate(-7deg);
-  transform: rotate(-7deg);
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center;
-  visibility: hidden;
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #905;
 }
 
-.canvas-confetti #demo-popup .interactive-text .inner-wrap .area-2 {
-  background: blue;
-  left: 58%;
-  top: 7%;
-  width: 43%;
-  height: 82%;
-  position: absolute;
-  -webkit-transform: rotate(-7deg);
-  -ms-transform: rotate(-7deg);
-  transform: rotate(-7deg);
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center;
-  visibility: hidden;
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #690;
 }
 
-.canvas-confetti #demo-popup .interactive-text span {
-  display: inline-block;
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #07a;
+}
+
+.token.function {
+  color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
 }
 
