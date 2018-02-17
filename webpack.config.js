@@ -13,7 +13,8 @@ module.exports = {
         three_js_experiments: './src/three_js_experiments.es6',
         canvas_confetti: './src/canvas-confetti.es6',
         lem_gmaps_page: './src/lem_gmaps_page.es6',
-        lem_counter_page: './src/lem_counter_page.es6'
+        lem_counter_page: './src/lem_counter_page.es6',
+        lem_youtube_page: './src/lem_youtube_page.es6'
     },
 
     output: {
@@ -40,7 +41,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/html/pages/lem-youtube.pug',
             filename: 'lem-youtube/index.html',
-            chunks: ['index']
+            chunks: ['index', 'lem_youtube_page']
         }),
         new HtmlWebpackPlugin({
             template: 'src/html/pages/lem-gmaps.pug',

@@ -16,6 +16,7 @@
     "lodash": "^4.17.4",
     "matter-js": "^0.14.1",
     "node-sass": "^4.7.2",
+    "nodemon": "^1.15.0",
     "postcss-loader": "^2.0.9",
     "prismjs": "^1.9.0",
     "pug": "^2.0.0-rc.4",
@@ -30,7 +31,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "webpack-dev-server"
+    "start:dev": "webpack-dev-server",
+    "start": "nodemon --watch webpack.config.js ./node_modules/.bin/webpack-dev-server"
   },
   "keywords": [
     "starter project webpack pug"

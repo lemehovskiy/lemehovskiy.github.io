@@ -5,89 +5,19 @@ append sharedVars
 
 
 block main
-  section.section-intro
-    .youtube-video.background-video(data-lem-youtube='{"videoId": "_L2sI5GFf1g"}')
+  section.section-intro.full-width.back-img
     .container
       .content-wrap
-        h3.main-ttl-1
+        h1.main-ttl-1
           | Lem youtube
-  section.section-demos
-    .container
 
-      .main-ttl-2
-        | Demos
-
-      ul.demos-list
-        li.demo-item.demo-item-1
-          .content-col
-            .main-ttl-3
-              | Default settings
-            .desc
-              pre
-                code.language-javascript
-                  |  $(window).on('apiReady.ly', function () {
-                  |      $('.youtube-video').lemYoutube();
-                  |  });
-          .media-col
-            .media-col-inner
-              .rect-outer
-                .rect-inner.youtube-video(data-lem-youtube='{"videoId": "yu_bA7jzX5Y"')
-        li.demo-item.demo-item-2
-          .content-col
-            .main-ttl-3
-              | Call methods when player ready
-            .desc
-              pre
-                code.language-javascript
-                  | $(window).on('apiReady.ly', function () {
-                  |     $('.demo-item-2 .youtube-video').lemYoutube();
-                  | });
-                  | $('.demo-item-2 .youtube-video').on('onReady.ly', function () {
-                  |     $(this).lemYoutube('ytPlayer', 'playVideo');
-                  |     $(this).lemYoutube('ytPlayer', 'mute');
-                  | });
-
-
-          .media-col
-            .media-col-inner
-              .rect-outer
-                .rect-inner.youtube-video(data-lem-youtube='{"videoId": "yu_bA7jzX5Y"}')
-        li.demo-item.demo-item-3
-          .content-col
-            .main-ttl-3
-              | Simple external controls
-            .desc
-              pre
-                code.language-javascript
-                  | $(window).on('apiReady.ly', function () {
-                  |     $('.demo-item-3 .youtube-video').lemYoutube();
-                  | });
-                  |
-                  | $('.play-btn').on('click', function(){
-                  |     $('.demo-item-3 .youtube-video').lemYoutube('ytPlayer', 'playVideo');
-                  | })
-                  |
-                  | $('.pause-btn').on('click', function(){
-                  |     $('.demo-item-3 .youtube-video').lemYoutube('ytPlayer', 'pauseVideo');
-                  | })
-            .btn-group
-              button.play-btn.btn
-                | Play
-              button.pause-btn.btn
-                | Pause
-
-          .media-col
-            .media-col-inner
-              .rect-outer
-                .rect-inner.youtube-video(data-lem-youtube='{"videoId": "yu_bA7jzX5Y"}')
-
-  section.section-installation
+  section.section-features-list
     .container
 
       .main-ttl-2
         | Installation
 
-      ul.installation-list
+      ul.features-list
         li.installation-item
           .content-col
             .main-ttl-3
@@ -116,13 +46,83 @@ block main
                   |     $('.youtube-video').lemYoutube();
                   | });
 
-    section.section-settings
+  section.section-features-list
+    .container
+
+      .main-ttl-2
+        | Demos
+
+      ul.features-list
+        li.demo-item-1
+          .content-col
+            .main-ttl-3
+              | Default settings
+            .desc
+              pre
+                code.language-javascript
+                  |  $(window).on('apiReady.ly', function () {
+                  |      $('.youtube-video').lemYoutube();
+                  |  });
+          .media-col
+            .media-col-inner
+              .rect-outer
+                .rect-inner.youtube-video(data-lem-youtube='{"videoId": "yu_bA7jzX5Y"')
+        li.demo-item-2
+          .content-col
+            .main-ttl-3
+              | Call methods when player ready
+            .desc
+              pre
+                code.language-javascript
+                  | $(window).on('apiReady.ly', function () {
+                  |     $('.demo-item-2 .youtube-video').lemYoutube();
+                  | });
+                  | $('.demo-item-2 .youtube-video').on('onReady.ly', function () {
+                  |     $(this).lemYoutube('ytPlayer', 'playVideo');
+                  |     $(this).lemYoutube('ytPlayer', 'mute');
+                  | });
+
+
+          .media-col
+            .media-col-inner
+              .rect-outer
+                .rect-inner.youtube-video(data-lem-youtube='{"videoId": "yu_bA7jzX5Y"}')
+        li.demo-item-3
+          .content-col
+            .main-ttl-3
+              | Simple external controls
+            .desc
+              pre
+                code.language-javascript
+                  | $(window).on('apiReady.ly', function () {
+                  |     $('.demo-item-3 .youtube-video').lemYoutube();
+                  | });
+                  |
+                  | $('.play-btn').on('click', function(){
+                  |     $('.demo-item-3 .youtube-video').lemYoutube('ytPlayer', 'playVideo');
+                  | })
+                  |
+                  | $('.pause-btn').on('click', function(){
+                  |     $('.demo-item-3 .youtube-video').lemYoutube('ytPlayer', 'pauseVideo');
+                  | })
+            .btn-group
+              button.play-btn.btn
+                | Play
+              button.pause-btn.btn
+                | Pause
+
+          .media-col
+            .media-col-inner
+              .rect-outer
+                .rect-inner.youtube-video(data-lem-youtube='{"videoId": "yu_bA7jzX5Y"}')
+
+    section.section-features-list
       .container
 
         .main-ttl-2
           | Settings
 
-        ul.settings-list
+        ul.features-list
           li.setting-item
             .content-col
               .main-ttl-3
@@ -179,13 +179,13 @@ block main
                     | data-lem-youtube='{"videoId": "yu_bA7jzX5Y", "playerVars": {"rel": 1, "showinfo": 1, "autoplay": 1}}'>
                     | &lt;/div>
 
-    section.section-methods
+    section.section-features-list
       .container
 
         .main-ttl-2
           | Methods
 
-        ul.methods-list
+        ul.features-list
           li.method-item
             .content-col
               .main-ttl-3
@@ -209,13 +209,13 @@ block main
                     |     $(this).lemYoutube('ytPlayer', 'loadVideoById', ["bHQqvYy5KYo", 50, "large"]);
                     | });
 
-    section.section-events
+    section.section-features-list
       .container
 
         .main-ttl-2
           | Events
 
-        ul.events-list
+        ul.features-list
 
           li.method-item
             .content-col
