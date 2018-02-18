@@ -13961,6 +13961,9 @@ return jQuery;
 /* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
 __webpack_require__(128);
 
 __webpack_require__(129);
@@ -13973,26 +13976,20 @@ var Prism = __webpack_require__(211);
 var Normalizer = __webpack_require__(212);
 __webpack_require__(213);
 
-
 (function ($) {
 
     $('.wp-navbar-collapse').lemNav({
         collapse_duration: 0.6,
         trigger: 'hover',
         navbar_toggle: '.wp-navbar-toggle',
-        on_dropdown_shown: function () {
-            TweenLite.to('.dropdown-caption', 0.5, {autoAlpha: 1})
+        on_dropdown_shown: function on_dropdown_shown() {
+            TweenLite.to('.dropdown-caption', 0.5, { autoAlpha: 1 });
         },
-        on_dropdown_hide: function () {
-            TweenLite.to('.dropdown-caption', 0.2, {autoAlpha: 0})
+        on_dropdown_hide: function on_dropdown_hide() {
+            TweenLite.to('.dropdown-caption', 0.2, { autoAlpha: 0 });
         }
     });
-
-
-
-
 })(jQuery);
-
 
 /***/ }),
 /* 128 */

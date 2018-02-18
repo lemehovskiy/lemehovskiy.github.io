@@ -9,7 +9,7 @@ module.exports = {
   watch: NODE_ENV == 'development',
 
   entry: {
-    index: './src/entry.js',
+    index: './src/entry.es6',
     lem_gmaps_page: './src/lem_gmaps_page.es6',
     lem_counter_page: './src/lem_counter_page.es6',
     lem_youtube_page: './src/lem_youtube_page.es6',
@@ -28,10 +28,6 @@ module.exports = {
       NODE_ENV: JSON.stringify(NODE_ENV)
     }),
     new ExtractTextPlugin("build/styles.css"),
-
-    new webpack.ProvidePlugin({
-      THREE: "three"
-    }),
 
     new HtmlWebpackPlugin({
       template: 'src/html/pages/index.pug',
