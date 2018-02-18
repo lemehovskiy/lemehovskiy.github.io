@@ -1,3 +1,5 @@
+@import "../../node_modules/lem_mixins/lem_mixins/lem_mixins";
+
 @import "_reset.scss";
 @import "mixins.scss";
 @import "partials/_variables";
@@ -18,7 +20,7 @@
 .container {
   margin: auto;
   max-width: 1100px;
-
+  padding: 0 20px;
 }
 
 section {
