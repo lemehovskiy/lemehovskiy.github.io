@@ -10,14 +10,21 @@
   font-size: 16px;
   font-weight: 700;
   padding: 17px 20px;
-  text-transform: uppercase;
   display: inline-block;
   letter-spacing: 1.5px;
   transition: .5s;
-  border: 2px solid black;
+  border-radius: 3px;
+  background: rgba(black, 0.6);
+  color: white;
+  text-decoration: none;
+
 
   &:hover {
     background: black;
     color: white;
+  }
+
+  i {
+    font-size: 17px;
   }
 }

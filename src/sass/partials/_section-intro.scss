@@ -8,6 +8,15 @@
   text-align: center;
   background-image: url('/src/imgs/sample-img-1.jpg');
 
+  .container {
+    z-index: 2;
+    position: relative;
+  }
+
+  .section-title {
+    text-transform: none;
+  }
+
   &:before {
     content: '';
     position: absolute;

@@ -2,20 +2,17 @@ extends ../templates/base
 
 append sharedVars
   - var page_slug = 'lem-counter';
-  - var page_title = 'Lem counter'
+  - var page_title = 'Lem counter';
   - var page_url = '/lem-counter';
 
-block main
-  section.section-intro.back-img(style="background-image: url('/src/imgs/sample-img-1.jpg')")
-    .container
-      .content-wrap
-        h3.main-ttl-1
-          | Lem counter
+  - var repository = 'https://github.com/lemehovskiy/lem_counter';
+  - var download_url = 'https://github.com/lemehovskiy/lem_counter/archive/master.zip';
 
+block main
   section.section-features-list
     .container
 
-      .main-ttl-2
+      .main-ttl-2.section-title
         | Installation
 
       ul.features-list
@@ -51,7 +48,7 @@ block main
   section.section-features-list
     .container
 
-      .main-ttl-2
+      .main-ttl-2.section-title
         | Demos
 
       ul.features-list
@@ -126,7 +123,7 @@ block main
   section.section-features-list
     .container
 
-      .main-ttl-2
+      .main-ttl-2.section-title
         | Events
 
       ul.events-list

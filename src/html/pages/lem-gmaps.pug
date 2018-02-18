@@ -1,12 +1,14 @@
 extends ../templates/base
 
+append sharedVars
+  - var page_slug = 'lem-gmaps';
+  - var page_title = 'Lem gmaps';
+  - var page_url = '/lem-gmaps';
+
+  - var repository = 'https://github.com/lemehovskiy/lem_gmaps';
+  - var download_url = 'https://github.com/lemehovskiy/lem_gmaps/archive/master.zip';
 
 block main
-  section.section-intro.full-width.back-img
-      .container
-        .content-wrap
-          h1.main-ttl-1
-            | Lem gmaps
   section.section-features-list
     .container
       h2.section-title.main-ttl-2

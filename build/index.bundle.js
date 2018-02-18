@@ -13964,6 +13964,8 @@ return jQuery;
 "use strict";
 
 
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./src/fonts/fontello/css/fontello.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
 __webpack_require__(128);
 
 __webpack_require__(129);

@@ -2,15 +2,16 @@ extends ../templates/base
 
 append sharedVars
   - var page_slug = 'lem-mixins';
-  - var page_title = 'Lem mixins'
   - var page_url = '/lem-mixins';
 
-block main
-  section.section-intro.back-img(style="background-image: url('/src/imgs/sample-img-1.jpg')")
-    .container
-      .content-wrap
-        h3.main-ttl-1=page_title
+  - var page_title = 'Lem mixins'
+  - var page_description = 'Lem mixins'
+  - var page_keywords = 'sass mixins mixins-library'
 
+  - var repository = 'https://github.com/lemehovskiy/lem_mixins';
+  - var download_url = 'https://github.com/lemehovskiy/lem_mixins/archive/master.zip';
+
+block main
   section.section-features-list
     .container
 

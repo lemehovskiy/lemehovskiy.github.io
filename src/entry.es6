@@ -1,3 +1,5 @@
+require("./fonts/fontello/css/fontello.css");
+
 require("./sass/style.scss");
 
 require("jquery");

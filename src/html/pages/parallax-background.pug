@@ -1,6 +1,7 @@
 extends ../templates/base
 
 append sharedVars
+
   - var page_slug = 'parallax-background';
   - var page_url = '/parallax-background';
 
@@ -8,13 +9,11 @@ append sharedVars
   - var page_description = 'Parallax background'
   - var page_keywords = 'parallax background responsive jQuery plugin Greensock Gsap animation'
 
+  - var repository = 'https://github.com/lemehovskiy/parallax_background';
+  - var download_url = 'https://github.com/lemehovskiy/parallax_background/archive/master.zip';
+
 
 block main
-  section.section-intro.full-width.back-img(style="background-image: url('/src/imgs/sample-img-1.jpg')")
-    .container
-      .content-wrap
-        h1.main-ttl-1
-          | Parallax background
   section.section-features-list
     .container
       h2.section-title.main-ttl-2

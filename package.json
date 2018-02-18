@@ -28,6 +28,7 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
     "three-orbit-controls": "^82.1.0",
+    "url-loader": "^0.6.2",
     "video_background": "^1.0.2",
     "webpack": "^3.6.0",
     "webpack-concat-plugin": "^2.4.2",

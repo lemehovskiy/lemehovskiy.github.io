@@ -2,19 +2,18 @@ extends ../templates/base
 
 append sharedVars
   - var page_slug = 'lem-youtube';
+  - var page_title = 'Lem youtube';
+  - var page_url = '/lem-youtube';
+
+  - var repository = 'https://github.com/lemehovskiy/lem_youtube';
+  - var download_url = 'https://github.com/lemehovskiy/lem_youtube/archive/master.zip';
 
 
 block main
-  section.section-intro.full-width.back-img
-    .container
-      .content-wrap
-        h1.main-ttl-1
-          | Lem youtube
-
   section.section-features-list
     .container
 
-      .main-ttl-2
+      .main-ttl-2.section-title
         | Installation
 
       ul.features-list
@@ -49,7 +48,7 @@ block main
   section.section-features-list
     .container
 
-      .main-ttl-2
+      .main-ttl-2.section-title
         | Demos
 
       ul.features-list
@@ -119,7 +118,7 @@ block main
     section.section-features-list
       .container
 
-        .main-ttl-2
+        .main-ttl-2.section-title
           | Settings
 
         ul.features-list
@@ -182,7 +181,7 @@ block main
     section.section-features-list
       .container
 
-        .main-ttl-2
+        .main-ttl-2.section-title
           | Methods
 
         ul.features-list
@@ -212,7 +211,7 @@ block main
     section.section-features-list
       .container
 
-        .main-ttl-2
+        .main-ttl-2.section-title
           | Events
 
         ul.features-list

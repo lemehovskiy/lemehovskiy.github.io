@@ -103,7 +103,7 @@ header {
     text-decoration: none;
     color: white;
     display: block;
-    padding: 14px 0;
+    padding: 9px 0;
   }
 
   .nav {
@@ -120,6 +120,10 @@ header {
     >li {
       position: relative;
 
+      &.active a {
+        background: rgba(white, 0.1);
+      }
+
       >a {
         color: $menu-font-color;
         padding: 20px 20px;
@@ -128,6 +132,11 @@ header {
         font-size: 16px;
         font-weight: 700;
         text-transform: uppercase;
+        transition: .5s;
+
+        &:hover {
+          background: rgba(white, 0.1);
+        }
 
         @media (max-width: $mobile-menu-breakpoint) {
           padding: 20px 0;
