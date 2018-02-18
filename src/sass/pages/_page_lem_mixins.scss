@@ -1,0 +1,53 @@
+.page-lem-mixins {
+  .main-ttl-3 {
+    border-bottom: 1px solid grey;
+    font-weight: 700;
+  }
+
+  .demo-adaptive-font-size {
+    font-size: 50px;
+    font-weight: 700;
+    background: cornflowerblue;
+    text-transform: uppercase;
+    @include adaptive-font-size(1400, 700, 50, 30, true)
+  }
+
+  .demo-adaptive-padding {
+    background: cornflowerblue;
+    padding: 100px 40px;
+    @include adaptive-padding(1000, 400, 100 40, 50 20, true)
+  }
+
+  .demo-adaptive-margin {
+    li {
+      background: cornflowerblue;
+      margin: 50px 0 0;
+      @include adaptive-margin(800, 400, 50 0 0, 10 0 0, true)
+    }
+  }
+
+  .demo-adaptive-height {
+    height: 100px;
+    width: 100px;
+    background: cornflowerblue;
+    @include adaptive-height(1000, 500, 100, 200, true)
+  }
+
+  .demo-adaptive-width {
+    height: 100px;
+    width: 100px;
+    background: cornflowerblue;
+    @include adaptive-width(1000, 500, 100, 500, true)
+  }
+
+
+
+  .demo-adaptive-property {
+    height: 100px;
+    width: 100%;
+    max-width: 500px;
+    background: cornflowerblue;
+    @include adaptive-property('max-width', 1000, 500, 500, 100, true)
+  }
+
+}

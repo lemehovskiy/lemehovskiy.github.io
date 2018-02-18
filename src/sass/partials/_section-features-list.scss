@@ -2,12 +2,14 @@
   $mobile-size: 800px;
   padding: 60px 0;
 
+  @include adaptive-padding(1200, 500, 60 0, 40 0, true);
+
   .section-title {
     text-align: center;
   }
 
   .features-list {
-    >li {
+    > li {
       padding: 30px 0 0;
     }
 

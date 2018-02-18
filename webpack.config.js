@@ -54,6 +54,11 @@ module.exports = {
       template: 'src/html/pages/parallax-background.pug',
       filename: 'parallax-background/index.html',
       chunks: ['index', 'parallax_background_page']
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/html/pages/lem-mixins.pug',
+      filename: 'lem-mixins/index.html',
+      chunks: ['index']
     })
 
   ],

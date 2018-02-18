@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Lem mixins</title>
+    <meta name="description" content="description">
+    <meta name="keywords" content="keywords">
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-112465244-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-112465244-1');
+      
+    </script>
+  <link href="../build/styles.css" rel="stylesheet"></head>
+  <body class="page-lem-mixins">
+    <header>
+      <div class="container">
+        <!--div= page_title-->
+        <div class="wp-navbar-head"><a class="logo" href="/">lem</a>
+          <button class="wp-navbar-toggle" type="button">
+            <div class="animate-burger"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
+          </button>
+        </div>
+        <div class="wp-navbar-collapse">
+          <ul class="nav">
+            <li class="menu-item"><a href="/lem-counter">Lem counter</a></li>
+            <li class="menu-item"><a href="/lem-youtube">Lem youtube</a></li>
+            <li class="menu-item"><a href="/lem-gmaps">Lem gmaps</a></li>
+            <li class="menu-item"><a href="/parallax-background">Parallax background</a></li>
+            <li class="menu-item active"><a href="/lem-mixins">Lem mixins</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="page lem-mixins" id="page">
+      <section class="section-intro back-img" style="background-image: url('/src/imgs/sample-img-1.jpg');">
+        <div class="container">
+          <div class="content-wrap">
+            <h3 class="main-ttl-1">Lem mixins</h3>
+          </div>
+        </div>
+      </section>
+      <section class="section-features-list">
+        <div class="container">
+          <div class="main-ttl-2 section-title">Documentation</div>
+          <ul class="features-list">
+            <li>
+              <div class="content-col">
+                <div class="main-ttl-3">adaptive-font-size</div>
+                <div class="desc">
+                  <div class="main-ttl-4">Arguments</div>
+                  <div class="responsive-table">
+                    <table class="arguments">
+                      <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                      </tr>
+                      <tr>
+                        <td>$viewport-width-from</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Media breakpoint from</td>
+                      </tr>
+                      <tr>
+                        <td>$viewport-width-to</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Media breakpoint to</td>
+                      </tr>
+                      <tr>
+                        <td>$font-size-from</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Calculate font size from</td>
+                      </tr>
+                      <tr>
+                        <td>$font-size-to</td>
+                        <td>number(without unit)</td>
+                        <td>null</td>
+                        <td>Calculate font size to</td>
+                      </tr>
+                      <tr>
+                        <td>$sticky</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>When breakpoint is lower then $viewport-width-to stay in $font-size-to</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="main-ttl-4">Example</div>
+                  <pre><code class="language-css">.page-lem-mixins .demo-adaptive-font-size {
+  @include adaptive-font-size(1400, 700, 50, 30, true)
+}
+
+
+// CSS Output
+@media (max-width: 1400px) and (min-width: 701px) {
+  .page-lem-mixins .demo-adaptive-font-size {
+    font-size: calc(20 * ((100vw - 700px) / 700) + 30px);
+  }
+}
+
+@media (max-width: 700px) {
+  .page-lem-mixins .demo-adaptive-font-size {
+    font-size: 30px;
+  }
+}</code></pre>
+                  <div class="main-ttl-4">Demo</div>
+                  <div class="demo-adaptive-font-size">Resize browser and see how calculate font-size</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="content-col">
+                <div class="main-ttl-3">adaptive-padding</div>
+                <div class="desc">
+                  <div class="main-ttl-4">Arguments</div>
+                  <div class="responsive-table">
+                    <table class="arguments">
+                      <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                      </tr>
+                      <tr>
+                        <td>$viewport-width-from</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Media breakpoint from</td>
+                      </tr>
+                      <tr>
+                        <td>$viewport-width-to</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Media breakpoint to</td>
+                      </tr>
+                      <tr>
+                        <td>$padding-from</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Calculate padding from</td>
+                      </tr>
+                      <tr>
+                        <td>$padding-to</td>
+                        <td>number(without unit)</td>
+                        <td>null</td>
+                        <td>Calculate padding to</td>
+                      </tr>
+                      <tr>
+                        <td>$sticky</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>When breakpoint is lower then $viewport-width-to stay in $padding-to</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="main-ttl-4">Example</div>
+                  <pre><code class="language-css">.page-lem-mixins .demo-adaptive-padding {
+  @include adaptive-padding(1000, 400, 60 0, 40 0, true);
+}
+
+
+// CSS Output
+@media (max-width: 1000px) and (min-width: 401px) {
+  .page-lem-mixins .demo-adaptive-padding {
+    padding: calc(50 * ((100vw - 400px) / 600) + 50px) calc(20 * ((100vw - 400px) / 600) + 20px);
+  }
+}
+
+@media (max-width: 400px) {
+  .page-lem-mixins .demo-adaptive-padding {
+    padding: 50px 20px;
+  }
+}</code></pre>
+                  <div class="main-ttl-4">Demo</div>
+                  <div class="demo-adaptive-padding">Resize browser and see how calculate padding</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="content-col">
+                <div class="main-ttl-3">adaptive-margin</div>
+                <div class="desc">
+                  <div class="main-ttl-4">Arguments</div>
+                  <div class="responsive-table">
+                    <table class="arguments">
+                      <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                      </tr>
+                      <tr>
+                        <td>$viewport-width-from</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Media breakpoint from</td>
+                      </tr>
+                      <tr>
+                        <td>$viewport-width-to</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Media breakpoint to</td>
+                      </tr>
+                      <tr>
+                        <td>$margin-from</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Calculate margin from</td>
+                      </tr>
+                      <tr>
+                        <td>$margin-to</td>
+                        <td>number(without unit)</td>
+                        <td>null</td>
+                        <td>Calculate margin to</td>
+                      </tr>
+                      <tr>
+                        <td>$sticky</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>When breakpoint is lower then $viewport-width-to stay in $margin-to</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="main-ttl-4">Example</div>
+                  <pre><code class="language-css">.page-lem-mixins .demo-adaptive-margin li {
+  @include adaptive-margin(800, 400, 50 0 0, 10 0 0, true)
+}
+
+
+// CSS Output
+@media (max-width: 800px) and (min-width: 401px) {
+  .page-lem-mixins .demo-adaptive-margin li {
+    margin: calc(40 * ((100vw - 400px) / 400) + 10px) 0px 0px;
+  }
+}
+
+@media (max-width: 400px) {
+  .page-lem-mixins .demo-adaptive-margin li {
+    margin: 10px 0px 0px;
+  }
+}</code></pre>
+                  <div class="main-ttl-4">Demo</div>
+                  <div class="demo-adaptive-margin">Resize browser and see how calculate margin
+                    <ul>
+                      <li>List item 1</li>
+                      <li>List item 2</li>
+                      <li>List item 3</li>
+                      <li>List item 4</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="content-col">
+                <div class="main-ttl-3">adaptive-height</div>
+                <div class="desc">
+                  <div class="main-ttl-4">Arguments</div>
+                  <div class="responsive-table">
+                    <table class="arguments">
+                      <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                      </tr>
+                      <tr>
+                        <td>$viewport-width-from</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Media breakpoint from</td>
+                      </tr>
+                      <tr>
+                        <td>$viewport-width-to</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Media breakpoint to</td>
+                      </tr>
+                      <tr>
+                        <td>$height-from</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Calculate height from</td>
+                      </tr>
+                      <tr>
+                        <td>$height-to</td>
+                        <td>number(without unit)</td>
+                        <td>null</td>
+                        <td>Calculate height to</td>
+                      </tr>
+                      <tr>
+                        <td>$sticky</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>When breakpoint is lower then $viewport-width-to stay in $height-to</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="main-ttl-4">Example</div>
+                  <pre><code class="language-css">.page-lem-mixins .demo-adaptive-height {
+  @include adaptive-height(1000, 500, 100, 200)
+}
+
+
+// CSS Output
+@media (max-width: 1000px) and (min-width: 501px) {
+  .page-lem-mixins .demo-adaptive-height {
+    height: calc(-100 * ((100vw - 500px) / 500) + 200px);
+  }
+}</code></pre>
+                  <div class="main-ttl-4">Resize browser and see how calculate height</div>
+                  <div class="demo-adaptive-height"></div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="content-col">
+                <div class="main-ttl-3">adaptive-width</div>
+                <div class="desc">
+                  <div class="main-ttl-4">Arguments</div>
+                  <div class="responsive-table">
+                    <table class="arguments">
+                      <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                      </tr>
+                      <tr>
+                        <td>$viewport-width-from</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Media breakpoint from</td>
+                      </tr>
+                      <tr>
+                        <td>$viewport-width-to</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Media breakpoint to</td>
+                      </tr>
+                      <tr>
+                        <td>$width-from</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Calculate width from</td>
+                      </tr>
+                      <tr>
+                        <td>$width-to</td>
+                        <td>number(without unit)</td>
+                        <td>null</td>
+                        <td>Calculate width to</td>
+                      </tr>
+                      <tr>
+                        <td>$sticky</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>When breakpoint is lower then $viewport-width-to stay in $width-to</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="main-ttl-4">Example</div>
+                  <pre><code class="language-css">.page-lem-mixins .demo-adaptive-width {
+  @include adaptive-width(1000, 500, 100, 500, true)
+}
+
+
+// CSS Output
+@media (max-width: 1000px) and (min-width: 501px) {
+  .page-lem-mixins .demo-adaptive-width {
+    width: calc(-400 * ((100vw - 500px) / 500) + 500px);
+  }
+}
+
+@media (max-width: 500px) {
+  .page-lem-mixins .demo-adaptive-width {
+    width: 500px;
+  }
+}</code></pre>
+                  <div class="main-ttl-4">Resize browser and see how calculate width</div>
+                  <div class="demo-adaptive-width"></div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="content-col">
+                <div class="main-ttl-3">adaptive-property</div>
+                <div class="desc">
+                  <div class="main-ttl-4">Arguments</div>
+                  <div class="responsive-table">
+                    <table class="arguments">
+                      <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                      </tr>
+                      <tr>
+                        <td>$property</td>
+                        <td>string</td>
+                        <td></td>
+                        <td>CSS property</td>
+                      </tr>
+                      <tr>
+                        <td>$viewport-width-from</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Media breakpoint from</td>
+                      </tr>
+                      <tr>
+                        <td>$viewport-width-to</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Media breakpoint to</td>
+                      </tr>
+                      <tr>
+                        <td>$property-from</td>
+                        <td>number(without unit)</td>
+                        <td></td>
+                        <td>Calculate property from</td>
+                      </tr>
+                      <tr>
+                        <td>$property-to</td>
+                        <td>number(without unit)</td>
+                        <td>null</td>
+                        <td>Calculate property to</td>
+                      </tr>
+                      <tr>
+                        <td>$sticky</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>When breakpoint is lower then $viewport-width-to stay in $property-to</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="main-ttl-4">Example</div>
+                  <pre><code class="language-css">.page-lem-mixins .demo-adaptive-property {
+  @include adaptive-property('max-width', 1000, 500, 500, 100, true)
+}
+
+
+// CSS Output
+@media (max-width: 1000px) and (min-width: 501px) {
+  .page-lem-mixins .demo-adaptive-property {
+    max-width: calc(400 * ((100vw - 500px) / 500) + 100px);
+  }
+}
+
+@media (max-width: 500px) {
+  .page-lem-mixins .demo-adaptive-property {
+    max-width: 100px;
+  }
+}</code></pre>
+                  <div class="main-ttl-4">Resize browser and see how calculate custom property</div>
+                  <div class="demo-adaptive-property"></div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  <script type="text/javascript" src="../build/index.bundle.js"></script></body>
+</html>

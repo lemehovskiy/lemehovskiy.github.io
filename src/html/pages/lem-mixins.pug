@@ -1,0 +1,434 @@
+extends ../templates/base
+
+append sharedVars
+  - var page_slug = 'lem-mixins';
+  - var page_title = 'Lem mixins'
+  - var page_url = '/lem-mixins';
+
+block main
+  section.section-intro.back-img(style="background-image: url('/src/imgs/sample-img-1.jpg')")
+    .container
+      .content-wrap
+        h3.main-ttl-1=page_title
+
+  section.section-features-list
+    .container
+
+      .main-ttl-2.section-title
+        | Documentation
+
+      ul.features-list
+        li
+          .content-col
+            .main-ttl-3
+              | adaptive-font-size
+            .desc
+
+              .main-ttl-4
+                | Arguments
+              .responsive-table
+                table.arguments
+                  tr
+                    th Name
+                    th Type
+                    th Default
+                    th Description
+                  tr
+                    td $viewport-width-from
+                    td number(without unit)
+                    td
+                    td Media breakpoint from
+                  tr
+                    td $viewport-width-to
+                    td number(without unit)
+                    td
+                    td Media breakpoint to
+                  tr
+                    td $font-size-from
+                    td number(without unit)
+                    td
+                    td Calculate font size from
+                  tr
+                    td $font-size-to
+                    td number(without unit)
+                    td null
+                    td Calculate font size to
+                  tr
+                    td $sticky
+                    td boolean
+                    td false
+                    td When breakpoint is lower then $viewport-width-to stay in $font-size-to
+
+              .main-ttl-4
+                | Example
+
+              pre
+                code.language-css
+                  | .page-lem-mixins .demo-adaptive-font-size {
+                  |   @include adaptive-font-size(1400, 700, 50, 30, true)
+                  | }
+                  |
+                  |
+                  | // CSS Output
+                  | @media (max-width: 1400px) and (min-width: 701px) {
+                  |   .page-lem-mixins .demo-adaptive-font-size {
+                  |     font-size: calc(20 * ((100vw - 700px) / 700) + 30px);
+                  |   }
+                  | }
+                  |
+                  | @media (max-width: 700px) {
+                  |   .page-lem-mixins .demo-adaptive-font-size {
+                  |     font-size: 30px;
+                  |   }
+                  | }
+
+              .main-ttl-4
+                | Demo
+              .demo-adaptive-font-size
+                | Resize browser and see how calculate font-size
+        li
+          .content-col
+            .main-ttl-3
+              | adaptive-padding
+            .desc
+
+              .main-ttl-4
+                | Arguments
+              .responsive-table
+                table.arguments
+                  tr
+                    th Name
+                    th Type
+                    th Default
+                    th Description
+                  tr
+                    td $viewport-width-from
+                    td number(without unit)
+                    td
+                    td Media breakpoint from
+                  tr
+                    td $viewport-width-to
+                    td number(without unit)
+                    td
+                    td Media breakpoint to
+                  tr
+                    td $padding-from
+                    td number(without unit)
+                    td
+                    td Calculate padding from
+                  tr
+                    td $padding-to
+                    td number(without unit)
+                    td null
+                    td Calculate padding to
+                  tr
+                    td $sticky
+                    td boolean
+                    td false
+                    td When breakpoint is lower then $viewport-width-to stay in $padding-to
+
+              .main-ttl-4
+                | Example
+
+              pre
+                code.language-css
+                  | .page-lem-mixins .demo-adaptive-padding {
+                  |   @include adaptive-padding(1000, 400, 60 0, 40 0, true);
+                  | }
+                  |
+                  |
+                  | // CSS Output
+                  | @media (max-width: 1000px) and (min-width: 401px) {
+                  |   .page-lem-mixins .demo-adaptive-padding {
+                  |     padding: calc(50 * ((100vw - 400px) / 600) + 50px) calc(20 * ((100vw - 400px) / 600) + 20px);
+                  |   }
+                  | }
+                  |
+                  | @media (max-width: 400px) {
+                  |   .page-lem-mixins .demo-adaptive-padding {
+                  |     padding: 50px 20px;
+                  |   }
+                  | }
+
+              .main-ttl-4
+                | Demo
+              .demo-adaptive-padding
+                | Resize browser and see how calculate padding
+
+        li
+          .content-col
+            .main-ttl-3
+              | adaptive-margin
+            .desc
+
+              .main-ttl-4
+                | Arguments
+              .responsive-table
+                table.arguments
+                  tr
+                    th Name
+                    th Type
+                    th Default
+                    th Description
+                  tr
+                    td $viewport-width-from
+                    td number(without unit)
+                    td
+                    td Media breakpoint from
+                  tr
+                    td $viewport-width-to
+                    td number(without unit)
+                    td
+                    td Media breakpoint to
+                  tr
+                    td $margin-from
+                    td number(without unit)
+                    td
+                    td Calculate margin from
+                  tr
+                    td $margin-to
+                    td number(without unit)
+                    td null
+                    td Calculate margin to
+                  tr
+                    td $sticky
+                    td boolean
+                    td false
+                    td When breakpoint is lower then $viewport-width-to stay in $margin-to
+
+              .main-ttl-4
+                | Example
+
+              pre
+                code.language-css
+                  | .page-lem-mixins .demo-adaptive-margin li {
+                  |   @include adaptive-margin(800, 400, 50 0 0, 10 0 0, true)
+                  | }
+                  |
+                  |
+                  | // CSS Output
+                  | @media (max-width: 800px) and (min-width: 401px) {
+                  |   .page-lem-mixins .demo-adaptive-margin li {
+                  |     margin: calc(40 * ((100vw - 400px) / 400) + 10px) 0px 0px;
+                  |   }
+                  | }
+                  |
+                  | @media (max-width: 400px) {
+                  |   .page-lem-mixins .demo-adaptive-margin li {
+                  |     margin: 10px 0px 0px;
+                  |   }
+                  | }
+
+              .main-ttl-4
+                | Demo
+              .demo-adaptive-margin
+                | Resize browser and see how calculate margin
+                ul
+                  li List item 1
+                  li List item 2
+                  li List item 3
+                  li List item 4
+
+        li
+          .content-col
+            .main-ttl-3
+              | adaptive-height
+            .desc
+
+              .main-ttl-4
+                | Arguments
+              .responsive-table
+                table.arguments
+                  tr
+                    th Name
+                    th Type
+                    th Default
+                    th Description
+                  tr
+                    td $viewport-width-from
+                    td number(without unit)
+                    td
+                    td Media breakpoint from
+                  tr
+                    td $viewport-width-to
+                    td number(without unit)
+                    td
+                    td Media breakpoint to
+                  tr
+                    td $height-from
+                    td number(without unit)
+                    td
+                    td Calculate height from
+                  tr
+                    td $height-to
+                    td number(without unit)
+                    td null
+                    td Calculate height to
+                  tr
+                    td $sticky
+                    td boolean
+                    td false
+                    td When breakpoint is lower then $viewport-width-to stay in $height-to
+
+              .main-ttl-4
+                | Example
+
+              pre
+                code.language-css
+                  | .page-lem-mixins .demo-adaptive-height {
+                  |   @include adaptive-height(1000, 500, 100, 200)
+                  | }
+                  |
+                  |
+                  | // CSS Output
+                  | @media (max-width: 1000px) and (min-width: 501px) {
+                  |   .page-lem-mixins .demo-adaptive-height {
+                  |     height: calc(-100 * ((100vw - 500px) / 500) + 200px);
+                  |   }
+                  | }
+
+              .main-ttl-4
+                | Resize browser and see how calculate height
+              .demo-adaptive-height
+
+        li
+          .content-col
+            .main-ttl-3
+              | adaptive-width
+            .desc
+
+              .main-ttl-4
+                | Arguments
+              .responsive-table
+                table.arguments
+                  tr
+                    th Name
+                    th Type
+                    th Default
+                    th Description
+                  tr
+                    td $viewport-width-from
+                    td number(without unit)
+                    td
+                    td Media breakpoint from
+                  tr
+                    td $viewport-width-to
+                    td number(without unit)
+                    td
+                    td Media breakpoint to
+                  tr
+                    td $width-from
+                    td number(without unit)
+                    td
+                    td Calculate width from
+                  tr
+                    td $width-to
+                    td number(without unit)
+                    td null
+                    td Calculate width to
+                  tr
+                    td $sticky
+                    td boolean
+                    td false
+                    td When breakpoint is lower then $viewport-width-to stay in $width-to
+
+              .main-ttl-4
+                | Example
+
+              pre
+                code.language-css
+                  | .page-lem-mixins .demo-adaptive-width {
+                  |   @include adaptive-width(1000, 500, 100, 500, true)
+                  | }
+                  |
+                  |
+                  | // CSS Output
+                  | @media (max-width: 1000px) and (min-width: 501px) {
+                  |   .page-lem-mixins .demo-adaptive-width {
+                  |     width: calc(-400 * ((100vw - 500px) / 500) + 500px);
+                  |   }
+                  | }
+                  |
+                  | @media (max-width: 500px) {
+                  |   .page-lem-mixins .demo-adaptive-width {
+                  |     width: 500px;
+                  |   }
+                  | }
+
+              .main-ttl-4
+                | Resize browser and see how calculate width
+              .demo-adaptive-width
+
+        li
+          .content-col
+            .main-ttl-3
+              | adaptive-property
+            .desc
+
+              .main-ttl-4
+                | Arguments
+
+              .responsive-table
+                table.arguments
+                  tr
+                    th Name
+                    th Type
+                    th Default
+                    th Description
+                  tr
+                    td $property
+                    td string
+                    td
+                    td CSS property
+                  tr
+                    td $viewport-width-from
+                    td number(without unit)
+                    td
+                    td Media breakpoint from
+                  tr
+                    td $viewport-width-to
+                    td number(without unit)
+                    td
+                    td Media breakpoint to
+                  tr
+                    td $property-from
+                    td number(without unit)
+                    td
+                    td Calculate property from
+                  tr
+                    td $property-to
+                    td number(without unit)
+                    td null
+                    td Calculate property to
+                  tr
+                    td $sticky
+                    td boolean
+                    td false
+                    td When breakpoint is lower then $viewport-width-to stay in $property-to
+
+              .main-ttl-4
+                | Example
+
+              pre
+                code.language-css
+                  | .page-lem-mixins .demo-adaptive-property {
+                  |   @include adaptive-property('max-width', 1000, 500, 500, 100, true)
+                  | }
+                  |
+                  |
+                  | // CSS Output
+                  | @media (max-width: 1000px) and (min-width: 501px) {
+                  |   .page-lem-mixins .demo-adaptive-property {
+                  |     max-width: calc(400 * ((100vw - 500px) / 500) + 100px);
+                  |   }
+                  | }
+                  |
+                  | @media (max-width: 500px) {
+                  |   .page-lem-mixins .demo-adaptive-property {
+                  |     max-width: 100px;
+                  |   }
+                  | }
+
+              .main-ttl-4
+                | Resize browser and see how calculate custom property
+              .demo-adaptive-property
