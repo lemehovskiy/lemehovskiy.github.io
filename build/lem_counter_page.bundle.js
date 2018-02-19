@@ -60,18 +60,18 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 217);
+/******/ 	return __webpack_require__(__webpack_require__.s = 222);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 217:
+/***/ 222:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(218);
+__webpack_require__(223);
 
 //COUNTER DEMO 1
 $('.counter-demo-1').lemCounter({
@@ -103,7 +103,7 @@ $('.counter-event-demo-1').on('onComplete.lc', function () {
 
 /***/ }),
 
-/***/ 218:
+/***/ 223:
 /***/ (function(module, exports) {
 
 /******/ (function(modules) { // webpackBootstrap

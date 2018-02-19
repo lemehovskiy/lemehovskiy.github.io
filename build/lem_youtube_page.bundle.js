@@ -60,18 +60,18 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 219);
+/******/ 	return __webpack_require__(__webpack_require__.s = 224);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 219:
+/***/ 224:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(220);
+__webpack_require__(225);
 
 //DEMO 1
 $(window).on('ytApiReady.ly', function () {
@@ -114,7 +114,7 @@ $(window).on('apiReady.ly', function () {
 
 /***/ }),
 
-/***/ 220:
+/***/ 225:
 /***/ (function(module, exports) {
 
 /******/ (function(modules) { // webpackBootstrap
