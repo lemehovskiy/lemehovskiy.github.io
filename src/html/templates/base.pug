@@ -52,16 +52,20 @@ html
                 a(href=i.url)= i.name
 
     #page.page(class=page_slug)
+
+
       section.section-intro.back-img(style="background-image: url('/src/imgs/sample-img-1.jpg')")
         .container
           .content-wrap
             h3.main-ttl-1.section-title= page_title
-            .btn-group
-              a(href=repository)(class="btn")
-                i.icon.icon-github-circled
-                | View on GitHub
-              a(href=download_url)(class="btn")
-                i.icon.icon-download
-                | Download
+
+            if repository && download_url
+              .btn-group
+                a(href=repository class="btn")
+                  i.icon.icon-github-circled
+                  | View on GitHub
+                a(href=download_url class="btn")
+                  i.icon.icon-download
+                  | Download
 
       block main

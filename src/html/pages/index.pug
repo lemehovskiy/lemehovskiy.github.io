@@ -1,15 +1,14 @@
 extends ../templates/base
 
 append sharedVars
-  - var page_slug = 'index';
+  - var page_slug = 'home';
+  - var page_title = 'Home';
+  - var page_url = '/index.html';
+
+  - var repository = '';
+  - var download_url = '';
 
 block main
-
-  section.section-intro.back-img(style="background-image: url('src/imgs/sample-img-1.jpg')")
-    .container
-      .content-wrap
-        h3.title.main-ttl-1
-          | Home
   section.section-features-list
     .container
       ul.features-list
