@@ -1,205 +1,78 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <title>title</title>
-    <meta name="description" content="description">
-    <meta name="keywords" content="keywords">
-    <!-- Global site tag (gtag.js) - Google Analytics-->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-112465244-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'UA-112465244-1');
-      
-    </script>
-  <link href="../build/styles.css" rel="stylesheet"></head>
-  <body class="page-undefined">
-    <header>
-      <div class="container">
-        <!--div= page_title-->
-        <div class="wp-navbar-head"><a class="logo" href="/">lem</a>
-          <button class="wp-navbar-toggle" type="button">
-            <div class="animate-burger"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
-          </button>
-        </div>
-        <div class="wp-navbar-collapse">
-          <ul class="nav">
-            <li class="menu-item"><a href="/lem-counter">Lem counter</a></li>
-            <li class="menu-item"><a href="/lem-youtube">Lem youtube</a></li>
-            <li class="menu-item"><a href="/lem-gmaps">Lem gmaps</a></li>
-            <li class="menu-item"><a href="/parallax-background">Parallax background</a></li>
-            <li class="menu-item"><a href="/lem-mixins">Lem mixins</a></li>
-          </ul>
-        </div>
-      </div>
-    </header>
-    <div class="page" id="page">
-      <section class="section-intro full-width back-img">
-        <div class="container">
-          <div class="content-wrap">
-            <h1 class="main-ttl-1">Lem gmaps</h1>
-          </div>
-        </div>
-      </section>
-      <section class="section-features-list">
-        <div class="container">
-          <h2 class="section-title main-ttl-2">Installation</h2>
-          <ul class="features-list">
-            <li>
-              <div class="content-col">
-                <div class="main-ttl-3">Include JS</div>
-                <div class="desc">
-                  <pre class="language-markup"><code>&lt;script src="jquery.min.js">&lt;/script>
-&lt;script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=googleMapsOnLoad" async defer>&lt;/script>
-&lt;script src="lem_gmaps.js">&lt;/script></code></pre>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="content-col">
-                <div class="main-ttl-3">Set HTML</div>
-                <div class="desc">
-                  <pre class="language-markup"><code>&lt;div class="google-map">&lt;/div></code></pre>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="content-col">
-                <div class="main-ttl-3">Call the plugin</div>
-                <div class="desc">
-                  <pre class="language-javascript"><code>window.googleMapsOnLoad = () => {
-  $('.google-map').lemGmaps({
-    markers: [
-      {
-        "lat": 44.530436,
-        "lng": -103.887630
-      }
-    ],
-  });
-};</code></pre>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section class="section-features-blocks">
-        <div class="container">
-          <h2 class="section-title main-ttl-2">Demo</h2>
-          <ul class="features-list">
-            <li class="feature-item">
-              <div class="content-col">
-                <div class="title main-ttl-3">Basic usage</div>
-                <div class="desc main-p-1">
-                  <pre class="language-javascript"><code>$('.google-map-demo-1').lemGmaps({
-  markers: [
-    {
-      "lat": 44.530436,
-      "lng": -103.887630
-    }
-  ],
-});</code></pre>
-                </div>
-              </div>
-              <div class="img-col">
-                <div class="img-wrap google-map-demo-1"></div>
-              </div>
-            </li>
-            <li class="feature-item">
-              <div class="content-col">
-                <div class="title main-ttl-3">Default marker</div>
-                <div class="desc main-p-1">
-                  <pre class="language-javascript"><code>$('.google-map-demo-2').lemGmaps({
-  markers: [
-    {
-      "lat": 44.530436,
-      "lng": -103.887630
-    }
- ],
-  marker_icon: null
-});</code></pre>
-                </div>
-              </div>
-              <div class="img-col">
-                <div class="img-wrap google-map-demo-2"></div>
-              </div>
-            </li>
-            <li class="feature-item">
-              <div class="content-col">
-                <div class="title main-ttl-3">Multiply markers</div>
-                <div class="desc main-p-1">
-                  <pre class="language-javascript"><code>$('.google-map-demo-3').lemGmaps({
-  markers: [
-    {
-      "lat": 44.530436,
-      "lng": -103.887630
-    },
-    {
-      "lat": 55.170730,
-      "lng": -118.819305
-    }
-  ]
-});</code></pre>
-                </div>
-              </div>
-              <div class="img-col">
-                <div class="img-wrap google-map-demo-3"></div>
-              </div>
-            </li>
-            <li class="feature-item">
-              <div class="content-col">
-                <div class="title main-ttl-3">Styles</div>
-                <div class="desc main-p-1">
-                  <pre class="language-javascript"><code>$('.google-map-demo-4').lemGmaps({
-  markers: [
-    {
-      "lat": 44.530436,
-      "lng": -103.887630
-    }
-  ],
-  map_options: {
-    styles: [
-      {
-        "featureType": "road",
-        "elementType": "all",
-        "stylers": [
-          {
-            "lightness": 90
-          }
-        ]
-      }
-    ]
-  }
-});</code></pre>
-                </div>
-              </div>
-              <div class="img-col">
-                <div class="img-wrap google-map-demo-4"></div>
-              </div>
-            </li>
-            <li class="feature-item">
-              <div class="content-col">
-                <h3 class="main-ttl-3">Settings from data attribute</h3>
-                <div class="desc">
-                  <pre class="language-markup"><code>&lt;div
-class="google-map-demo-5"
-data-lem-gmap='{"markers": [{"lat": 46.904767, "lng": -96.797955}, {"lat": 42.163677, "lng": -72.632944, "icon": {"fillColor": "#0000ff"}}]}'>
-&lt;/div></code></pre>
-                  <pre class="language-javascript"><code>$('.google-map-demo-5').lemGmaps();</code></pre>
-                </div>
-              </div>
-              <div class="img-col">
-                <div class="img-wrap google-map-demo-5" data-lem-gmap="{&quot;markers&quot;: [{&quot;lat&quot;: 46.904767, &quot;lng&quot;: -96.797955}, {&quot;lat&quot;: 42.163677, &quot;lng&quot;: -72.632944, &quot;icon&quot;: {&quot;fillColor&quot;: &quot;#0000ff&quot;}}]}"></div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </div>
-  <script type="text/javascript" src="../build/index.bundle.js"></script><script type="text/javascript" src="../build/lem_gmaps_page.bundle.js"></script></body>
-</html>
+Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module build failed: Error: ENOENT: no such file or directory, open '/Users/lemehovskiy1/PhpstormProjects/lemehovskiy.github.io/src/html/pages/lem-gmaps/index.pug'
+  
+  
+  - Error: ENOENT: no such file or directory, open '/Users/lemehovskiy1/PhpstormProjects/lemehovskiy.github.io/src/html/pages/lem-gmaps/index.pug'
+  
+  - compiler.js:76 
+    [lemehovskiy.github.io]/[html-webpack-plugin]/lib/compiler.js:76:16
+  
+  - Compiler.js:304 compile
+    [lemehovskiy.github.io]/[webpack]/lib/Compiler.js:304:11
+  
+  - Compiler.js:514 applyPluginsAsync.err
+    [lemehovskiy.github.io]/[webpack]/lib/Compiler.js:514:14
+  
+  - Tapable.js:202 next
+    [lemehovskiy.github.io]/[tapable]/lib/Tapable.js:202:11
+  
+  - CachePlugin.js:78 Compiler.<anonymous>
+    [lemehovskiy.github.io]/[webpack]/lib/CachePlugin.js:78:5
+  
+  - Tapable.js:206 Compiler.applyPluginsAsyncSeries
+    [lemehovskiy.github.io]/[tapable]/lib/Tapable.js:206:13
+  
+  - Compiler.js:511 compilation.seal.err
+    [lemehovskiy.github.io]/[webpack]/lib/Compiler.js:511:11
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [lemehovskiy.github.io]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:678 self.applyPluginsAsync.err
+    [lemehovskiy.github.io]/[webpack]/lib/Compilation.js:678:19
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [lemehovskiy.github.io]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:669 self.applyPluginsAsync.err
+    [lemehovskiy.github.io]/[webpack]/lib/Compilation.js:669:11
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [lemehovskiy.github.io]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:664 self.applyPluginsAsync.err
+    [lemehovskiy.github.io]/[webpack]/lib/Compilation.js:664:10
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [lemehovskiy.github.io]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:660 sealPart2
+    [lemehovskiy.github.io]/[webpack]/lib/Compilation.js:660:9
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [lemehovskiy.github.io]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:603 Compilation.seal
+    [lemehovskiy.github.io]/[webpack]/lib/Compilation.js:603:8
+  
+  - Compiler.js:508 applyPluginsParallel.err
+    [lemehovskiy.github.io]/[webpack]/lib/Compiler.js:508:17
+  
+  - Tapable.js:289 
+    [lemehovskiy.github.io]/[tapable]/lib/Tapable.js:289:11
+  
+  - Compilation.js:505 _addModuleChain
+    [lemehovskiy.github.io]/[webpack]/lib/Compilation.js:505:11
+  
+  - Compilation.js:475 processModuleDependencies.err
+    [lemehovskiy.github.io]/[webpack]/lib/Compilation.js:475:14
+  
+  - next_tick.js:73 _combinedTickCallback
+    internal/process/next_tick.js:73:7
+  
+  - next_tick.js:104 process._tickCallback
+    internal/process/next_tick.js:104:9
+  
+</pre><script type="text/javascript" src="../build/index.bundle.js"></script><script type="text/javascript" src="../build/lem_gmaps_page.bundle.js"></script>
