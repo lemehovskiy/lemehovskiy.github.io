@@ -1,0 +1,131 @@
+extends ../templates/base
+
+append sharedVars
+
+  - var page_slug = 'parallax-content';
+  - var page_url = '/parallax-content';
+
+  - var page_title = 'Parallax content'
+  - var page_description = 'Parallax content'
+  - var page_keywords = 'parallax content responsive jQuery plugin Greensock Gsap animation'
+
+  - var repository = 'https://github.com/lemehovskiy/parallax_content';
+  - var download_url = 'https://github.com/lemehovskiy/parallax_content/archive/master.zip';
+
+
+block main
+  section.section-features-list
+    .container
+      h2.section-title.main-ttl-2
+        | Installation
+      ul.features-list
+        li
+          .content-col
+            .main-ttl-3 Include JS
+            .desc
+              pre.language-markup
+                code
+                  | &lt;script src="TweenLite.min.js">&lt;/script>
+                  | &lt;script src="CSSPlugin.min.js">&lt;/script>
+                  | &lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;
+                  | &lt;script src=&quot;parallax_content.js&quot;&gt;&lt;/script&gt;
+
+        li
+          .content-col
+            .main-ttl-3 Set HTML
+            .desc
+              pre.language-markup
+                code
+                  | &lt;div class=&quot;parallax-background&quot;&gt;
+                  |   &lt;div class=&quot;parallax-inner&quot; style=&quot;background-image: url(&apos;background-image.jpg&apos;)&quot;&gt;
+                  |   &lt;/div&gt;
+                  | &lt;/div&gt;
+        li
+          .content-col
+            .main-ttl-3 Call the plugin
+            .desc
+              pre.language-javascript
+                code
+                  | $(document).ready(function() {
+                  |   $(&apos;.parallax-background&apos;).parallaxBackground();
+                  | });
+  section.section-features-blocks
+    .container
+      h2.section-title.main-ttl-2
+        | Demo
+      ul.features-list
+        li.feature-item
+          .content-col
+            .title.main-ttl-3
+              | Basic usage
+            .desc.main-p-1
+              pre
+                code.language-javascript
+                  | $(&apos;.parallax-demo-1&apos;).parallaxBackground();
+          .img-col
+            .img-wrap.parallax-demo-1
+              .parallax-inner.back-img(style="background-image: url('/src/imgs/sample-img-2.jpg')")
+        li.feature-item
+          .content-col
+            .title.main-ttl-3
+              | Animation type - rotate
+            .desc.main-p-1
+              pre
+                code.language-javascript
+                  | $(&apos;.parallax-demo-2&apos;).parallaxBackground({
+                  |   animation_type: &apos;rotate&apos;,
+                  |   zoom: 50,
+                  |   rotate_perspective: 500
+                  | });
+          .img-col
+            .img-wrap.parallax-demo-2
+              .parallax-inner.back-img(style="background-image: url('/src/imgs/sample-img-3.jpg')")
+        li.feature-item
+          .content-col
+            .title.main-ttl-3
+              | Event - mouse move
+            .desc.main-p-1
+              pre
+                code.language-javascript
+                  | $(&apos;.parallax-demo-3&apos;).parallaxBackground({
+                  |   event: &apos;mouse_move&apos;,
+                  |   animation_type: &apos;shift&apos;,
+                  |   animate_duration: 2
+                  | });
+          .img-col.hover-me
+            .img-wrap.parallax-demo-3
+              .parallax-inner.back-img(style="background-image: url('/src/imgs/sample-img-4.jpg')")
+        li.feature-item
+          .content-col
+            .title.main-ttl-3
+              | Event - mouse move with rotate animation
+            .desc.main-p-1
+              pre
+                code.language-javascript
+                  | $(&apos;.parallax-demo-4&apos;).parallaxBackground({
+                  |   event: &apos;mouse_move&apos;,
+                  |   animation_type: &apos;rotate&apos;,
+                  |   animate_duration: 1,
+                  |   zoom: 70,
+                  | r otate_perspective: 1000
+                  | });
+          .img-col.hover-me
+            .img-wrap.parallax-demo-4
+              .parallax-inner.back-img(style="background-image: url('/src/imgs/sample-img-1.jpg')")
+        li.feature-item
+          .content-col
+            h3.main-ttl-3
+              | Alternative background type
+            .desc
+              pre
+                code.language-javascript
+                  | $(&apos;.parallax-demo-5&apos;).parallaxBackground({
+                  |   event: &apos;mouse_move&apos;,
+                  |   animation_type: &apos;rotate&apos;,
+                  |   animate_duration: 1,
+                  |   zoom: 70,
+                  |   rotate_perspective: 1000
+                  | });
+          .img-col.hover-me
+            .img-wrap.parallax-demo-5
+              .parallax-inner.youtube-video.youtube-video-background
