@@ -46,7 +46,9 @@ block main
             .desc
               pre.language-javascript
                 code
-                  | $(&apos;.parallax-background&apos;).parallaxBackground();
+                  | $(document).ready(function() {
+                  |   $(&apos;.parallax-background&apos;).parallaxBackground();
+                  | });
   section.section-features-blocks
     .container
       h2.section-title.main-ttl-2
