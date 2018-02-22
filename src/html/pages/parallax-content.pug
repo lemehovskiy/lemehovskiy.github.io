@@ -13,6 +13,7 @@ append sharedVars
   - var download_url = 'https://github.com/lemehovskiy/parallax_content/archive/master.zip';
 
 
+
 block main
   section.section-features-list
     .container
@@ -36,9 +37,8 @@ block main
             .desc
               pre.language-markup
                 code
-                  | &lt;div class=&quot;parallax-background&quot;&gt;
-                  |   &lt;div class=&quot;parallax-inner&quot; style=&quot;background-image: url(&apos;background-image.jpg&apos;)&quot;&gt;
-                  |   &lt;/div&gt;
+                  | &lt;div class=&quot;parallax-title&quot;&gt;
+                  |   Parallax title
                   | &lt;/div&gt;
         li
           .content-col
@@ -47,7 +47,7 @@ block main
               pre.language-javascript
                 code
                   | $(document).ready(function() {
-                  |   $(&apos;.parallax-background&apos;).parallaxBackground();
+                  |   $(&apos;.parallax-title&apos;).parallaxContent();
                   | });
   section.section-features-blocks
     .container
@@ -61,71 +61,46 @@ block main
             .desc.main-p-1
               pre
                 code.language-javascript
-                  | $(&apos;.parallax-demo-1&apos;).parallaxBackground();
-          .img-col
-            .img-wrap.parallax-demo-1
-              .parallax-inner.back-img(style="background-image: url('/src/imgs/sample-img-2.jpg')")
+                  | $('.parallax-content-demo-1 .title').parallaxContent({
+                  |   shift: 20
+                  | });
+                  |
+                  | $('.parallax-content-demo-1').parallaxContent({
+                  |   shift: -20,
+                  |   duration: 3
+                  | });
+          .img-col.parallax-content-demo-1
+            .demo-content
+              .title.main-ttl-3
+                | Lorem ipsum
+              .desc
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            .img-wrap.back-img(style="background-image: url('/src/imgs/sample-img-2.jpg')")
         li.feature-item
           .content-col
             .title.main-ttl-3
-              | Animation type - rotate
+              | Settings from data attribute
             .desc.main-p-1
+              pre.language-markup
+                code
+                  | &lt;div
+                  |   class="title"
+                  |   data-parallax-content='{&quot;shift&quot;: 35}'>
+                  |   Lorem ipsum
+                  | &lt;/div>
+                  | &lt;div
+                  |   class="desc"
+                  |   data-parallax-content='{&quot;shift&quot;: 70, &quot;duration&quot;: 3}'>
+                  |   Lorem ipsum dolor sit amet ....
+                  | &lt;/div>
               pre
                 code.language-javascript
-                  | $(&apos;.parallax-demo-2&apos;).parallaxBackground({
-                  |   animation_type: &apos;rotate&apos;,
-                  |   zoom: 50,
-                  |   rotate_perspective: 500
-                  | });
-          .img-col
-            .img-wrap.parallax-demo-2
-              .parallax-inner.back-img(style="background-image: url('/src/imgs/sample-img-3.jpg')")
-        li.feature-item
-          .content-col
-            .title.main-ttl-3
-              | Event - mouse move
-            .desc.main-p-1
-              pre
-                code.language-javascript
-                  | $(&apos;.parallax-demo-3&apos;).parallaxBackground({
-                  |   event: &apos;mouse_move&apos;,
-                  |   animation_type: &apos;shift&apos;,
-                  |   animate_duration: 2
-                  | });
-          .img-col.hover-me
-            .img-wrap.parallax-demo-3
-              .parallax-inner.back-img(style="background-image: url('/src/imgs/sample-img-4.jpg')")
-        li.feature-item
-          .content-col
-            .title.main-ttl-3
-              | Event - mouse move with rotate animation
-            .desc.main-p-1
-              pre
-                code.language-javascript
-                  | $(&apos;.parallax-demo-4&apos;).parallaxBackground({
-                  |   event: &apos;mouse_move&apos;,
-                  |   animation_type: &apos;rotate&apos;,
-                  |   animate_duration: 1,
-                  |   zoom: 70,
-                  | r otate_perspective: 1000
-                  | });
-          .img-col.hover-me
-            .img-wrap.parallax-demo-4
-              .parallax-inner.back-img(style="background-image: url('/src/imgs/sample-img-1.jpg')")
-        li.feature-item
-          .content-col
-            h3.main-ttl-3
-              | Alternative background type
-            .desc
-              pre
-                code.language-javascript
-                  | $(&apos;.parallax-demo-5&apos;).parallaxBackground({
-                  |   event: &apos;mouse_move&apos;,
-                  |   animation_type: &apos;rotate&apos;,
-                  |   animate_duration: 1,
-                  |   zoom: 70,
-                  |   rotate_perspective: 1000
-                  | });
-          .img-col.hover-me
-            .img-wrap.parallax-demo-5
-              .parallax-inner.youtube-video.youtube-video-background
+                  | $('.parallax-content-demo-2 .title').parallaxContent();
+                  | $('.parallax-content-demo-2 .desc').parallaxContent();
+          .img-col.parallax-content-demo-2
+            .demo-content
+              .title.main-ttl-3(data-parallax-content='{"shift": 35}')
+                | Lorem ipsum
+              .desc(data-parallax-content='{"shift": 70, "duration": 3}')
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            .img-wrap.back-img(style="background-image: url('/src/imgs/sample-img-3.jpg')")

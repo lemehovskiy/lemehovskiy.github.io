@@ -1,0 +1,27 @@
+.page-parallax-content {
+  padding: 0 0 200px;
+
+
+
+    .img-col {
+      padding: 0 20px;
+      .demo-content {
+        position: relative;
+        z-index: 3;
+        color: white;
+      }
+    }
+
+  .img-wrap {
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(black, 0.5);
+    }
+  }
+
+}

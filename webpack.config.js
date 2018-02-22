@@ -13,7 +13,8 @@ module.exports = {
     lem_gmaps_page: './src/lem_gmaps_page.es6',
     lem_counter_page: './src/lem_counter_page.es6',
     lem_youtube_page: './src/lem_youtube_page.es6',
-    parallax_background_page: './src/parallax_background_page.es6'
+    parallax_background_page: './src/parallax_background_page.es6',
+    parallax_content_page: './src/parallax_content_page.es6'
   },
 
   output: {
@@ -54,6 +55,11 @@ module.exports = {
       template: 'src/html/pages/parallax-background.pug',
       filename: 'parallax-background/index.html',
       chunks: ['index', 'parallax_background_page']
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/html/pages/parallax-content.pug',
+      filename: 'parallax-content/index.html',
+      chunks: ['index', 'parallax_content_page']
     }),
     new HtmlWebpackPlugin({
       template: 'src/html/pages/lem-mixins.pug',

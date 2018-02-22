@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Parallax content</title>
+    <meta name="description" content="Parallax content">
+    <meta name="keywords" content="parallax content responsive jQuery plugin Greensock Gsap animation">
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-112465244-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-112465244-1');
+      
+    </script>
+  <link href="../build/styles.css" rel="stylesheet"></head>
+  <body class="page-parallax-content">
+    <header>
+      <div class="container">
+        <!--div= page_title-->
+        <div class="wp-navbar-head"><a class="logo" href="/">lem</a>
+          <button class="wp-navbar-toggle" type="button">
+            <div class="animate-burger"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
+          </button>
+        </div>
+        <div class="wp-navbar-collapse">
+          <ul class="nav">
+            <li class="menu-item"><a href="/lem-counter">Lem counter</a></li>
+            <li class="menu-item"><a href="/lem-youtube">Lem youtube</a></li>
+            <li class="menu-item"><a href="/lem-gmaps">Lem gmaps</a></li>
+            <li class="menu-item"><a href="/parallax-background">Parallax background</a></li>
+            <li class="menu-item active"><a href="/parallax-content">Parallax content</a></li>
+            <li class="menu-item"><a href="/lem-mixins">Lem mixins</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="page parallax-content" id="page">
+      <section class="section-intro back-img" style="background-image: url('/src/imgs/sample-img-1.jpg');">
+        <div class="container">
+          <div class="content-wrap">
+            <h3 class="main-ttl-1 section-title">Parallax content</h3>
+            <div class="btn-group"><a class="btn" href="https://github.com/lemehovskiy/parallax_content"><i class="icon icon-github-circled"></i>View on GitHub</a><a class="btn" href="https://github.com/lemehovskiy/parallax_content/archive/master.zip"><i class="icon icon-download"></i>Download</a></div>
+          </div>
+        </div>
+      </section>
+      <section class="section-features-list">
+        <div class="container">
+          <h2 class="section-title main-ttl-2">Installation</h2>
+          <ul class="features-list">
+            <li>
+              <div class="content-col">
+                <div class="main-ttl-3">Include JS</div>
+                <div class="desc">
+                  <pre class="language-markup"><code>&lt;script src="TweenLite.min.js">&lt;/script>
+&lt;script src="CSSPlugin.min.js">&lt;/script>
+&lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;parallax_content.js&quot;&gt;&lt;/script&gt;</code></pre>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="content-col">
+                <div class="main-ttl-3">Set HTML</div>
+                <div class="desc">
+                  <pre class="language-markup"><code>&lt;div class=&quot;parallax-title&quot;&gt;
+  Parallax title
+&lt;/div&gt;</code></pre>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="content-col">
+                <div class="main-ttl-3">Call the plugin</div>
+                <div class="desc">
+                  <pre class="language-javascript"><code>$(document).ready(function() {
+  $(&apos;.parallax-title&apos;).parallaxContent();
+});</code></pre>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section-features-blocks">
+        <div class="container">
+          <h2 class="section-title main-ttl-2">Demo</h2>
+          <ul class="features-list">
+            <li class="feature-item">
+              <div class="content-col">
+                <div class="title main-ttl-3">Basic usage</div>
+                <div class="desc main-p-1">
+                  <pre><code class="language-javascript">$('.parallax-content-demo-1 .title').parallaxContent({
+  shift: 20
+});
+
+$('.parallax-content-demo-1').parallaxContent({
+  shift: -20,
+  duration: 3
+});</code></pre>
+                </div>
+              </div>
+              <div class="img-col parallax-content-demo-1">
+                <div class="demo-content">
+                  <div class="title main-ttl-3">Lorem ipsum</div>
+                  <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                </div>
+                <div class="img-wrap back-img" style="background-image: url('/src/imgs/sample-img-2.jpg');"></div>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="content-col">
+                <div class="title main-ttl-3">Settings from data attribute</div>
+                <div class="desc main-p-1">
+                  <pre class="language-markup"><code>&lt;div
+  class="title"
+  data-parallax-content='{&quot;shift&quot;: 35}'>
+  Lorem ipsum
+&lt;/div>
+&lt;div
+  class="desc"
+  data-parallax-content='{&quot;shift&quot;: 70, &quot;duration&quot;: 3}'>
+  Lorem ipsum dolor sit amet ....
+&lt;/div></code></pre>
+                  <pre><code class="language-javascript">$('.parallax-content-demo-2 .title').parallaxContent();
+$('.parallax-content-demo-2 .desc').parallaxContent();</code></pre>
+                </div>
+              </div>
+              <div class="img-col parallax-content-demo-2">
+                <div class="demo-content">
+                  <div class="title main-ttl-3" data-parallax-content="{&quot;shift&quot;: 35}">Lorem ipsum</div>
+                  <div class="desc" data-parallax-content="{&quot;shift&quot;: 70, &quot;duration&quot;: 3}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                </div>
+                <div class="img-wrap back-img" style="background-image: url('/src/imgs/sample-img-3.jpg');"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  <script type="text/javascript" src="../build/index.bundle.js"></script><script type="text/javascript" src="../build/parallax_content_page.bundle.js"></script></body>
+</html>

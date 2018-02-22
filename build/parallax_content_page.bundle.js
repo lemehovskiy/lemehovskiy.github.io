@@ -60,61 +60,37 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 220);
+/******/ 	return __webpack_require__(__webpack_require__.s = 226);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 220:
+/***/ 226:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(221);
+__webpack_require__(227);
 
-//DEMO 1
-$(window).on('ytApiReady.ly', function () {
-  $('.demo-item-1 .youtube-video').lemYoutube();
-});
+$(document).ready(function () {
 
-//DEMO 2
-$(window).on('ytApiReady.ly', function () {
-  $('.demo-item-2 .youtube-video').lemYoutube();
-});
-
-$('.demo-item-2 .youtube-video').on('onReady.ly', function () {
-  $(this).lemYoutube('ytPlayer', 'playVideo');
-  $(this).lemYoutube('ytPlayer', 'mute');
-});
-
-//DEMO 3
-$(window).on('ytApiReady.ly', function () {
-  $('.demo-item-3 .youtube-video').lemYoutube();
-});
-
-$('.play-btn').on('click', function () {
-  $('.demo-item-3 .youtube-video').lemYoutube('ytPlayer', 'playVideo');
-});
-
-$('.pause-btn').on('click', function () {
-  $('.demo-item-3 .youtube-video').lemYoutube('ytPlayer', 'pauseVideo');
-});
-
-$(window).on('apiReady.ly', function () {
-  $('.youtube-video').lemYoutube({
-    videoId: "yu_bA7jzX5Y",
-    playerVars: {
-      'rel': 1,
-      'showinfo': 1,
-      'autoplay': 1
-    }
+  $('.parallax-content-demo-1 .title').parallaxContent({
+    shift: 20
   });
+
+  $('.parallax-content-demo-1').parallaxContent({
+    shift: -20,
+    duration: 3
+  });
+
+  $('.parallax-content-demo-2 .title').parallaxContent();
+  $('.parallax-content-demo-2 .desc').parallaxContent();
 });
 
 /***/ }),
 
-/***/ 221:
+/***/ 227:
 /***/ (function(module, exports) {
 
 /******/ (function(modules) { // webpackBootstrap
@@ -188,11 +164,11 @@ $(window).on('apiReady.ly', function () {
 
 "use strict";
 /*
- Version: 1.0.0
+ Version: 1.0.6
  Author: lemehovskiy
- Website: http://lemehovskiy.github.io
- Repo: https://github.com/lemehovskiy/lem_youtube
-*/
+ Website: https://lemehovskiy.github.io/parallax-content
+ Repo: https://github.com/lemehovskiy/parallax_content
+ */
 
 
 
@@ -203,99 +179,111 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 (function ($) {
-    //init youtube
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    window.onYouTubePlayerAPIReady = function () {
-        $(document).ready(function () {
-            $(window).trigger('ytApiReady.ly');
-        });
-    };
-
-    var LemYoutube = function () {
-        function LemYoutube(element, options) {
-            _classCallCheck(this, LemYoutube);
+    var ParallaxContent = function () {
+        function ParallaxContent(element, options) {
+            _classCallCheck(this, ParallaxContent);
 
             var self = this;
 
-            self.settings = $.extend(true, {
-                playerVars: {
-                    'rel': 0,
-                    'showinfo': 0
-                }
-
-            }, options);
-
             self.$element = $(element);
 
-            //create div for iframe init
-            $(self.$element).append('<div class="player"></div>');
-
-            self.$player_element = $(self.$element).find('.player');
+            //extend by function call
+            self.settings = $.extend(true, {
+                duration: 1.5,
+                shift: 10
+            }, options);
 
             //extend by data options
-            self.data_options = self.$element.data('lem-youtube');
-
+            self.data_options = self.$element.data('parallax-content');
             self.settings = $.extend(true, self.settings, self.data_options);
 
-            self.settings.events = {
-                'onReady': function onReady() {
-                    self.$element.trigger('onReady.ly');
-                },
-                'onStateChange': function onStateChange(event) {
-                    self.$element.trigger('onStateChange.ly', event.data);
-                }
-            };
+            self.scrollTop = 0;
+            self.windowHeight = 0;
+            self.triggerPosition = 0;
+
+            self.thisHeight = self.$element.outerHeight();
+            self.animationTriggerStart = 0;
+            self.animationTriggerEnd = 0;
+            self.offset_top = 0;
+            self.animationLength = 0;
 
             self.init();
         }
 
-        _createClass(LemYoutube, [{
+        _createClass(ParallaxContent, [{
             key: 'init',
             value: function init() {
                 var self = this;
-                self.player = new YT.Player(self.$player_element[0], self.settings);
+
+                self.update_trigger();
+                self.animate_element();
+
+                $(window).on('scroll resize', function () {
+                    self.update_trigger();
+                    self.animate_element();
+                });
             }
         }, {
-            key: 'ytPlayer',
-            value: function ytPlayer(method, args) {
-
+            key: 'refresh',
+            value: function refresh() {
                 var self = this;
 
-                var params = [];
+                self.update_trigger();
+                self.animate_element();
+            }
+        }, {
+            key: 'update_trigger',
+            value: function update_trigger() {
+                var self = this;
 
-                if ((typeof args === 'undefined' ? 'undefined' : _typeof(args)) === 'object') {
-                    params = args;
+                self.scrollTop = $(window).scrollTop();
+
+                self.windowHeight = $(window).height();
+
+                self.triggerPosition = self.scrollTop + self.windowHeight;
+
+                self.offset_top = self.$element.offset().top;
+
+                self.animationTriggerStart = self.offset_top;
+
+                self.animationTriggerEnd = self.animationTriggerStart + self.windowHeight;
+
+                self.animationLength = self.animationTriggerEnd - self.animationTriggerStart;
+            }
+        }, {
+            key: 'animate_element',
+            value: function animate_element() {
+                var self = this;
+
+                if (self.triggerPosition > self.animationTriggerStart && self.triggerPosition < self.animationTriggerEnd + self.thisHeight) {
+
+                    self.$element.addClass('active');
+
+                    var centerPixelShift = self.triggerPosition - self.offset_top - self.animationLength * 0.5;
+
+                    var centerPercentShift = centerPixelShift / (self.animationLength / 100) * 2;
+
+                    var y = self.settings.shift / 100 * centerPercentShift;
+
+                    TweenLite.to(self.$element, self.settings.duration, { y: y + 'px' });
                 } else {
-                    params.push(args);
+                    self.$element.removeClass('active');
                 }
-
-                self.player[method].apply(self.player, params);
             }
         }]);
 
-        return LemYoutube;
+        return ParallaxContent;
     }();
 
-    $.fn.lemYoutube = function () {
+    $.fn.parallaxContent = function () {
         var $this = this,
-            options = arguments[0],
+            opt = arguments[0],
             args = Array.prototype.slice.call(arguments, 1),
             length = $this.length,
             i = void 0,
             ret = void 0;
-
         for (i = 0; i < length; i++) {
-            if ((typeof options === 'undefined' ? 'undefined' : _typeof(options)) == 'object' || typeof options == 'undefined') {
-                $this[i].lem_youtube = new LemYoutube($this[i], options);
-            } else {
-                ret = $this[i].lem_youtube[options].apply($this[i].lem_youtube, args);
-            }
-
+            if ((typeof opt === 'undefined' ? 'undefined' : _typeof(opt)) == 'object' || typeof opt == 'undefined') $this[i].parallax_content = new ParallaxContent($this[i], opt);else ret = $this[i].parallax_content[opt].apply($this[i].parallax_content, args);
             if (typeof ret != 'undefined') return ret;
         }
         return $this;
