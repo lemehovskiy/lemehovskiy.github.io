@@ -150,6 +150,7 @@ header {
     color: $menu-font-color;
     height: 0;
     min-width: 150px;
+    overflow: hidden;
 
     @media (min-width: $mobile-menu-breakpoint + 1) {
       position: absolute;
@@ -158,9 +159,17 @@ header {
     }
 
     >li {
+      &.active a {
+        background: rgba(white, 0.1);
+      }
+
       >a {
-        padding: 20px 30px;
+        white-space: nowrap;
+        padding: 10px 30px;
         color: $menu-font-color;
+        &:hover {
+          background: rgba(white, 0.1);
+        }
       }
     }
   }

@@ -1,11 +1,13 @@
 -
   var pages = [
-  {name: 'Lem counter', url: '/lem-counter'},
-  {name: 'Lem youtube', url: '/lem-youtube'},
-  {name: 'Lem gmaps', url: '/lem-gmaps'},
-  {name: 'Parallax background', url: '/parallax-background'},
-  {name: 'Parallax content', url: '/parallax-content'},
-  {name: 'Lem mixins', url: '/lem-mixins'}
+  {name: 'Plugins', sub_menu: [
+    {name: 'Lem counter', url: '/lem-counter'},
+    {name: 'Lem youtube', url: '/lem-youtube'},
+    {name: 'Lem gmaps', url: '/lem-gmaps'},
+    {name: 'Parallax background', url: '/parallax-background'},
+    {name: 'Parallax content', url: '/parallax-content'},
+    {name: 'Lem mixins', url: '/lem-mixins'}
+  ]}
   ];
 
   var page_title = "title";
@@ -27,30 +29,39 @@ html
     // Global site tag (gtag.js) - Google Analytics
     script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-112465244-1')
     script.
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'UA-112465244-1');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-112465244-1');
 
   body(class='page-' + page_slug)
     header
+
       .container
-        //div= page_title
         .wp-navbar-head
           a.logo(href='/')
             | lem
           button.wp-navbar-toggle(type='button')
             .animate-burger
-              span.top
+              span.topr
               span.middle
               span.bottom
         .wp-navbar-collapse
           ul.nav
             each i in pages
-              li.menu-item(class={active: page_url == i.url})
-                a(href=i.url)= i.name
+              if i.sub_menu
+                li.menu-item(class="menu-item-has-children")
+                  a(href=i.url)= i.name
+                  ul.sub-menu
+                    each sub_item in i.sub_menu
+                      li.menu-item(class={active: page_url == sub_item.url})
+                        a(href=sub_item.url)= sub_item.name
+              else
+                li.menu-item(class={active: page_url == i.url})
+                  a(href=i.url)= i.name
+
 
     #page.page(class=page_slug)
 
