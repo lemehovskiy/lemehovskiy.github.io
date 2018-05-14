@@ -60,18 +60,18 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 224);
+/******/ 	return __webpack_require__(__webpack_require__.s = 118);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 224:
+/***/ 118:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(225);
+__webpack_require__(119);
 
 //DEMO 1
 $(window).on('ytApiReady.ly', function () {
@@ -114,7 +114,7 @@ $(window).on('apiReady.ly', function () {
 
 /***/ }),
 
-/***/ 225:
+/***/ 119:
 /***/ (function(module, exports) {
 
 /******/ (function(modules) { // webpackBootstrap
@@ -203,19 +203,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 (function ($) {
-    //init youtube
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    window.onYouTubePlayerAPIReady = function () {
-        $(document).ready(function () {
-            $(window).trigger('ytApiReady.ly');
-        });
-    };
-
     var LemYoutube = function () {
         function LemYoutube(element, options) {
             _classCallCheck(this, LemYoutube);

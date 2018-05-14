@@ -47,5 +47,8 @@
     "starter project webpack pug"
   ],
   "author": "lemehovskiy",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lem_nav": "^1.0.1"
+  }
 }

@@ -6,7 +6,7 @@ require("jquery");
 
 require("gsap");
 
-require("../../lem_nav/build/lem_nav.js");
+require("lem_nav");
 
 var Prism = require('prismjs');
 var Normalizer = require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');
