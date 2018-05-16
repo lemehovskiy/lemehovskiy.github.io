@@ -41,9 +41,7 @@ block main
             .desc
               pre.language-javascript
                 code
-                  | $(window).on('apiReady.ly', function () {
-                  |     $('.youtube-video').lemYoutube();
-                  | });
+                  | $('.youtube-video').lemYoutube();
 
   section.section-features-list
     .container
@@ -59,9 +57,7 @@ block main
             .desc
               pre
                 code.language-javascript
-                  |  $(window).on('apiReady.ly', function () {
-                  |      $('.youtube-video').lemYoutube();
-                  |  });
+                  | $('.youtube-video').lemYoutube();
           .media-col
             .media-col-inner
               .rect-outer
@@ -73,9 +69,8 @@ block main
             .desc
               pre
                 code.language-javascript
-                  | $(window).on('apiReady.ly', function () {
-                  |     $('.demo-item-2 .youtube-video').lemYoutube();
-                  | });
+                  | $('.demo-item-2 .youtube-video').lemYoutube();
+                  |
                   | $('.demo-item-2 .youtube-video').on('onReady.ly', function () {
                   |     $(this).lemYoutube('ytPlayer', 'playVideo');
                   |     $(this).lemYoutube('ytPlayer', 'mute');
@@ -93,9 +88,7 @@ block main
             .desc
               pre
                 code.language-javascript
-                  | $(window).on('apiReady.ly', function () {
-                  |     $('.demo-item-3 .youtube-video').lemYoutube();
-                  | });
+                  | $('.demo-item-3 .youtube-video').lemYoutube();
                   |
                   | $('.play-btn').on('click', function(){
                   |     $('.demo-item-3 .youtube-video').lemYoutube('ytPlayer', 'playVideo');
@@ -149,16 +142,14 @@ block main
               .desc
                 pre.language-javascript
                   code
-                    | $(window).on('apiReady.ly', function () {
-                    |     $('.youtube-video').lemYoutube({
-                    |         videoId: "yu_bA7jzX5Y",
-                    |         playerVars: {
-                    |             'rel': 1,
-                    |             'showinfo': 1,
-                    |             'autoplay': 1
-                    |         }
-                    |     });
-                    | });
+                    |   $('.youtube-video').lemYoutube({
+                    |       videoId: "yu_bA7jzX5Y",
+                    |       playerVars: {
+                    |           'rel': 1,
+                    |           'showinfo': 1,
+                    |           'autoplay': 1
+                    |       }
+                    |   });
 
           li.setting-item
             .content-col
@@ -167,9 +158,7 @@ block main
               .desc
                 pre.language-javascript
                   code
-                    | $(window).on('apiReady.ly', function () {
-                    |     $('.youtube-video').lemYoutube();
-                    | });
+                    | $('.youtube-video').lemYoutube();
 
                 pre.language-markup
                   code
@@ -200,9 +189,7 @@ block main
               .desc
                 pre
                   code.language-javascript
-                    | $(window).on('apiReady.ly', function () {
-                    |     $('.youtube-video').lemYoutube();
-                    | });
+                    | $('.youtube-video').lemYoutube();
                     | $('.youtube-video').on('onReady.ly', function () {
                     |     $(this).lemYoutube('ytPlayer', 'playVideo');
                     |     $(this).lemYoutube('ytPlayer', 'loadVideoById', ["bHQqvYy5KYo", 50, "large"]);
