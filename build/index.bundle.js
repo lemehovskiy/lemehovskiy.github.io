@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 66);
+/******/ 	return __webpack_require__(__webpack_require__.s = 67);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -76,18 +76,18 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* global Symbol
 	__webpack_require__(2),
 	__webpack_require__(70),
 	__webpack_require__(20),
-	__webpack_require__(38),
 	__webpack_require__(39),
+	__webpack_require__(40),
 	__webpack_require__(23),
 	__webpack_require__(19),
-	__webpack_require__(40),
-	__webpack_require__(22),
 	__webpack_require__(41),
+	__webpack_require__(22),
+	__webpack_require__(42),
 	__webpack_require__(71),
 	__webpack_require__(7),
 	__webpack_require__(1),
 	__webpack_require__(17),
-	__webpack_require__(42),
+	__webpack_require__(43),
 	__webpack_require__(10)
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( arr, document, getProto, slice, concat, push, indexOf,
 	class2type, toString, hasOwn, fnToString, ObjectFunctionString,
@@ -520,9 +520,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Initialize a 
 	__webpack_require__(0),
 	__webpack_require__(2),
 	__webpack_require__(1),
-	__webpack_require__(47),
+	__webpack_require__(48),
 
-	__webpack_require__(48)
+	__webpack_require__(49)
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery, document, isFunction, rsingleTag ) {
 
 "use strict";
@@ -652,7 +652,7 @@ return init;
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	__webpack_require__(51)
+	__webpack_require__(52)
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( Data ) {
 	"use strict";
 
@@ -794,7 +794,7 @@ return nodeName;
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
 	__webpack_require__(19),
-	__webpack_require__(40)
+	__webpack_require__(41)
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( class2type, toString ) {
 
 "use strict";
@@ -1230,11 +1230,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 	__webpack_require__(23),
 	__webpack_require__(76),
 	__webpack_require__(77),
-	__webpack_require__(49),
+	__webpack_require__(50),
 	__webpack_require__(9),
 
 	__webpack_require__(4),
-	__webpack_require__(48),
+	__webpack_require__(49),
 	__webpack_require__(3)
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery, indexOf, dir, siblings, rneedsContext, nodeName ) {
 
@@ -2184,14 +2184,14 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 	__webpack_require__(1),
 	__webpack_require__(6),
 	__webpack_require__(91),
+	__webpack_require__(64),
 	__webpack_require__(63),
-	__webpack_require__(62),
 
 	__webpack_require__(4),
 	__webpack_require__(92),
 	__webpack_require__(36),
 	__webpack_require__(11),
-	__webpack_require__(64) // jQuery.param
+	__webpack_require__(65) // jQuery.param
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery, document, isFunction, rnothtmlwhite, location, nonce, rquery ) {
 
 "use strict";
@@ -3050,15 +3050,15 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 	__webpack_require__(24),
 	__webpack_require__(26),
 	__webpack_require__(27),
-	__webpack_require__(43),
-	__webpack_require__(37),
 	__webpack_require__(44),
+	__webpack_require__(38),
 	__webpack_require__(45),
 	__webpack_require__(46),
+	__webpack_require__(47),
 	__webpack_require__(28),
 
 	__webpack_require__(4),
-	__webpack_require__(50),
+	__webpack_require__(51),
 	__webpack_require__(3) // contains
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery, pnum, access, camelCase, document, rcssNum, rnumnonpx, cssExpand,
 	getStyles, swap, curCSS, adjustCSS, addGetHookIf, support ) {
@@ -3615,23 +3615,23 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
 	__webpack_require__(0),
-	__webpack_require__(38),
-	__webpack_require__(1),
 	__webpack_require__(39),
+	__webpack_require__(1),
+	__webpack_require__(40),
 	__webpack_require__(8),
-	__webpack_require__(60),
-	__webpack_require__(55),
+	__webpack_require__(61),
 	__webpack_require__(56),
 	__webpack_require__(57),
 	__webpack_require__(58),
 	__webpack_require__(59),
-	__webpack_require__(54),
+	__webpack_require__(60),
+	__webpack_require__(55),
 	__webpack_require__(82),
 
 	__webpack_require__(5),
-	__webpack_require__(52),
+	__webpack_require__(53),
 	__webpack_require__(31),
-	__webpack_require__(42),
+	__webpack_require__(43),
 	__webpack_require__(9),
 
 	__webpack_require__(4),
@@ -4740,9 +4740,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 	__webpack_require__(24),
 	__webpack_require__(6),
 	__webpack_require__(27),
-	__webpack_require__(53),
-	__webpack_require__(37),
-	__webpack_require__(45),
+	__webpack_require__(54),
+	__webpack_require__(38),
+	__webpack_require__(46),
 	__webpack_require__(5),
 	__webpack_require__(81),
 
@@ -5708,6 +5708,53 @@ return jQuery;
 /* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
+	__webpack_require__(0),
+	__webpack_require__(3),
+	__webpack_require__(12),
+	__webpack_require__(30),
+	__webpack_require__(11),
+	__webpack_require__(78),
+	__webpack_require__(51),
+	__webpack_require__(79),
+	__webpack_require__(32),
+	__webpack_require__(80),
+	__webpack_require__(84),
+	__webpack_require__(13),
+	__webpack_require__(88),
+	__webpack_require__(21),
+	__webpack_require__(90),
+	__webpack_require__(93),
+	__webpack_require__(15),
+	__webpack_require__(94),
+	__webpack_require__(65),
+	__webpack_require__(14),
+	__webpack_require__(95),
+	__webpack_require__(96),
+	__webpack_require__(97),
+	__webpack_require__(98),
+	__webpack_require__(101),
+	__webpack_require__(33),
+	__webpack_require__(102),
+	__webpack_require__(103),
+	__webpack_require__(104),
+	__webpack_require__(105),
+	__webpack_require__(107),
+	__webpack_require__(108)
+], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery ) {
+
+"use strict";
+
+return jQuery;
+
+}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
 
 "use strict";
@@ -5738,7 +5785,7 @@ return function( elem, options, callback, args ) {
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
@@ -5752,7 +5799,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
@@ -5766,7 +5813,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
@@ -5780,7 +5827,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
@@ -5794,7 +5841,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
@@ -5831,7 +5878,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
@@ -5855,14 +5902,14 @@ var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() 
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
 	__webpack_require__(0),
 	__webpack_require__(72),
 	__webpack_require__(26),
-	__webpack_require__(43),
+	__webpack_require__(44),
 	__webpack_require__(28),
 	__webpack_require__(3) // Get jQuery.contains
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery, rboxStyle, rnumnonpx, getStyles, support ) {
@@ -5927,7 +5974,7 @@ return curCSS;
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
@@ -6007,7 +6054,7 @@ return adjustCSS;
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
@@ -6040,7 +6087,7 @@ return addGetHookIf;
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
@@ -6053,14 +6100,14 @@ var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() 
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
 	__webpack_require__(0),
 	__webpack_require__(23),
 	__webpack_require__(1),
-	__webpack_require__(49),
+	__webpack_require__(50),
 	__webpack_require__(3)
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery, indexOf, isFunction, rneedsContext ) {
 
@@ -6157,7 +6204,7 @@ jQuery.fn.extend( {
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
@@ -6172,7 +6219,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
@@ -6265,7 +6312,7 @@ if ( document.readyState === "complete" ||
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
@@ -6434,11 +6481,11 @@ return Data;
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	__webpack_require__(51)
+	__webpack_require__(52)
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( Data ) {
 	"use strict";
 
@@ -6448,7 +6495,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
@@ -6489,17 +6536,17 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
 	__webpack_require__(0),
 	__webpack_require__(10),
-	__webpack_require__(55),
 	__webpack_require__(56),
 	__webpack_require__(57),
 	__webpack_require__(58),
-	__webpack_require__(59)
+	__webpack_require__(59),
+	__webpack_require__(60)
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery, toType, rtagName, rscriptType, wrapMap, getAll, setGlobalEval ) {
 
 "use strict";
@@ -6601,7 +6648,7 @@ return buildFragment;
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
@@ -6613,7 +6660,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() 
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
@@ -6625,7 +6672,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() 
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
@@ -6661,7 +6708,7 @@ return wrapMap;
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
@@ -6700,7 +6747,7 @@ return getAll;
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
@@ -6729,7 +6776,7 @@ return setGlobalEval;
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
@@ -6741,7 +6788,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() 
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
@@ -6891,7 +6938,7 @@ jQuery.each( [
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
@@ -6903,7 +6950,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() 
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
@@ -6915,17 +6962,17 @@ var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() 
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
 	__webpack_require__(0),
 	__webpack_require__(10),
-	__webpack_require__(60),
+	__webpack_require__(61),
 	__webpack_require__(1),
 	__webpack_require__(4),
 	__webpack_require__(12), // filter
-	__webpack_require__(61)
+	__webpack_require__(62)
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery, toType, rcheckableType, isFunction ) {
 
 "use strict";
@@ -7054,7 +7101,7 @@ return jQuery;
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports) {
 
 var g;
@@ -7081,25 +7128,25 @@ module.exports = g;
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(67);
-
 __webpack_require__(68);
 
 __webpack_require__(69);
 
+__webpack_require__(37);
+
 __webpack_require__(109);
 
-__webpack_require__(139);
+__webpack_require__(110);
 
-var Prism = __webpack_require__(110);
-var Normalizer = __webpack_require__(111);
-__webpack_require__(112);
+var Prism = __webpack_require__(111);
+var Normalizer = __webpack_require__(112);
+__webpack_require__(113);
 
 (function ($) {
 
@@ -7117,12 +7164,6 @@ __webpack_require__(112);
 })(jQuery);
 
 /***/ }),
-/* 67 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
 /* 68 */
 /***/ (function(module, exports) {
 
@@ -7130,50 +7171,9 @@ __webpack_require__(112);
 
 /***/ }),
 /* 69 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	__webpack_require__(0),
-	__webpack_require__(3),
-	__webpack_require__(12),
-	__webpack_require__(30),
-	__webpack_require__(11),
-	__webpack_require__(78),
-	__webpack_require__(50),
-	__webpack_require__(79),
-	__webpack_require__(32),
-	__webpack_require__(80),
-	__webpack_require__(84),
-	__webpack_require__(13),
-	__webpack_require__(88),
-	__webpack_require__(21),
-	__webpack_require__(90),
-	__webpack_require__(93),
-	__webpack_require__(15),
-	__webpack_require__(94),
-	__webpack_require__(64),
-	__webpack_require__(14),
-	__webpack_require__(95),
-	__webpack_require__(96),
-	__webpack_require__(97),
-	__webpack_require__(98),
-	__webpack_require__(101),
-	__webpack_require__(33),
-	__webpack_require__(102),
-	__webpack_require__(103),
-	__webpack_require__(104),
-	__webpack_require__(105),
-	__webpack_require__(107),
-	__webpack_require__(108)
-], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery ) {
-
-"use strict";
-
-return jQuery;
-
-}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 70 */
@@ -7192,7 +7192,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() 
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	__webpack_require__(41)
+	__webpack_require__(42)
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( fnToString ) {
 	"use strict";
 
@@ -9630,7 +9630,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 	__webpack_require__(8),
 	__webpack_require__(18),
 	__webpack_require__(5),
-	__webpack_require__(52)
+	__webpack_require__(53)
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery, access, camelCase, dataPriv, dataUser ) {
 
 "use strict";
@@ -9846,7 +9846,7 @@ return jQuery.fn.delay;
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
 	__webpack_require__(0),
 	__webpack_require__(5),
-	__webpack_require__(53)
+	__webpack_require__(54)
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery, dataPriv, isHiddenWithinTree ) {
 
 "use strict";
@@ -10130,7 +10130,7 @@ jQuery.fx.step = {};
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
 	__webpack_require__(0),
 	__webpack_require__(85),
-	__webpack_require__(61),
+	__webpack_require__(62),
 	__webpack_require__(86),
 	__webpack_require__(87)
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery ) {
@@ -11216,8 +11216,8 @@ jQuery.ajaxTransport( "script", function( s ) {
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
 	__webpack_require__(0),
 	__webpack_require__(1),
+	__webpack_require__(64),
 	__webpack_require__(63),
-	__webpack_require__(62),
 	__webpack_require__(14)
 ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery, isFunction, nonce, rquery ) {
 
@@ -11410,8 +11410,8 @@ jQuery.fn.load = function( url, params, callback ) {
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
 	__webpack_require__(0),
 	__webpack_require__(2),
-	__webpack_require__(47),
-	__webpack_require__(54),
+	__webpack_require__(48),
+	__webpack_require__(55),
 
 	// This is the only module that needs core/support
 	__webpack_require__(100)
@@ -11564,8 +11564,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 	__webpack_require__(29),
 	__webpack_require__(1),
 	__webpack_require__(26),
-	__webpack_require__(44),
-	__webpack_require__(46),
+	__webpack_require__(45),
+	__webpack_require__(47),
 	__webpack_require__(28),
 	__webpack_require__(17),
 	__webpack_require__(4),
@@ -20055,10 +20055,260 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 		_tickerActive = false; //ensures that the first official animation forces a ticker.tick() to update the time when it is instantiated
 
 })((typeof(module) !== "undefined" && module.exports && typeof(global) !== "undefined") ? global : this || window, "TweenMax");
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(65)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(66)))
 
 /***/ }),
 /* 110 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+;(function (factory) {
+    'use strict';
+
+    if (true) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(37)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+    } else if (typeof exports !== 'undefined') {
+        module.exports = factory(require('jquery'));
+    } else {
+        factory(jQuery);
+    }
+})(function ($) {
+    'use strict';
+
+    var LemNav = function () {
+        function LemNav(element, options) {
+            _classCallCheck(this, LemNav);
+
+            var self = this;
+
+            self.nav = {};
+
+            self.nav.dropdowns = [];
+
+            self.nav.navbar_open = false;
+
+            self.$navbar = $(element);
+
+            self.settings = $.extend({
+                navbar_toggle: '.lem-navbar-toggle',
+                collapse_duration: 0.2,
+                trigger: 'click',
+                trigger_linked: false,
+                extra_trigger_button: "<button class='extra-trigger'>+</button>",
+                navbar_collapse_duration: 0.5,
+                on_dropdown_shown: function on_dropdown_shown() {},
+                on_dropdown_hide: function on_dropdown_hide() {}
+
+            }, options);
+
+            self.init();
+        }
+
+        _createClass(LemNav, [{
+            key: 'init',
+            value: function init() {
+                var self = this;
+
+                if (self.is_touch_device()) {
+                    $('body').addClass('is-touch');
+                }
+
+                self.$navbar.find('.menu-item-has-children').each(function () {
+                    var $this = $(this);
+
+                    self.nav.dropdowns.push({
+                        nav_item: $this,
+                        trigger: $this,
+                        menu: $this.find('>.sub-menu'),
+                        menu_items: $this.find('>.sub-menu >li'),
+                        open: false
+                    });
+                });
+
+                self.nav.dropdowns.forEach(function (dropdown) {
+
+                    dropdown.menu_items_tl = new TimelineMax({
+                        paused: true
+                    });
+                });
+
+                if (self.settings.trigger_linked) {
+                    self.extra_trigger();
+                }
+
+                if (self.settings.trigger == 'click') {
+                    $(window).click(function () {
+                        self.close_all();
+                    });
+                    self.nav.dropdowns.forEach(function (dropdown) {
+                        dropdown.trigger.on('click', function (event) {
+                            event.stopPropagation();
+                            if (dropdown.open) {
+                                self.close({
+                                    dropdown: dropdown
+                                });
+                            } else {
+                                self.close_all();
+                                self.open({
+                                    dropdown: dropdown
+                                });
+                            }
+                        });
+                    });
+                } else if (self.settings.trigger == 'hover' && !self.is_touch_device()) {
+
+                    self.nav.dropdowns.forEach(function (dropdown) {
+                        dropdown.trigger.hover(function () {
+                            self.open({
+                                dropdown: dropdown
+                            });
+                        }, function () {
+                            self.close({
+                                dropdown: dropdown
+                            });
+                        });
+                    });
+                }
+
+                self.navbar_collapse();
+            }
+        }, {
+            key: 'close_all',
+            value: function close_all() {
+
+                var self = this;
+
+                self.nav.dropdowns.forEach(function (dropdown) {
+                    if (dropdown.open) {
+                        self.close({
+                            dropdown: dropdown
+                        });
+                    }
+                });
+            }
+        }, {
+            key: 'navbar_collapse',
+            value: function navbar_collapse() {
+                var self = this;
+
+                self.nav.navbar_trigger = $(self.settings.navbar_toggle);
+
+                self.nav.navbar_trigger.on('click', function () {
+                    if (self.nav.navbar_open) {
+                        TweenLite.to(self.$navbar, self.settings.navbar_collapse_duration, { height: 0 });
+
+                        self.nav.navbar_open = false;
+                        self.nav.navbar_trigger.removeClass('open');
+                    } else {
+                        TweenLite.set(self.$navbar, { height: "auto" });
+                        TweenLite.from(self.$navbar, self.settings.navbar_collapse_duration, { height: 0 });
+
+                        self.nav.navbar_open = true;
+                        self.nav.navbar_trigger.addClass('open');
+                    }
+                });
+            }
+        }, {
+            key: 'extra_trigger',
+            value: function extra_trigger() {
+                var self = this;
+
+                self.nav.dropdowns.forEach(function (dropdown) {
+
+                    var $button = $(self.settings.extra_trigger_button);
+
+                    dropdown.nav_item.append($button);
+
+                    $button.on('click', function () {
+
+                        if (dropdown.open) {
+                            self.close({
+                                dropdown: dropdown
+                            });
+                        } else {
+                            self.open({
+                                dropdown: dropdown
+                            });
+                        }
+                    });
+                });
+            }
+        }, {
+            key: 'open',
+            value: function open(options) {
+                var self = this;
+                var dropdown = options.dropdown;
+                var current_menu_height = dropdown.menu.outerHeight();
+
+                TweenLite.set(dropdown.menu, { height: "auto" });
+                TweenLite.from(dropdown.menu, self.settings.collapse_duration, {
+                    height: current_menu_height,
+                    onComplete: dropdown_shown
+                });
+
+                dropdown.open = true;
+                dropdown.nav_item.addClass('open');
+
+                function dropdown_shown() {
+                    self.settings.on_dropdown_shown();
+                }
+            }
+        }, {
+            key: 'close',
+            value: function close(options) {
+                var self = this;
+                var dropdown = options.dropdown;
+
+                self.settings.on_dropdown_hide();
+
+                TweenLite.to(dropdown.menu, self.settings.collapse_duration, { height: 0 });
+
+                dropdown.open = false;
+                dropdown.nav_item.removeClass('open');
+            }
+        }, {
+            key: 'is_touch_device',
+            value: function is_touch_device() {
+                try {
+                    document.createEvent("TouchEvent");
+                    return true;
+                } catch (e) {
+                    return false;
+                }
+            }
+        }]);
+
+        return LemNav;
+    }();
+
+    $.fn.lemNav = function () {
+        var $this = this,
+            opt = arguments[0],
+            args = Array.prototype.slice.call(arguments, 1),
+            length = $this.length,
+            i = void 0,
+            ret = void 0;
+        for (i = 0; i < length; i++) {
+            if ((typeof opt === 'undefined' ? 'undefined' : _typeof(opt)) == 'object' || typeof opt == 'undefined') $this[i].lem_nav = new LemNav($this[i], opt);else ret = $this[i].lem_nav[opt].apply($this[i].lem_nav, args);
+            if (typeof ret != 'undefined') return ret;
+        }
+        return $this;
+    };
+});
+
+/***/ }),
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {
@@ -20931,10 +21181,10 @@ Prism.languages.js = Prism.languages.javascript;
 
 })();
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(65)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(66)))
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports) {
 
 (function() {
@@ -21129,286 +21379,10 @@ Prism.hooks.add('before-sanity-check', function (env) {
 }());
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-;(function (factory) {
-    'use strict';
-
-    if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(69)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-    } else if (typeof exports !== 'undefined') {
-        module.exports = factory(require('jquery'));
-    } else {
-        factory(jQuery);
-    }
-})(function ($) {
-    'use strict';
-
-    var LemNav = function () {
-        function LemNav(element, options) {
-            _classCallCheck(this, LemNav);
-
-            var self = this;
-
-            self.nav = {};
-
-            self.nav.dropdowns = [];
-
-            self.nav.navbar_open = false;
-
-            self.$navbar = $(element);
-
-            self.settings = $.extend({
-                navbar_toggle: '.lem-navbar-toggle',
-                collapse_duration: 0.2,
-                trigger: 'click',
-                trigger_linked: false,
-                extra_trigger_button: "<button class='extra-trigger'>+</button>",
-                navbar_collapse_duration: 0.5,
-                on_dropdown_shown: function on_dropdown_shown() {},
-                on_dropdown_hide: function on_dropdown_hide() {}
-
-            }, options);
-
-            self.init();
-        }
-
-        _createClass(LemNav, [{
-            key: 'init',
-            value: function init() {
-                var self = this;
-
-                if (self.is_touch_device()) {
-                    $('body').addClass('is-touch');
-                }
-
-                self.$navbar.find('.menu-item-has-children').each(function () {
-                    var $this = $(this);
-
-                    self.nav.dropdowns.push({
-                        nav_item: $this,
-                        trigger: $this,
-                        menu: $this.find('>.sub-menu'),
-                        menu_items: $this.find('>.sub-menu >li'),
-                        open: false
-                    });
-                });
-
-                self.nav.dropdowns.forEach(function (dropdown) {
-
-                    dropdown.menu_items_tl = new TimelineMax({
-                        paused: true
-                    });
-                });
-
-                if (self.settings.trigger_linked) {
-                    self.extra_trigger();
-                }
-
-                if (self.settings.trigger == 'click') {
-                    $(window).click(function () {
-                        self.close_all();
-                    });
-                    self.nav.dropdowns.forEach(function (dropdown) {
-                        dropdown.trigger.on('click', function (event) {
-                            event.stopPropagation();
-                            if (dropdown.open) {
-                                self.close({
-                                    dropdown: dropdown
-                                });
-                            } else {
-                                self.close_all();
-                                self.open({
-                                    dropdown: dropdown
-                                });
-                            }
-                        });
-                    });
-                } else if (self.settings.trigger == 'hover' && !self.is_touch_device()) {
-
-                    self.nav.dropdowns.forEach(function (dropdown) {
-                        dropdown.trigger.hover(function () {
-                            self.open({
-                                dropdown: dropdown
-                            });
-                        }, function () {
-                            self.close({
-                                dropdown: dropdown
-                            });
-                        });
-                    });
-                }
-
-                self.navbar_collapse();
-            }
-        }, {
-            key: 'close_all',
-            value: function close_all() {
-
-                var self = this;
-
-                self.nav.dropdowns.forEach(function (dropdown) {
-                    if (dropdown.open) {
-                        self.close({
-                            dropdown: dropdown
-                        });
-                    }
-                });
-            }
-        }, {
-            key: 'navbar_collapse',
-            value: function navbar_collapse() {
-                var self = this;
-
-                self.nav.navbar_trigger = $(self.settings.navbar_toggle);
-
-                self.nav.navbar_trigger.on('click', function () {
-                    if (self.nav.navbar_open) {
-                        TweenLite.to(self.$navbar, self.settings.navbar_collapse_duration, { height: 0 });
-
-                        self.nav.navbar_open = false;
-                        self.nav.navbar_trigger.removeClass('open');
-                    } else {
-                        TweenLite.set(self.$navbar, { height: "auto" });
-                        TweenLite.from(self.$navbar, self.settings.navbar_collapse_duration, { height: 0 });
-
-                        self.nav.navbar_open = true;
-                        self.nav.navbar_trigger.addClass('open');
-                    }
-                });
-            }
-        }, {
-            key: 'extra_trigger',
-            value: function extra_trigger() {
-                var self = this;
-
-                self.nav.dropdowns.forEach(function (dropdown) {
-
-                    var $button = $(self.settings.extra_trigger_button);
-
-                    dropdown.nav_item.append($button);
-
-                    $button.on('click', function () {
-
-                        if (dropdown.open) {
-                            self.close({
-                                dropdown: dropdown
-                            });
-                        } else {
-                            self.open({
-                                dropdown: dropdown
-                            });
-                        }
-                    });
-                });
-            }
-        }, {
-            key: 'open',
-            value: function open(options) {
-                var self = this;
-                var dropdown = options.dropdown;
-                var current_menu_height = dropdown.menu.outerHeight();
-
-                TweenLite.set(dropdown.menu, { height: "auto" });
-                TweenLite.from(dropdown.menu, self.settings.collapse_duration, {
-                    height: current_menu_height,
-                    onComplete: dropdown_shown
-                });
-
-                dropdown.open = true;
-                dropdown.nav_item.addClass('open');
-
-                function dropdown_shown() {
-                    self.settings.on_dropdown_shown();
-                }
-            }
-        }, {
-            key: 'close',
-            value: function close(options) {
-                var self = this;
-                var dropdown = options.dropdown;
-
-                self.settings.on_dropdown_hide();
-
-                TweenLite.to(dropdown.menu, self.settings.collapse_duration, { height: 0 });
-
-                dropdown.open = false;
-                dropdown.nav_item.removeClass('open');
-            }
-        }, {
-            key: 'is_touch_device',
-            value: function is_touch_device() {
-                try {
-                    document.createEvent("TouchEvent");
-                    return true;
-                } catch (e) {
-                    return false;
-                }
-            }
-        }]);
-
-        return LemNav;
-    }();
-
-    $.fn.lemNav = function () {
-        var $this = this,
-            opt = arguments[0],
-            args = Array.prototype.slice.call(arguments, 1),
-            length = $this.length,
-            i = void 0,
-            ret = void 0;
-        for (i = 0; i < length; i++) {
-            if ((typeof opt === 'undefined' ? 'undefined' : _typeof(opt)) == 'object' || typeof opt == 'undefined') $this[i].lem_nav = new LemNav($this[i], opt);else ret = $this[i].lem_nav[opt].apply($this[i].lem_nav, args);
-            if (typeof ret != 'undefined') return ret;
-        }
-        return $this;
-    };
-});
 
 /***/ })
 /******/ ]);

@@ -1,16 +1,28 @@
-require("../../lem_youtube/build/lem_youtube.js");
+require("lem_youtube");
+
+let yt_api_ready = require('yt_api_load');
 
 
 //DEMO 1
-$(window).on('ytApiReady.ly', function () {
-  $('.demo-item-1 .youtube-video').lemYoutube();
+yt_api_ready().then(
+    function () {
+      $('.demo-item-1 .youtube-video').lemYoutube();
+    }
+).catch(function (error) {
+  console.log(error)
 });
+
 
 
 //DEMO 2
-$(window).on('ytApiReady.ly', function () {
-  $('.demo-item-2 .youtube-video').lemYoutube();
+yt_api_ready().then(
+    function () {
+      $('.demo-item-2 .youtube-video').lemYoutube();
+    }
+).catch(function (error) {
+  console.log(error)
 });
+
 
 $('.demo-item-2 .youtube-video').on('onReady.ly', function () {
   $(this).lemYoutube('ytPlayer', 'playVideo');
@@ -19,8 +31,14 @@ $('.demo-item-2 .youtube-video').on('onReady.ly', function () {
 
 
 //DEMO 3
-$(window).on('ytApiReady.ly', function () {
-  $('.demo-item-3 .youtube-video').lemYoutube();
+yt_api_ready().then(
+    function () {
+      $(window).on('ytApiReady.ly', function () {
+        $('.demo-item-3 .youtube-video').lemYoutube();
+      });
+    }
+).catch(function (error) {
+  console.log(error)
 });
 
 $('.play-btn').on('click', function () {
@@ -32,13 +50,18 @@ $('.pause-btn').on('click', function () {
 })
 
 
-$(window).on('apiReady.ly', function () {
-  $('.youtube-video').lemYoutube({
-    videoId: "yu_bA7jzX5Y",
-    playerVars: {
-      'rel': 1,
-      'showinfo': 1,
-      'autoplay': 1
+
+yt_api_ready().then(
+    function () {
+      $('.youtube-video').lemYoutube({
+        videoId: "yu_bA7jzX5Y",
+        playerVars: {
+          'rel': 1,
+          'showinfo': 1,
+          'autoplay': 1
+        }
+      });
     }
-  });
+).catch(function (error) {
+  console.log(error)
 });
